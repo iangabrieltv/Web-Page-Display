@@ -32,11 +32,11 @@ function Nav() {
   }, []);
 
   const links = [
-    { label: "Serviços", href: "#servicos" },
-    { label: "Diferenciais", href: "#diferenciais" },
-    { label: "Resultados", href: "#resultados" },
+    { label: "Início", href: "#" },
+    { label: "Sobre", href: "#diferenciais" },
+    { label: "Espaço", href: "#resultados" },
+    { label: "Serviço", href: "#servicos" },
     { label: "Contato", href: "#contato" },
-    { label: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -45,36 +45,53 @@ function Nav() {
       style={{
         backgroundColor: "#fff",
         boxShadow: scrolled ? "0 2px 24px rgba(0,51,52,0.10)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(0,51,52,0.07)" : "1px solid transparent",
+        borderBottom: scrolled ? "1px solid rgba(0,51,52,0.07)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="16" r="16" fill="rgb(0,51,52)" />
-            <path d="M10 12c0-3.3 2.7-6 6-6s6 2.7 6 6c0 2.4-1.4 4.5-3.4 5.5L17 26h-2l-1.6-8.5C11.4 16.5 10 14.4 10 12z" fill="#fff" />
+        <a href="#" className="flex items-center gap-2 flex-shrink-0">
+          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="20" fill="none" stroke="rgb(0,51,52)" strokeWidth="1.5"/>
+            <text x="20" y="15" textAnchor="middle" fontSize="7" fill="rgb(0,51,52)" fontFamily="serif" fontStyle="italic">Dra.</text>
+            <text x="20" y="23" textAnchor="middle" fontSize="5" fill="rgb(0,51,52)" fontFamily="serif" letterSpacing="0.5">GABRYELLA</text>
+            <text x="20" y="30" textAnchor="middle" fontSize="5" fill="rgb(0,51,52)" fontFamily="serif" letterSpacing="0.5">NUNES</text>
           </svg>
-          <span className="font-semibold text-base" style={{ color: "rgb(0,51,52)", letterSpacing: "-0.01em" }}>
-            Dra. Gabryella Nunes
-          </span>
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="text-[9px] font-semibold tracking-widest uppercase" style={{ color: "rgb(0,51,52)" }}>DRA. GABRYELLA</span>
+            <span className="text-[9px] font-semibold tracking-widest uppercase" style={{ color: "rgb(0,51,52)" }}>NUNES</span>
+          </div>
         </a>
 
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-2">
           {links.map((l) => (
             <a
-              key={l.href}
+              key={l.href + l.label}
               href={l.href}
-              className="text-sm font-medium transition-colors hover:opacity-70"
-              style={{ color: "rgb(48,66,84)" }}
+              className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 hover:border-teal-deep hover:text-teal-deep"
+              style={{
+                color: "rgb(48,66,84)",
+                borderColor: "rgba(48,66,84,0.25)",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgb(0,51,52)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgb(0,51,52)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(48,66,84,0.25)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgb(48,66,84)";
+              }}
             >
               {l.label}
             </a>
           ))}
+        </div>
+
+        <div className="hidden md:flex items-center">
           <a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-95"
+            className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-95"
             style={{ backgroundColor: "rgb(0,51,52)", color: "#fff" }}
           >
             Agendar Avaliação
@@ -98,14 +115,14 @@ function Nav() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden px-6 pb-5 flex flex-col gap-4 bg-white border-t" style={{ borderColor: "rgba(0,51,52,0.08)" }}>
+        <div className="md:hidden px-6 pb-5 flex flex-col gap-3 bg-white border-t" style={{ borderColor: "rgba(0,51,52,0.08)" }}>
           {links.map((l) => (
             <a
-              key={l.href}
+              key={l.label}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm font-medium py-1"
-              style={{ color: "rgb(48,66,84)" }}
+              className="text-sm font-medium py-1 border-b"
+              style={{ color: "rgb(48,66,84)", borderColor: "rgba(0,0,0,0.05)" }}
             >
               {l.label}
             </a>
@@ -114,7 +131,7 @@ function Nav() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full text-sm font-semibold text-center"
+            className="px-5 py-2.5 rounded-full text-sm font-semibold text-center mt-1"
             style={{ backgroundColor: "rgb(0,51,52)", color: "#fff" }}
           >
             Agendar Avaliação
@@ -128,82 +145,108 @@ function Nav() {
 function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
-      style={{ backgroundColor: "#fff", paddingTop: "80px" }}
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "#fff", minHeight: "100vh" }}
     >
+      {/* Full-bleed split layout */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,51,52,0.07) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="relative max-w-3xl mx-auto">
+        className="flex flex-col md:flex-row"
+        style={{ minHeight: "100vh" }}
+      >
+        {/* ── LEFT HALF ── */}
         <div
-          className="inline-block mb-6 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
-          style={{ backgroundColor: "rgba(0,51,52,0.08)", color: "rgb(0,51,52)" }}
+          className="relative z-10 flex items-center"
+          style={{ flex: "0 0 50%", backgroundColor: "#fff" }}
         >
-          Odontologia humanizada em Penedo - AL
+          <div className="w-full px-8 md:pl-12 lg:pl-20 xl:pl-28 py-24 md:py-0" style={{ paddingTop: "80px" }}>
+            <h1
+              className="text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.15] mb-7"
+              style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em", maxWidth: "480px" }}
+            >
+              <span className="font-bold block">Especialista em cuidar</span>
+              <span className="font-bold">de pessoas e </span>
+              <span
+                style={{
+                  fontStyle: "italic",
+                  fontFamily: "'Georgia', 'Times New Roman', serif",
+                  fontWeight: 400,
+                  color: "rgb(0,51,52)",
+                }}
+              >
+                transformar sorrisos com naturalidade e confiança
+              </span>
+            </h1>
+
+            <p
+              className="mb-10"
+              style={{ color: "rgb(90,110,125)", lineHeight: 1.75, fontSize: "15px", maxWidth: "380px" }}
+            >
+              Aparelhos fixos, alinhadores invisíveis e muito mais em um ambiente sem julgamentos, criado para quem adiou o dentista por medo ou insegurança.
+            </p>
+
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-9 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
+              style={{
+                backgroundColor: "rgb(0,51,52)",
+                color: "#fff",
+                boxShadow: "0 8px 32px rgba(0,51,52,0.28)",
+              }}
+            >
+              Agendar Avaliação
+            </a>
+          </div>
         </div>
 
-        <h1
-          className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
-          style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em" }}
+        {/* ── RIGHT HALF ── photo */}
+        <div
+          className="relative"
+          style={{ flex: "0 0 50%", minHeight: "480px" }}
         >
-          O sorriso que você{" "}
-          <span
+          {/* Decorative concentric circles — top-right corner */}
+          <div
+            className="absolute pointer-events-none z-20"
+            style={{ top: 0, right: 0, width: "320px", height: "320px" }}
+          >
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+              <div
+                key={i}
+                className="absolute rounded-full border"
+                style={{
+                  width: `${90 + i * 44}px`,
+                  height: `${90 + i * 44}px`,
+                  top: `${-(45 + i * 22)}px`,
+                  right: `${-(45 + i * 22)}px`,
+                  borderColor: `rgba(0,85,87,${0.30 - i * 0.038})`,
+                  borderWidth: "1.5px",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Photo — show right portion (the doctor's side of the reference image) */}
+          <img
+            src="/hero-dra.png"
+            alt="Dra. Gabryella Nunes"
+            className="absolute inset-0 w-full h-full"
             style={{
-              background: "linear-gradient(135deg, rgb(0,51,52) 0%, rgb(0,100,102) 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              objectFit: "cover",
+              objectPosition: "75% center",
             }}
-          >
-            merece
-          </span>
-          , com o cuidado que você precisa
-        </h1>
+          />
 
-        <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto" style={{ color: "rgb(80,100,115)", lineHeight: 1.7 }}>
-          Ortodontia, estética e saúde bucal com atendimento humanizado e foco no seu bem-estar. Cada tratamento é pensado para transformar seu sorriso com leveza e confiança.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95 shadow-lg"
-            style={{ backgroundColor: "rgb(0,51,52)", color: "#fff", boxShadow: "0 8px 32px rgba(0,51,52,0.25)" }}
-          >
-            Agendar Avaliação
-          </a>
-          <a
-            href="#servicos"
-            className="px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-80 border-2"
-            style={{ color: "rgb(0,51,52)", borderColor: "rgb(0,51,52)" }}
-          >
-            Conheça os Serviços
-          </a>
-        </div>
-
-        <div className="mt-14 flex flex-col sm:flex-row gap-8 justify-center items-center">
-          {[
-            { label: "Atendimento humanizado", icon: "❤" },
-            { label: "Tecnologia moderna", icon: "✦" },
-            { label: "Resultados naturais", icon: "✓" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2">
-              <span className="text-lg" style={{ color: "rgb(0,51,52)" }}>{item.icon}</span>
-              <span className="text-sm font-medium" style={{ color: "rgb(60,80,95)" }}>{item.label}</span>
-            </div>
-          ))}
+          {/* Left fade — blends photo into white left panel, covers center text bleed */}
+          <div
+            className="absolute inset-y-0 left-0 z-10 pointer-events-none"
+            style={{
+              width: "55%",
+              background: "linear-gradient(to right, #fff 0%, #fff 30%, rgba(255,255,255,0.85) 55%, transparent 100%)",
+            }}
+          />
         </div>
       </div>
-
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, rgba(245,247,246,0.4))" }}
-      />
     </section>
   );
 }

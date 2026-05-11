@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Dra. Gabryella Nunes"
+version = "1.0.0"
+id = "artifacts/clinica-gabryella"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25787
+
+[services.development]
+run = "pnpm --filter @workspace/clinica-gabryella run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/clinica-gabryella", "run", "build" ]
+publicDir = "artifacts/clinica-gabryella/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25787"
+BASE_PATH = "/"

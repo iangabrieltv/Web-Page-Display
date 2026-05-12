@@ -5,6 +5,9 @@ import beforeAfter2 from "@assets/image(1)_1778593478101.png";
 import beforeAfter3 from "@assets/image(2)_1778593478102.png";
 import beforeAfter4 from "@assets/png_1778593487627.png";
 import beforeAfter5 from "@assets/png(1)_1778593487628.png";
+import doctorPhoto from "@assets/DSC_0037.JPG_1778594681306.jpeg";
+import toothIcon from "@assets/dente_1778594972069.png";
+import brancoBg from "@assets/branco_1778595419572.png";
 
 function useReveal() {
   useEffect(() => {
@@ -593,79 +596,177 @@ function Services() {
 }
 
 function Diferenciais() {
-  const items = [
-    {
-      title: "Tecnologia moderna para mais conforto",
-      desc: "Equipamentos de última geração para procedimentos mais precisos, rápidos e com mínimo desconforto.",
-      icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Atendimento acolhedor e humanizado",
-      desc: "Cada paciente é recebido com escuta, empatia e atenção individualizada em cada etapa do tratamento.",
-      icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Ortodontia com acompanhamento próximo",
-      desc: "Acompanhamento contínuo e personalizado para garantir os melhores resultados ao longo de todo o tratamento.",
-      icon: (
-        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      ),
-    },
+  const bullets = [
+    "Tecnologia moderna para mais conforto",
+    "Atendimento acolhedor e humanizado",
+    "Ortodontia com acompanhamento próximo",
   ];
 
   return (
-    <section id="diferenciais" className="py-24 px-6" style={{ backgroundColor: "rgb(0,51,52)" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-14 reveal">
-          <div
-            className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
-            style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)" }}
-          >
-            Diferenciais +
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ color: "#fff", letterSpacing: "-0.02em", maxWidth: "560px" }}
-          >
-            Ortodontia com propósito
-          </h2>
-          <p className="text-base max-w-xl" style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.7 }}>
-            Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório.
-          </p>
+    <section
+      id="diferenciais"
+      style={{ position: "relative", overflow: "visible" }}
+    >
+      <div style={{ display: "flex", minHeight: "520px", alignItems: "stretch" }}>
+
+        {/* ── LEFT — white side with doctor photo ── */}
+        <div
+          style={{
+            width: "45%",
+            backgroundColor: "#fff",
+            position: "relative",
+            overflow: "visible",
+            flexShrink: 0,
+          }}
+        >
+          {/* Tooth icon — top center of photo area */}
+          <img
+            src={toothIcon}
+            alt="Ícone dente"
+            style={{
+              position: "absolute",
+              top: "-28px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "72px",
+              height: "72px",
+              zIndex: 20,
+              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.15))",
+            }}
+          />
+
+          {/* Doctor photo — head overflows above section */}
+          <img
+            src={doctorPhoto}
+            alt="Dra. Gabryella Nunes"
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              height: "115%",
+              width: "auto",
+              maxWidth: "none",
+              objectFit: "cover",
+              objectPosition: "top center",
+              zIndex: 10,
+            }}
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger">
-          {items.map((item) => (
+        {/* ── RIGHT — dark green side with content ── */}
+        <div
+          style={{
+            flex: 1,
+            backgroundColor: "#003334",
+            position: "relative",
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            padding: "clamp(40px, 6vw, 80px) clamp(32px, 5vw, 72px) clamp(40px, 6vw, 80px) clamp(32px, 4vw, 56px)",
+          }}
+        >
+          {/* White swoosh background element */}
+          <img
+            src={brancoBg}
+            alt=""
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              bottom: "-10%",
+              right: "-5%",
+              width: "70%",
+              opacity: 0.07,
+              pointerEvents: "none",
+              zIndex: 0,
+            }}
+          />
+
+          {/* Content */}
+          <div style={{ position: "relative", zIndex: 1, maxWidth: "480px" }}>
+            {/* Label */}
             <div
-              key={item.title}
-              className="reveal rounded-2xl p-8 border transition-all duration-300 hover:border-white/20"
-              style={{ backgroundColor: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.10)" }}
+              style={{
+                display: "inline-block",
+                marginBottom: "16px",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "12px",
+                fontWeight: 600,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.60)",
+              }}
             >
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ backgroundColor: "rgba(255,255,255,0.12)", color: "#fff" }}
-              >
-                {item.icon}
-              </div>
-              <h3 className="font-semibold text-lg mb-3" style={{ color: "#fff" }}>
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-                {item.desc}
-              </p>
+              Diferenciais +
             </div>
-          ))}
+
+            {/* Title */}
+            <h2
+              style={{
+                fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+                fontWeight: 400,
+                fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+                color: "#fff",
+                lineHeight: 1.15,
+                margin: "0 0 20px 0",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Ortodontia com propósito
+            </h2>
+
+            {/* Body */}
+            <p
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "clamp(0.82rem, 1vw, 0.95rem)",
+                color: "rgba(255,255,255,0.68)",
+                lineHeight: 1.85,
+                margin: "0 0 32px 0",
+                maxWidth: "400px",
+              }}
+            >
+              Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório.
+            </p>
+
+            {/* Bullet points */}
+            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
+              {bullets.map((b) => (
+                <li
+                  key={b}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "clamp(0.80rem, 0.95vw, 0.90rem)",
+                    color: "rgba(255,255,255,0.85)",
+                    fontWeight: 500,
+                  }}
+                >
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      width: "20px",
+                      height: "20px",
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #f5c9a0 0%, #e8b48a 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="#003334" strokeWidth={2.2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
+                    </svg>
+                  </span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+
       </div>
     </section>
   );

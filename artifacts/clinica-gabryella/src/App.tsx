@@ -737,31 +737,20 @@ function Resultados() {
               borderRadius: "16px",
               overflow: "hidden",
               position: "relative",
-              aspectRatio: "3 / 4",
               background: "#001a1b",
             }}
           >
-            {/* Animated image */}
-            <div
+            {/* Full image — no crop */}
+            <img
+              src={photo.src}
+              alt={`Antes e depois ${i + 1}`}
+              className="before-after-img"
               style={{
-                position: "absolute",
-                inset: 0,
-                overflow: "hidden",
+                width: "100%",
+                height: "auto",
+                display: "block",
               }}
-            >
-              <img
-                src={photo.src}
-                alt={`Antes e depois ${i + 1}`}
-                className={`before-after-img ${photo.delay}`}
-                style={{
-                  width: "100%",
-                  height: "200%",
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                  display: "block",
-                }}
-              />
-            </div>
+            />
 
             {/* "Antes e depois" badge — top left */}
             <div

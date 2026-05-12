@@ -743,7 +743,7 @@ function Resultados() {
               borderRadius: "16px",
               overflow: "hidden",
               position: "relative",
-              background: "#001a1b",
+              background: "#003334",
             }}
           >
             {/* Full image — no crop */}

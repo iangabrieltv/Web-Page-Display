@@ -649,7 +649,7 @@ function Diferenciais() {
                 color: "rgba(255,255,255,0.55)",
                 margin: "0 0 clamp(6px, 1vw, 14px) 0",
               }}
-            >
+              className="mt-[0px] mb-[250px]">
               Diferenciais +
             </p>
 

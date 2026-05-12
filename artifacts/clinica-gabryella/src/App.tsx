@@ -624,17 +624,17 @@ function Diferenciais() {
           }}
         />
 
-        {/* ── Text overlay — positioned over the green card (right ~45–90% of image) ── */}
+        {/* ── Text overlay — fills the green card (right side of image) ── */}
         <div
           style={{
             position: "absolute",
-            top: "10%",
-            left: "46%",
-            width: "43%",
-            height: "78%",
+            top: "8%",
+            left: "44%",
+            width: "49%",
+            height: "84%",
             display: "flex",
             alignItems: "center",
-            padding: "0 2%",
+            padding: "0 4%",
           }}
         >
           <div style={{ width: "100%" }}>
@@ -642,12 +642,12 @@ function Diferenciais() {
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "clamp(0.55rem, 0.85vw, 0.72rem)",
+                fontSize: "clamp(0.6rem, 1.1vw, 0.85rem)",
                 fontWeight: 600,
-                letterSpacing: "0.14em",
+                letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 color: "rgba(255,255,255,0.55)",
-                margin: "0 0 clamp(4px, 0.8vw, 10px) 0",
+                margin: "0 0 clamp(6px, 1vw, 14px) 0",
               }}
             >
               Diferenciais +
@@ -658,10 +658,10 @@ function Diferenciais() {
               style={{
                 fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                 fontWeight: 400,
-                fontSize: "clamp(0.95rem, 2.1vw, 2.2rem)",
+                fontSize: "clamp(1.3rem, 3vw, 3rem)",
                 color: "#fff",
-                lineHeight: 1.15,
-                margin: "0 0 clamp(6px, 1vw, 14px) 0",
+                lineHeight: 1.1,
+                margin: "0 0 clamp(8px, 1.4vw, 20px) 0",
                 letterSpacing: "-0.01em",
               }}
             >
@@ -672,36 +672,35 @@ function Diferenciais() {
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "clamp(0.5rem, 0.85vw, 0.82rem)",
+                fontSize: "clamp(0.65rem, 1.1vw, 1rem)",
                 color: "rgba(255,255,255,0.65)",
                 lineHeight: 1.75,
-                margin: "0 0 clamp(8px, 1.2vw, 20px) 0",
+                margin: "0 0 clamp(10px, 1.6vw, 26px) 0",
               }}
             >
               Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório.
             </p>
 
             {/* Bullet points */}
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "clamp(4px, 0.8vw, 12px)" }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "clamp(6px, 1vw, 14px)" }}>
               {bullets.map((b) => (
                 <li
                   key={b}
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "clamp(4px, 0.6vw, 10px)",
+                    gap: "clamp(6px, 0.8vw, 12px)",
                     fontFamily: "'Poppins', sans-serif",
-                    fontSize: "clamp(0.48rem, 0.8vw, 0.78rem)",
-                    color: "rgba(255,255,255,0.82)",
+                    fontSize: "clamp(0.62rem, 1vw, 0.92rem)",
+                    color: "rgba(255,255,255,0.85)",
                     fontWeight: 500,
-                    transition: "opacity 0.2s",
                   }}
                 >
                   <span
                     style={{
                       flexShrink: 0,
-                      width: "clamp(12px, 1.2vw, 18px)",
-                      height: "clamp(12px, 1.2vw, 18px)",
+                      width: "clamp(16px, 1.6vw, 22px)",
+                      height: "clamp(16px, 1.6vw, 22px)",
                       borderRadius: "50%",
                       background: "linear-gradient(135deg, #f5c9a0 0%, #e8b48a 100%)",
                       display: "flex",
@@ -709,7 +708,7 @@ function Diferenciais() {
                       justifyContent: "center",
                     }}
                   >
-                    <svg width="8" height="8" fill="none" viewBox="0 0 12 12" stroke="#003334" strokeWidth={2.5}>
+                    <svg width="9" height="9" fill="none" viewBox="0 0 12 12" stroke="#003334" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
                     </svg>
                   </span>

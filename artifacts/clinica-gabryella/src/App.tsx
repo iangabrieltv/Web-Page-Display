@@ -685,11 +685,18 @@ function Resultados() {
       id="resultados"
       style={{
         backgroundColor: "#003334",
-        padding: "clamp(60px, 8vw, 100px) clamp(16px, 4vw, 48px)",
+        padding: "clamp(60px, 8vw, 100px) 0 clamp(50px, 6vw, 80px) 0",
       }}
     >
       {/* Header */}
-      <div className="text-center reveal" style={{ marginBottom: "clamp(40px, 5vw, 64px)" }}>
+      <div
+        className="text-center reveal"
+        style={{
+          marginBottom: "clamp(40px, 5vw, 64px)",
+          paddingLeft: "clamp(16px, 4vw, 48px)",
+          paddingRight: "clamp(16px, 4vw, 48px)",
+        }}
+      >
         <h2
           style={{
             fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
@@ -724,9 +731,8 @@ function Resultados() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(5, 1fr)",
-          gap: "clamp(8px, 1.2vw, 16px)",
-          maxWidth: "1320px",
-          margin: "0 auto",
+          gap: "clamp(6px, 0.8vw, 12px)",
+          width: "100%",
         }}
       >
         {photos.map((photo, i) => (
@@ -779,7 +785,14 @@ function Resultados() {
       </div>
 
       {/* CTA button */}
-      <div className="text-center reveal" style={{ marginTop: "clamp(36px, 4vw, 56px)" }}>
+      <div
+        className="text-center reveal"
+        style={{
+          marginTop: "clamp(36px, 4vw, 56px)",
+          paddingLeft: "clamp(16px, 4vw, 48px)",
+          paddingRight: "clamp(16px, 4vw, 48px)",
+        }}
+      >
         <a
           href={WHATSAPP_LINK}
           target="_blank"

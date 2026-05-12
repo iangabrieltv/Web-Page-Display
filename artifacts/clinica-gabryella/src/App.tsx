@@ -158,19 +158,46 @@ function Hero() {
           className="relative flex items-center"
           style={{ flex: "0 0 50%", backgroundColor: "transparent", zIndex: 1 }}
         >
-          <div className="w-full px-8 md:pl-12 lg:pl-20 xl:pl-28 py-24 md:py-0" style={{ paddingTop: "80px" }}>
+          <div
+            className="w-full"
+            style={{
+              paddingLeft: "clamp(1.5rem, 5vw, 7rem)",
+              paddingRight: "clamp(1rem, 3vw, 3rem)",
+              paddingTop: "clamp(5rem, 10vh, 8rem)",
+              paddingBottom: "clamp(3rem, 6vh, 5rem)",
+            }}
+          >
             <h1
-              className="text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.15] mb-7"
-              style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em", maxWidth: "480px" }}
+              style={{
+                color: "rgb(0,51,52)",
+                maxWidth: "clamp(260px, 38vw, 520px)",
+                marginBottom: "clamp(1rem, 2.5vh, 1.75rem)",
+                lineHeight: 1.13,
+              }}
             >
-              <span className="font-bold block">Especialista em cuidar</span>
-              <span className="font-bold">de pessoas e </span>
+              {/* Poppins bold portion */}
               <span
                 style={{
-                  fontStyle: "italic",
-                  fontFamily: "'Georgia', 'Times New Roman', serif",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.6rem, 3.2vw, 3.4rem)",
+                  display: "block",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                Especialista em cuidar<br />de pessoas e
+              </span>
+              {/* Roxborough CF italic portion */}
+              <span
+                style={{
+                  fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                   fontWeight: 400,
-                  color: "rgb(0,51,52)",
+                  fontStyle: "italic",
+                  fontSize: "clamp(1.6rem, 3.2vw, 3.4rem)",
+                  display: "block",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1.18,
+                  marginTop: "0.1em",
                 }}
               >
                 transformar sorrisos com naturalidade e confiança
@@ -178,8 +205,15 @@ function Hero() {
             </h1>
 
             <p
-              className="mb-10"
-              style={{ color: "rgb(90,110,125)", lineHeight: 1.75, fontSize: "15px", maxWidth: "380px" }}
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 400,
+                color: "rgb(85,105,120)",
+                lineHeight: 1.72,
+                fontSize: "clamp(0.8rem, 1.1vw, 1rem)",
+                maxWidth: "clamp(240px, 30vw, 400px)",
+                marginBottom: "clamp(1.5rem, 3.5vh, 2.5rem)",
+              }}
             >
               Aparelhos fixos, alinhadores invisíveis e muito mais em um ambiente sem julgamentos, criado para quem adiou o dentista por medo ou insegurança.
             </p>
@@ -188,12 +222,21 @@ function Hero() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-9 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
               style={{
+                display: "inline-block",
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: "clamp(0.8rem, 1vw, 1rem)",
                 backgroundColor: "rgb(0,51,52)",
                 color: "#fff",
+                borderRadius: "9999px",
+                padding: "clamp(0.65rem, 1.2vh, 0.9rem) clamp(1.6rem, 3vw, 2.4rem)",
                 boxShadow: "0 8px 32px rgba(0,51,52,0.28)",
+                textDecoration: "none",
+                transition: "opacity 0.2s, transform 0.2s",
               }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
             >
               Agendar Avaliação
             </a>

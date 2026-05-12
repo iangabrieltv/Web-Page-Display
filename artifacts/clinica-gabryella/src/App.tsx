@@ -146,21 +146,23 @@ function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: "#fff" }}
+      style={{ backgroundColor: "#fff", height: "100vh", minHeight: "500px" }}
     >
       {/* Background image — full design with text, photo and circles baked in */}
       <img
         src="/hero-bg.png"
         alt="Dra. Gabryella Nunes — Especialista em cuidar de pessoas"
         style={{
-          display: "block",
+          position: "absolute",
+          inset: 0,
           width: "100%",
-          height: "auto",
+          height: "100%",
           objectFit: "cover",
+          objectPosition: "center top",
         }}
       />
 
-      {/* Invisible clickable button overlay — positioned over the "Agendar Avaliação" in the image */}
+      {/* Invisible clickable overlay over the button area in the image */}
       <a
         href={WHATSAPP_LINK}
         target="_blank"
@@ -169,9 +171,9 @@ function Hero() {
         style={{
           position: "absolute",
           left: "5%",
-          bottom: "18%",
-          width: "17%",
-          height: "7%",
+          bottom: "22%",
+          width: "16%",
+          height: "6%",
           borderRadius: "9999px",
           display: "block",
           cursor: "pointer",

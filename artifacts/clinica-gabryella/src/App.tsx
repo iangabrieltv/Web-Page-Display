@@ -190,7 +190,6 @@ function Hero() {
                   paddingLeft: "clamp(1.2rem, 2.5vw, 2.2rem)",
                   paddingRight: "clamp(1.2rem, 2.5vw, 2.2rem)",
                   flexShrink: 0,
-                  borderRight: "1px solid rgba(0,51,52,0.18)",
                 }}
               >
                 <img

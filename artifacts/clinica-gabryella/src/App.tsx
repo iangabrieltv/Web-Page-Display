@@ -155,8 +155,8 @@ function Hero() {
       >
         {/* ── LEFT HALF ── */}
         <div
-          className="relative z-10 flex items-center"
-          style={{ flex: "0 0 50%", backgroundColor: "#fff" }}
+          className="relative flex items-center"
+          style={{ flex: "0 0 50%", backgroundColor: "transparent", zIndex: 1 }}
         >
           <div className="w-full px-8 md:pl-12 lg:pl-20 xl:pl-28 py-24 md:py-0" style={{ paddingTop: "80px" }}>
             <h1
@@ -200,53 +200,16 @@ function Hero() {
           </div>
         </div>
 
-        {/* ── RIGHT HALF ── photo */}
-        <div
-          className="relative"
-          style={{ flex: "0 0 50%", minHeight: "480px" }}
-        >
-          {/* Decorative concentric circles — top-right corner */}
-          <div
-            className="absolute pointer-events-none z-20"
-            style={{ top: 0, right: 0, width: "320px", height: "320px" }}
-          >
-            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className="absolute rounded-full border"
-                style={{
-                  width: `${90 + i * 44}px`,
-                  height: `${90 + i * 44}px`,
-                  top: `${-(45 + i * 22)}px`,
-                  right: `${-(45 + i * 22)}px`,
-                  borderColor: `rgba(0,85,87,${0.30 - i * 0.038})`,
-                  borderWidth: "1.5px",
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Photo — show right portion (the doctor's side of the reference image) */}
-          <img
-            src="/hero-dra.png"
-            alt="Dra. Gabryella Nunes"
-            className="absolute inset-0 w-full h-full"
-            style={{
-              objectFit: "cover",
-              objectPosition: "75% center",
-            }}
-          />
-
-          {/* Left fade — blends photo into white left panel, covers center text bleed */}
-          <div
-            className="absolute inset-y-0 left-0 z-10 pointer-events-none"
-            style={{
-              width: "55%",
-              background: "linear-gradient(to right, #fff 0%, #fff 30%, rgba(255,255,255,0.85) 55%, transparent 100%)",
-            }}
-          />
-        </div>
       </div>
+
+      {/* Full-bleed background image — already has white fade + doctor + circles baked in */}
+      <img
+        src="/hero-bg.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ objectFit: "cover", objectPosition: "center center", zIndex: 0 }}
+      />
     </section>
   );
 }

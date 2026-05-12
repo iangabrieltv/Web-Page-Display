@@ -606,12 +606,13 @@ function Diferenciais() {
       className="reveal"
       style={{
         position: "relative",
-        backgroundColor: "#f7f3ee",
+        backgroundColor: "#003334",
         overflow: "hidden",
+        paddingBottom: "clamp(40px, 5vw, 80px)",
       }}
     >
       {/* ── Composition image — full width, defines section height ── */}
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", maxWidth: "1100px", margin: "0 auto" }}>
         <img
           src={diferencialsBg}
           alt=""

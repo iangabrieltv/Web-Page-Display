@@ -628,12 +628,14 @@ function Diferenciais() {
         <div
           style={{
             position: "absolute",
-            top: "0",
+            top: "9%",
             left: "44%",
             width: "49%",
-            height: "100%",
+            height: "82%",
             display: "flex",
-            alignItems: "center",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "flex-start",
             padding: "0 5% 0 4%",
           }}
         >

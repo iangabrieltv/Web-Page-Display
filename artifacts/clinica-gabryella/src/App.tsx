@@ -173,45 +173,39 @@ function Hero() {
           zIndex: 10,
           backgroundColor: "#ffcc99",
           overflow: "hidden",
-          height: "clamp(44px, 6vh, 60px)",
+          height: "clamp(60px, 8vh, 80px)",
           display: "flex",
           alignItems: "center",
         }}
       >
-        <div className="marquee-track" style={{ alignItems: "center" }}>
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "clamp(1rem, 3vw, 2.5rem)",
-                paddingRight: "clamp(1rem, 3vw, 2.5rem)",
-                flexShrink: 0,
-              }}
-            >
-              <img
-                src="/logo-gabryella.png"
-                alt="Dra. Gabryella Nunes"
+        {/* Two identical sets → animate first set off-screen = seamless loop */}
+        <div className="marquee-track" style={{ alignItems: "center", display: "flex" }}>
+          {[0, 1].map((setIdx) =>
+            Array.from({ length: 10 }).map((_, i) => (
+              <div
+                key={`${setIdx}-${i}`}
                 style={{
-                  height: "clamp(22px, 3.5vh, 36px)",
-                  width: "auto",
-                  filter: "brightness(0) invert(1) sepia(1) saturate(2000%) hue-rotate(152deg) brightness(0.22)",
-                  opacity: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  paddingLeft: "clamp(1.2rem, 2.5vw, 2.2rem)",
+                  paddingRight: "clamp(1.2rem, 2.5vw, 2.2rem)",
                   flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  color: "rgba(255,255,255,0.45)",
-                  fontSize: "clamp(10px, 1.2vw, 16px)",
-                  flexShrink: 0,
+                  borderRight: "1px solid rgba(0,51,52,0.18)",
                 }}
               >
-                ✦
-              </span>
-            </div>
-          ))}
+                <img
+                  src="/logo-gabryella.png"
+                  alt="Dra. Gabryella Nunes"
+                  style={{
+                    height: "clamp(28px, 4.5vh, 46px)",
+                    width: "auto",
+                    filter: "brightness(0) invert(1) sepia(1) saturate(2000%) hue-rotate(152deg) brightness(0.22)",
+                    flexShrink: 0,
+                  }}
+                />
+              </div>
+            ))
+          )}
         </div>
       </div>
 

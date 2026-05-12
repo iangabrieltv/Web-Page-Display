@@ -612,7 +612,7 @@ function Diferenciais() {
       }}
     >
       {/* ── Composition image — full width, defines section height ── */}
-      <div style={{ position: "relative", maxWidth: "1100px", margin: "0 auto" }}>
+      <div style={{ position: "relative" }}>
         <img
           src={diferencialsBg}
           alt=""

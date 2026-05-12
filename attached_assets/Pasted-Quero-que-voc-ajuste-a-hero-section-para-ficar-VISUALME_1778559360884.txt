@@ -1,0 +1,181 @@
+Quero que você ajuste a hero section para ficar VISUALMENTE IGUAL ao protótipo de referência enviado (anexo 2).
+Atualmente o layout está parecido, mas os espaçamentos, proporções, tipografia e alinhamentos estão diferentes.
+O objetivo é replicar fielmente a composição visual do design original.
+
+AJUSTES IMPORTANTES:
+
+Estrutura Geral
+A hero deve ocupar praticamente toda a altura da tela (min-height: 100vh)
+Criar um layout em duas colunas:
+esquerda = conteúdo textual
+direita = imagem da doutora
+O conteúdo da esquerda deve ficar mais centralizado verticalmente.
+Adicionar mais respiro nas laterais, principalmente à esquerda.
+O espaço entre o texto e a imagem está muito pequeno no layout atual.
+Container
+Definir largura máxima do conteúdo:
+max-width: 1280px
+Centralizar com:
+margin: 0 auto
+Padding lateral:
+desktop: padding: 0 64px
+tablet: padding: 0 40px
+mobile: padding: 0 24px
+Coluna Esquerda
+
+A coluna textual está muito comprimida no layout atual.
+
+Ajustar:
+
+largura máxima do bloco:
+max-width: 520px
+aumentar espaçamento entre:
+título
+subtítulo
+botão
+métricas
+
+Usar:
+
+gap: 28px
+Headline
+
+A headline do layout atual está pequena e sem a hierarquia correta.
+
+Quero:
+
+primeira parte em negrito moderno
+segunda parte em fonte serifada elegante
+Estilo:
+
+Primeira parte:
+
+font-size: 64px
+line-height: 1.05
+font-weight: 700
+cor verde escuro elegante
+
+Parte serifada:
+
+font-family: "Cormorant Garamond", serif
+font-size: 60px
+font-weight: 500
+line-height: 1.05
+itálico suave
+
+IMPORTANTE:
+
+aumentar o espaço vertical entre as linhas
+evitar quebra estranha de texto
+a composição precisa parecer sofisticada e premium
+Texto de apoio
+
+O parágrafo está muito pequeno.
+
+Ajustar:
+
+font-size: 17px
+line-height: 1.8
+max-width: 460px
+cor cinza escuro suave
+Botão
+
+O botão atual está pequeno e fino.
+
+Quero:
+
+altura maior
+aparência premium
+cantos totalmente arredondados
+Estilo:
+altura: 56px
+padding horizontal: 32px
+border-radius: 999px
+fundo verde escuro
+texto branco
+font-size: 16px
+font-weight: 600
+sombra suave
+
+Hover:
+
+leve elevação
+escurecer um pouco o fundo
+Métricas
+
+As métricas do rodapé da hero estão muito pequenas e sem presença.
+
+Ajustar:
+
+aumentar espaçamento horizontal
+deixar números maiores
+Números:
+font-size: 28px
+font-weight: 700
+Texto:
+font-size: 13px
+uppercase suave
+letter-spacing leve
+
+Adicionar linha horizontal acima das métricas com:
+
+opacidade baixa
+largura alinhada ao conteúdo
+Coluna Direita / Imagem
+
+A imagem está ocupando espaço demais e sem refinamento.
+
+Ajustar:
+
+aumentar levemente a largura da área da imagem
+alinhar melhor a modelo à direita
+manter bastante espaço em branco no centro
+suavizar o gradiente branco central
+Imagem da Doutora
+imagem deve parecer mais elegante e premium
+evitar corte agressivo
+mostrar melhor braço e parte inferior
+manter alinhamento semelhante ao protótipo
+Elementos Decorativos
+
+As linhas curvas verdes precisam ficar:
+
+mais suaves
+mais finas
+com menor opacidade
+posicionadas atrás da modelo
+Responsividade
+
+Tablet:
+
+headline entre 48px–54px
+
+Mobile:
+
+layout em coluna
+texto primeiro
+imagem abaixo
+centralizar tudo
+headline:
+42px
+botão:
+largura quase total
+Sensação Visual
+
+O layout precisa transmitir:
+
+clínica premium
+sofisticação
+leveza
+feminilidade
+luxo discreto
+muito espaço em branco
+
+Evitar:
+
+aparência “apertada”
+elementos pequenos
+excesso de contraste
+alinhamentos rígidos
+
+Quero um resultado extremamente próximo do protótipo real enviado como referência.

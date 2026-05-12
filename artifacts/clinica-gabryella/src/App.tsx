@@ -634,9 +634,9 @@ function Diferenciais() {
             height: "82%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "flex-start",
-            padding: "0 5% 0 4%",
+            padding: "5% 5% 0 4%",
           }}
         >
           <div style={{ width: "100%" }}>

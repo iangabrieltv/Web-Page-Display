@@ -1,0 +1,154 @@
+Quero que você refaça o HEADER/NAVBAR para ficar visualmente igual ao protótipo enviado como referência (anexo 2).
+Atualmente o header está pequeno, sem refinamento e com proporções erradas.
+
+O objetivo é criar um cabeçalho premium, elegante e sofisticado.
+
+Estrutura do Header
+Header horizontal clean e minimalista
+Altura aproximada:
+88px
+Conteúdo centralizado
+max-width: 1280px
+margin: 0 auto
+padding: 0 48px
+
+Distribuição:
+
+Logo na esquerda
+Menu centralizado
+Botão CTA na direita
+
+IMPORTANTE:
+
+tudo deve ficar perfeitamente alinhado verticalmente
+usar bastante espaço em branco
+o header precisa parecer refinado e luxuoso
+Logo
+
+A logo está pequena demais.
+
+Ajustar:
+
+aumentar tamanho visual da logo
+largura aproximada:
+120px
+manter bastante respiro ao redor
+alinhamento vertical perfeito
+Menu de Navegação
+
+Os botões atuais estão pequenos e muito arredondados.
+
+Quero exatamente o estilo do anexo 2:
+
+botões horizontais mais esticados
+aparência sofisticada
+borda fina
+gradiente sutil ciano/branco
+visual leve e premium
+Estilo dos botões do menu
+altura:
+38px
+largura mínima:
+84px
+padding horizontal:
+22px
+border-radius:
+999px
+Fundo:
+
+Usar gradiente MUITO suave:
+
+branco
+ciano extremamente leve
+quase imperceptível
+
+Exemplo:
+linear-gradient(180deg, #ffffff 0%, #eefcff 100%)
+
+Borda:
+1px solid rgba(0, 70, 80, 0.35)
+Texto:
+font-size: 13px
+font-weight: 600
+cor verde petróleo escuro
+bastante legibilidade
+Hover:
+fundo levemente mais ciano
+transição suave
+leve glow elegante
+sem exagero
+Espaçamento do Menu
+
+O menu está muito comprimido.
+
+Quero:
+
+gap: 16px
+alinhamento perfeitamente centralizado
+Botão CTA da Direita
+
+O botão "Agendar Avaliação" precisa ficar premium.
+
+Estilo:
+altura:
+42px
+padding:
+0 28px
+border-radius:
+999px
+fundo verde petróleo escuro
+texto branco
+font-size: 13px
+font-weight: 700
+
+Adicionar:
+
+sombra suave elegante
+hover com leve elevação
+transição suave
+Espaçamento Geral
+
+Atualmente tudo está muito apertado verticalmente.
+
+Ajustar:
+
+mais espaço entre header e hero
+o header precisa respirar
+diminuir sensação de elementos “colados”
+Sensação Visual
+
+O cabeçalho deve transmitir:
+
+clínica premium
+sofisticação
+luxo discreto
+leveza
+design moderno
+estética clean
+
+Evitar:
+
+bordas grossas
+sombras fortes
+botões pequenos
+aparência de template comum
+Responsividade
+
+Tablet:
+
+reduzir levemente paddings
+manter menu centralizado
+
+Mobile:
+
+transformar menu em botão hamburger elegante
+CTA continua destacado
+manter aparência premium
+MUITO IMPORTANTE
+
+O resultado final precisa ficar MUITO próximo do anexo 2:
+
+mesmos espaçamentos
+mesmas proporções
+mesmo estilo dos botões
+mesma sensação visual refinada

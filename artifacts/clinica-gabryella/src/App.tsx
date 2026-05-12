@@ -44,41 +44,69 @@ function Nav() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         backgroundColor: "#fff",
-        boxShadow: scrolled ? "0 2px 24px rgba(0,51,52,0.10)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(0,51,52,0.07)" : "none",
+        boxShadow: scrolled ? "0 2px 32px rgba(0,51,52,0.09)" : "none",
+        borderBottom: "1px solid rgba(0,51,52,0.07)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2 flex-shrink-0">
-          <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="20" fill="none" stroke="rgb(0,51,52)" strokeWidth="1.5"/>
-            <text x="20" y="15" textAnchor="middle" fontSize="7" fill="rgb(0,51,52)" fontFamily="serif" fontStyle="italic">Dra.</text>
-            <text x="20" y="23" textAnchor="middle" fontSize="5" fill="rgb(0,51,52)" fontFamily="serif" letterSpacing="0.5">GABRYELLA</text>
-            <text x="20" y="30" textAnchor="middle" fontSize="5" fill="rgb(0,51,52)" fontFamily="serif" letterSpacing="0.5">NUNES</text>
-          </svg>
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-[9px] font-semibold tracking-widest uppercase" style={{ color: "rgb(0,51,52)" }}>DRA. GABRYELLA</span>
-            <span className="text-[9px] font-semibold tracking-widest uppercase" style={{ color: "rgb(0,51,52)" }}>NUNES</span>
-          </div>
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 48px",
+          height: "88px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {/* Logo */}
+        <a href="#" style={{ flexShrink: 0, display: "flex", alignItems: "center" }}>
+          <img
+            src="/logo-nova.png"
+            alt="Dra. Gabryella Nunes"
+            style={{ width: "120px", height: "auto", display: "block" }}
+          />
         </a>
 
-        <div className="hidden md:flex items-center gap-2">
+        {/* Desktop Menu — centered */}
+        <div
+          className="hidden md:flex items-center"
+          style={{ gap: "16px", position: "absolute", left: "50%", transform: "translateX(-50%)" }}
+        >
           {links.map((l) => (
             <a
               key={l.href + l.label}
               href={l.href}
-              className="px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 hover:border-teal-deep hover:text-teal-deep"
               style={{
-                color: "rgb(48,66,84)",
-                borderColor: "rgba(48,66,84,0.25)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "38px",
+                minWidth: "84px",
+                padding: "0 22px",
+                borderRadius: "999px",
+                background: "linear-gradient(180deg, #ffffff 0%, #eefcff 100%)",
+                border: "1px solid rgba(0,70,80,0.35)",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "13px",
+                fontWeight: 600,
+                color: "#003334",
+                textDecoration: "none",
+                transition: "background 0.2s, box-shadow 0.2s, border-color 0.2s",
+                cursor: "pointer",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgb(0,51,52)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgb(0,51,52)";
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = "linear-gradient(180deg, #eefcff 0%, #d4f4f8 100%)";
+                el.style.boxShadow = "0 0 12px rgba(0,100,120,0.12)";
+                el.style.borderColor = "rgba(0,70,80,0.55)";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(48,66,84,0.25)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgb(48,66,84)";
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.background = "linear-gradient(180deg, #ffffff 0%, #eefcff 100%)";
+                el.style.boxShadow = "none";
+                el.style.borderColor = "rgba(0,70,80,0.35)";
               }}
             >
               {l.label}
@@ -86,23 +114,51 @@ function Nav() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center">
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center" style={{ flexShrink: 0 }}>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-95"
-            style={{ backgroundColor: "rgb(0,51,52)", color: "#fff" }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              height: "42px",
+              padding: "0 28px",
+              borderRadius: "999px",
+              backgroundColor: "#003334",
+              color: "#fff",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "13px",
+              fontWeight: 700,
+              textDecoration: "none",
+              boxShadow: "0 4px 18px rgba(0,51,52,0.22)",
+              transition: "transform 0.2s, box-shadow 0.2s, background-color 0.2s",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "translateY(-2px)";
+              el.style.boxShadow = "0 8px 24px rgba(0,51,52,0.30)";
+              el.style.backgroundColor = "#002526";
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "0 4px 18px rgba(0,51,52,0.22)";
+              el.style.backgroundColor = "#003334";
+            }}
           >
             Agendar Avaliação
           </a>
         </div>
 
+        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2 rounded-lg"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
-          style={{ color: "rgb(0,51,52)" }}
+          style={{ color: "#003334" }}
         >
           <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             {menuOpen ? (
@@ -121,8 +177,15 @@ function Nav() {
               key={l.label}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm font-medium py-1 border-b"
-              style={{ color: "rgb(48,66,84)", borderColor: "rgba(0,0,0,0.05)" }}
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: "#003334",
+                padding: "8px 0",
+                borderBottom: "1px solid rgba(0,0,0,0.05)",
+                textDecoration: "none",
+              }}
             >
               {l.label}
             </a>
@@ -131,8 +194,19 @@ function Nav() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full text-sm font-semibold text-center mt-1"
-            style={{ backgroundColor: "rgb(0,51,52)", color: "#fff" }}
+            style={{
+              display: "block",
+              textAlign: "center",
+              padding: "10px 20px",
+              borderRadius: "999px",
+              backgroundColor: "#003334",
+              color: "#fff",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "13px",
+              fontWeight: 700,
+              textDecoration: "none",
+              marginTop: "4px",
+            }}
           >
             Agendar Avaliação
           </a>
@@ -304,11 +378,11 @@ function Hero() {
                 { value: "+10 anos", label: "EXPERIÊNCIA" },
                 { value: "4022", label: "CRO" },
               ].map((stat) => (
-                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center", textAlign: "center" }}>
                   <span
                     style={{
                       fontFamily: "'Poppins', sans-serif",
-                      fontWeight: 700,
+                      fontWeight: 400,
                       fontSize: "clamp(1.1rem, 1.8vw, 28px)",
                       color: "rgb(0,51,52)",
                       lineHeight: 1,
@@ -319,7 +393,7 @@ function Hero() {
                   <span
                     style={{
                       fontFamily: "'Poppins', sans-serif",
-                      fontWeight: 500,
+                      fontWeight: 400,
                       fontSize: "13px",
                       color: "rgb(100,120,135)",
                       lineHeight: 1.3,

@@ -71,7 +71,7 @@ function Nav() {
         {/* Desktop Menu — centered */}
         <div
           className="hidden md:flex items-center"
-          style={{ gap: "16px", position: "absolute", left: "50%", transform: "translateX(-50%)" }}
+          style={{ gap: "14px", position: "absolute", left: "50%", transform: "translateX(-50%)" }}
         >
           {links.map((l) => (
             <a
@@ -82,31 +82,29 @@ function Nav() {
                 alignItems: "center",
                 justifyContent: "center",
                 height: "38px",
-                minWidth: "84px",
-                padding: "0 22px",
+                minWidth: "88px",
+                padding: "0 24px",
                 borderRadius: "999px",
-                background: "linear-gradient(180deg, #ffffff 0%, #eefcff 100%)",
-                border: "1px solid rgba(0,70,80,0.35)",
+                background: "linear-gradient(white, white) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
+                border: "1px solid transparent",
                 fontFamily: "'Poppins', sans-serif",
                 fontSize: "13px",
                 fontWeight: 600,
                 color: "#003334",
                 textDecoration: "none",
-                transition: "background 0.2s, box-shadow 0.2s, border-color 0.2s",
+                transition: "background 0.25s, box-shadow 0.25s, opacity 0.25s",
                 cursor: "pointer",
                 whiteSpace: "nowrap",
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLAnchorElement;
-                el.style.background = "linear-gradient(180deg, #eefcff 0%, #d4f4f8 100%)";
-                el.style.boxShadow = "0 0 12px rgba(0,100,120,0.12)";
-                el.style.borderColor = "rgba(0,70,80,0.55)";
+                el.style.background = "linear-gradient(rgba(238,252,255,0.7), rgba(238,252,255,0.7)) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
+                el.style.boxShadow = "0 2px 16px rgba(0,51,52,0.08)";
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLAnchorElement;
-                el.style.background = "linear-gradient(180deg, #ffffff 0%, #eefcff 100%)";
+                el.style.background = "linear-gradient(white, white) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                 el.style.boxShadow = "none";
-                el.style.borderColor = "rgba(0,70,80,0.35)";
               }}
             >
               {l.label}

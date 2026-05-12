@@ -940,11 +940,13 @@ function FAQ() {
                         ? "transparent"
                         : "linear-gradient(white, white) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
                       border: isOpen ? "none" : "1px solid transparent",
-                      fontSize: "18px",
-                      lineHeight: 1,
+                      fontSize: "20px",
+                      lineHeight: "28px",
+                      textAlign: "center",
                       color: isOpen ? "#ffcc99" : "#003334",
-                      fontWeight: 400,
+                      fontWeight: 300,
                       transition: "color 0.25s",
+                      userSelect: "none",
                     }}
                   >
                     {isOpen ? "−" : "+"}

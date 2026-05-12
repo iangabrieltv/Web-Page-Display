@@ -884,60 +884,111 @@ function FAQ() {
 
   return (
     <section id="faq" className="py-24 px-6" style={{ backgroundColor: "#fff" }}>
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-14 reveal">
-          <div
-            className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
-            style={{ backgroundColor: "rgba(0,51,52,0.07)", color: "rgb(0,51,52)" }}
+      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+        {/* Title */}
+        <div className="text-center reveal" style={{ marginBottom: "48px" }}>
+          <h2
+            style={{
+              fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+              fontWeight: 400,
+              fontStyle: "italic",
+              fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+              color: "#003334",
+              margin: 0,
+              letterSpacing: "-0.01em",
+            }}
           >
             Perguntas frequentes
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em" }}
-          >
-            Tire suas dúvidas
           </h2>
         </div>
 
-        <div className="flex flex-col gap-3">
-          {FAQS.map((faq, i) => (
-            <div
-              key={i}
-              className="reveal rounded-2xl border overflow-hidden transition-all duration-300"
-              style={{ borderColor: open === i ? "rgb(0,51,52)" : "rgba(0,51,52,0.12)" }}
-            >
-              <button
-                className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 transition-colors duration-200"
-                style={{ backgroundColor: open === i ? "rgba(0,51,52,0.03)" : "#fff" }}
-                onClick={() => setOpen(open === i ? null : i)}
-              >
-                <span className="font-semibold text-sm" style={{ color: "rgb(0,51,52)" }}>
-                  {faq.q}
-                </span>
-                <span
-                  className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300"
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {FAQS.map((faq, i) => {
+            const isOpen = open === i;
+            return (
+              <div key={i} className="reveal" style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                {/* Question row */}
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
                   style={{
-                    backgroundColor: open === i ? "rgb(0,51,52)" : "rgba(0,51,52,0.08)",
-                    color: open === i ? "#fff" : "rgb(0,51,52)",
-                    transform: open === i ? "rotate(180deg)" : "rotate(0deg)",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "16px",
+                    width: "100%",
+                    padding: "18px 24px",
+                    borderRadius: "999px",
+                    border: "1px solid transparent",
+                    background: isOpen
+                      ? "#003334"
+                      : "linear-gradient(white, white) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    transition: "background 0.25s",
                   }}
                 >
-                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </button>
-              <div
-                className="overflow-hidden transition-all duration-300"
-                style={{ maxHeight: open === i ? "200px" : "0px" }}
-              >
-                <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: "rgb(80,100,115)" }}>
-                  {faq.a}
-                </p>
+                  {/* Icon: + or − */}
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: isOpen
+                        ? "transparent"
+                        : "linear-gradient(white, white) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
+                      border: isOpen ? "none" : "1px solid transparent",
+                      fontSize: "18px",
+                      lineHeight: 1,
+                      color: isOpen ? "#ffcc99" : "#003334",
+                      fontWeight: 400,
+                      transition: "color 0.25s",
+                    }}
+                  >
+                    {isOpen ? "−" : "+"}
+                  </span>
+
+                  <span
+                    style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      color: isOpen ? "#fff" : "#003334",
+                      lineHeight: 1.5,
+                      transition: "color 0.25s",
+                    }}
+                  >
+                    {faq.q}
+                  </span>
+                </button>
+
+                {/* Answer row */}
+                {isOpen && (
+                  <div
+                    style={{
+                      backgroundColor: "#003334",
+                      borderRadius: "24px",
+                      padding: "20px 24px 20px 68px",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: "'Poppins', sans-serif",
+                        fontSize: "13px",
+                        color: "rgba(255,255,255,0.82)",
+                        lineHeight: 1.75,
+                        margin: 0,
+                      }}
+                    >
+                      {faq.a}
+                    </p>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

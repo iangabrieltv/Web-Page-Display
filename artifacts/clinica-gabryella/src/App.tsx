@@ -163,6 +163,58 @@ function Hero() {
         }}
       />
 
+      {/* ── Marquee logo bar — near bottom of hero ── */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 10,
+          backgroundColor: "rgb(186,155,104)",
+          overflow: "hidden",
+          height: "clamp(44px, 6vh, 60px)",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <div className="marquee-track" style={{ alignItems: "center" }}>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "clamp(1rem, 3vw, 2.5rem)",
+                paddingRight: "clamp(1rem, 3vw, 2.5rem)",
+                flexShrink: 0,
+              }}
+            >
+              <img
+                src="/logo-gabryella.png"
+                alt="Dra. Gabryella Nunes"
+                style={{
+                  height: "clamp(22px, 3.5vh, 36px)",
+                  width: "auto",
+                  filter: "brightness(0) invert(1) sepia(1) saturate(0) brightness(1.8)",
+                  opacity: 0.92,
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.45)",
+                  fontSize: "clamp(10px, 1.2vw, 16px)",
+                  flexShrink: 0,
+                }}
+              >
+                ✦
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* White mask — covers the baked-in text on the left of the image */}
       <div
         style={{

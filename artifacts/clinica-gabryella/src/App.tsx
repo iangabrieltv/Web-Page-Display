@@ -65,7 +65,7 @@ function Nav() {
             src="/logo-nova.png"
             alt="Dra. Gabryella Nunes"
             style={{ width: "120px", height: "auto", display: "block" }}
-          />
+            className="mr-[300px]" />
         </a>
 
         {/* Desktop Menu — centered */}
@@ -167,7 +167,6 @@ function Nav() {
           </svg>
         </button>
       </div>
-
       {menuOpen && (
         <div className="md:hidden px-6 pb-5 flex flex-col gap-3 bg-white border-t" style={{ borderColor: "rgba(0,51,52,0.08)" }}>
           {links.map((l) => (

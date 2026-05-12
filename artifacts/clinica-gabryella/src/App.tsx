@@ -323,36 +323,39 @@ function Hero() {
             </p>
 
             {/* CTA Button */}
-            <div>
+            <div style={{ width: "100%", maxWidth: "460px" }}>
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: "inline-flex",
+                  display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
+                  width: "100%",
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 600,
                   fontSize: "16px",
-                  backgroundColor: "rgb(0,51,52)",
+                  background: "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
+                  border: "1px solid transparent",
                   color: "#fff",
                   borderRadius: "999px",
                   height: "56px",
                   padding: "0 32px",
                   boxShadow: "0 8px 28px rgba(0,51,52,0.28)",
                   textDecoration: "none",
-                  transition: "background-color 0.2s, transform 0.2s, box-shadow 0.2s",
+                  transition: "background 0.25s, transform 0.2s, box-shadow 0.2s",
                   letterSpacing: "0.01em",
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.backgroundColor = "rgb(0,38,39)";
+                  el.style.background = "linear-gradient(to right, #001e20 0%, #004a4c 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                   el.style.transform = "translateY(-2px)";
-                  el.style.boxShadow = "0 12px 32px rgba(0,51,52,0.35)";
+                  el.style.boxShadow = "0 12px 32px rgba(0,51,52,0.38)";
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.backgroundColor = "rgb(0,51,52)";
+                  el.style.background = "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                   el.style.transform = "translateY(0)";
                   el.style.boxShadow = "0 8px 28px rgba(0,51,52,0.28)";
                 }}

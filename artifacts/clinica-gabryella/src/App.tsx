@@ -464,128 +464,305 @@ function Hero() {
 
 const SERVICES = [
   {
-    title: "Implante Dental",
-    desc: "Reposição de dentes perdidos com aparência e função idênticas ao dente natural.",
-    icon: "🦷",
-  },
-  {
-    title: "Coroa Dentária",
-    desc: "Proteção e restauração estética para dentes danificados, com resultado natural e duradouro.",
-    icon: "👑",
-  },
-  {
-    title: "Harmonização Facial",
-    desc: "Procedimentos minimamente invasivos para realçar a beleza natural do rosto com naturalidade.",
-    icon: "✨",
-  },
-  {
-    title: "Tratamento de Canal",
-    desc: "Elimine a dor e preserve seu dente com segurança. Técnica moderna e muito menos desconforto.",
-    icon: "🔬",
-  },
-  {
-    title: "Limpeza Dental",
-    desc: "Remoção profissional de tártaro e manchas para um sorriso saudável e protegido.",
-    icon: "🪥",
-  },
-  {
-    title: "Laser Odontológico",
-    desc: "Tecnologia de ponta para procedimentos mais precisos, rápidos e com mínimo desconforto.",
-    icon: "⚡",
-  },
-  {
-    title: "Clínica Geral",
-    desc: "Restaurações, extrações e prevenção completa para toda a família em um só lugar.",
-    icon: "🏥",
-  },
-  {
     title: "Ortodontia",
     desc: "Sorriso alinhado com aparelhos metálicos ou estéticos. Discreta, segura e com resultado transformador.",
-    icon: "😁",
+    gradient: "linear-gradient(145deg, #002a2b 0%, #004a4c 60%, #006668 100%)",
   },
   {
     title: "Alinhadores Invisíveis",
     desc: "Corrija o sorriso sem aparelho aparente. Removível, confortável e quase imperceptível no dia a dia.",
-    icon: "💎",
+    gradient: "linear-gradient(145deg, #001e1f 0%, #003c3e 60%, #005456 100%)",
   },
   {
     title: "Clareamento Dental",
     desc: "Dentes visivelmente mais brancos em poucos encontros, com tecnologia segura e resultado duradouro.",
-    icon: "☀️",
+    gradient: "linear-gradient(145deg, #002e2e 0%, #004e50 60%, #006a6c 100%)",
   },
   {
     title: "Estética Dental",
     desc: "Facetas, resinas e procedimentos que devolvem harmonia e beleza natural ao sorriso.",
-    icon: "🌟",
+    gradient: "linear-gradient(145deg, #002626 0%, #004040 60%, #005a5a 100%)",
+  },
+  {
+    title: "Implante Dental",
+    desc: "Reposição de dentes perdidos com aparência e função idênticas ao dente natural.",
+    gradient: "linear-gradient(145deg, #001a1a 0%, #003434 60%, #004e4e 100%)",
+  },
+  {
+    title: "Coroa Dentária",
+    desc: "Proteção e restauração estética para dentes danificados, com resultado natural e duradouro.",
+    gradient: "linear-gradient(145deg, #002020 0%, #003c3c 60%, #005454 100%)",
+  },
+  {
+    title: "Harmonização Facial",
+    desc: "Procedimentos minimamente invasivos para realçar a beleza natural do rosto com naturalidade.",
+    gradient: "linear-gradient(145deg, #002828 0%, #004444 60%, #005e5e 100%)",
+  },
+  {
+    title: "Tratamento de Canal",
+    desc: "Elimine a dor e preserve seu dente com segurança. Técnica moderna e muito menos desconforto.",
+    gradient: "linear-gradient(145deg, #001c1c 0%, #003636 60%, #005050 100%)",
+  },
+  {
+    title: "Limpeza Dental",
+    desc: "Remoção profissional de tártaro e manchas para um sorriso saudável e protegido.",
+    gradient: "linear-gradient(145deg, #002424 0%, #004040 60%, #005c5c 100%)",
+  },
+  {
+    title: "Laser Odontológico",
+    desc: "Tecnologia de ponta para procedimentos mais precisos, rápidos e com mínimo desconforto.",
+    gradient: "linear-gradient(145deg, #002c2c 0%, #004848 60%, #006464 100%)",
+  },
+  {
+    title: "Clínica Geral",
+    desc: "Restaurações, extrações e prevenção completa para toda a família em um só lugar.",
+    gradient: "linear-gradient(145deg, #001e1e 0%, #003a3a 60%, #005252 100%)",
   },
 ];
 
-function Services() {
+function ServiceCard({ title, desc, gradient }: { title: string; desc: string; gradient: string }) {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <section id="servicos" className="py-24 px-6" style={{ backgroundColor: "#fff" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 reveal">
-          <div
-            className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
-            style={{ backgroundColor: "rgba(0,51,52,0.07)", color: "rgb(0,51,52)" }}
-          >
-            Nossos Serviços
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em" }}
-          >
-            Tratamentos pensados para cuidar do seu sorriso com leveza e confiança
-          </h2>
-          <p className="text-base max-w-2xl mx-auto" style={{ color: "rgb(80,100,115)", lineHeight: 1.7 }}>
-            Ortodontia, estética e saúde bucal com atendimento humanizado e foco no seu bem-estar. Conheça todos os nossos serviços e realize sua consulta.
-          </p>
-        </div>
+    <div
+      className="reveal"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        borderRadius: "16px",
+        overflow: "hidden",
+        backgroundColor: "#003334",
+        display: "flex",
+        flexDirection: "column",
+        cursor: "pointer",
+        boxShadow: hovered
+          ? "0 16px 40px rgba(0,0,0,0.22)"
+          : "0 4px 16px rgba(0,0,0,0.10)",
+        transform: hovered ? "translateY(-4px)" : "translateY(0)",
+        transition: "box-shadow 0.3s ease, transform 0.3s ease",
+      }}
+    >
+      {/* Image area */}
+      <div
+        style={{
+          width: "100%",
+          aspectRatio: "16 / 10",
+          background: gradient,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <svg
+          width="48" height="48" viewBox="0 0 48 48" fill="none"
+          style={{ opacity: 0.18 }}
+        >
+          <path d="M24 4C16 4 10 10 10 18c0 5 2 9 5 12l2 10a1 1 0 001 1h12a1 1 0 001-1l2-10c3-3 5-7 5-12 0-8-6-14-14-14z" fill="white"/>
+        </svg>
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to bottom, transparent 40%, rgba(0,51,52,0.6) 100%)",
+        }} />
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 stagger">
-          {SERVICES.map((s) => (
-            <div
-              key={s.title}
-              className="reveal group rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
-              style={{
-                backgroundColor: "#fff",
-                borderColor: "rgba(0,51,52,0.10)",
-              }}
-            >
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-xl mb-4 transition-all duration-300 group-hover:scale-110"
-                style={{ backgroundColor: "rgba(0,51,52,0.06)" }}
-              >
-                {s.icon}
-              </div>
-              <h3 className="font-semibold text-base mb-2" style={{ color: "rgb(0,51,52)" }}>
-                {s.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "rgb(90,110,125)" }}>
-                {s.desc}
-              </p>
-              <div
-                className="mt-4 text-xs font-semibold flex items-center gap-1 transition-all duration-200 group-hover:gap-2"
-                style={{ color: "rgb(0,51,52)" }}
-              >
-                Conheça mais
-                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Content */}
+      <div style={{ padding: "16px 18px 18px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+        <h3
+          style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: "clamp(0.8rem, 1vw, 0.95rem)",
+            color: "#ffffff",
+            margin: "0 0 6px 0",
+            lineHeight: 1.3,
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "clamp(0.65rem, 0.8vw, 0.76rem)",
+            color: "rgba(255,255,255,0.60)",
+            lineHeight: 1.65,
+            margin: "0 0 14px 0",
+            flexGrow: 1,
+          }}
+        >
+          {desc}
+        </p>
 
-        <div className="mt-14 text-center reveal">
+        {/* Saiba mais button */}
+        <div style={{ display: "flex" }}>
           <a
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
-            style={{ backgroundColor: "rgb(0,51,52)", color: "#fff", boxShadow: "0 6px 24px rgba(0,51,52,0.20)" }}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "7px",
+              background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 40%, #f0c8a8 70%, #fde8d0 100%)",
+              borderRadius: "999px",
+              padding: "6px 14px 6px 10px",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "0.7rem",
+              fontWeight: 600,
+              color: "#003334",
+              textDecoration: "none",
+              letterSpacing: "0.01em",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+              transition: "opacity 0.2s, transform 0.2s",
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04)";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
+            }}
+          >
+            <span style={{
+              width: "18px", height: "18px", borderRadius: "50%",
+              backgroundColor: "#003334",
+              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            }}>
+              <svg width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={2.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+            Saiba mais
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Services() {
+  return (
+    <section
+      id="servicos"
+      style={{
+        backgroundColor: "#fff",
+        padding: "clamp(60px, 7vw, 100px) clamp(16px, 4vw, 60px)",
+      }}
+    >
+      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+
+        {/* Header */}
+        <div className="reveal" style={{ textAlign: "center", marginBottom: "clamp(36px, 4vw, 56px)" }}>
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.75rem, 1vw, 0.9rem)",
+              color: "rgba(0,51,52,0.55)",
+              letterSpacing: "0.02em",
+              margin: "0 0 10px 0",
+            }}
+          >
+            Tratamentos pensados para cuidar do
+          </p>
+          <h2
+            style={{
+              fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+              fontWeight: 400,
+              fontSize: "clamp(1.6rem, 3.2vw, 2.8rem)",
+              color: "#003334",
+              lineHeight: 1.2,
+              margin: "0 0 16px 0",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            seu sorriso com leveza e confiança
+          </h2>
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.8rem, 1vw, 0.92rem)",
+              color: "rgba(0,51,52,0.55)",
+              lineHeight: 1.7,
+              maxWidth: "520px",
+              margin: "0 auto",
+            }}
+          >
+            Ortodontia, estética e saúde bucal com atendimento humanizado e foco no seu bem-estar.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "clamp(10px, 1.2vw, 18px)",
+          }}
+          className="services-grid stagger"
+        >
+          {SERVICES.map((s) => (
+            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} />
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="reveal" style={{ textAlign: "center", marginTop: "clamp(36px, 4vw, 56px)" }}>
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.78rem, 1vw, 0.9rem)",
+              color: "rgba(0,51,52,0.55)",
+              marginBottom: "20px",
+            }}
+          >
+            Conheça todos os nossos serviços e realize sua consulta
+          </p>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 38%, #f0c8a8 68%, #fde8d0 100%)",
+              border: "1px solid rgba(255,255,255,0.25)",
+              borderRadius: "999px",
+              padding: "13px 32px",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.82rem, 1vw, 0.95rem)",
+              fontWeight: 500,
+              color: "#003334",
+              textDecoration: "none",
+              letterSpacing: "0.03em",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.14)",
+              transition: "transform 0.2s, box-shadow 0.2s",
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "translateY(-2px)";
+              el.style.boxShadow = "0 8px 28px rgba(0,0,0,0.20)";
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.14)";
+            }}
           >
             Agendar Avaliação
+            <span style={{
+              width: "26px", height: "26px", borderRadius: "50%",
+              backgroundColor: "#003334",
+              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            }}>
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
           </a>
         </div>
       </div>

@@ -1,0 +1,117 @@
+Quero que você recrie fielmente a seção “Serviços” baseada EXATAMENTE na imagem de referência enviada no anexo.
+
+IMPORTANTE:
+Analise cuidadosamente o layout da imagem e reproduza a seção com máxima fidelidade visual.
+
+OBJETIVO:
+Criar uma seção premium, organizada e moderna para apresentar os serviços odontológicos da Dra. Gabryella Nunes.
+
+ESTRUTURA DA SEÇÃO:
+
+TOPO:
+
+título centralizado
+subtítulo pequeno acima
+tipografia elegante
+aparência clean e sofisticada
+
+Textos:
+
+Subtítulo:
+“Tratamentos pensados para cuidar do”
+
+Título:
+“seu sorriso com leveza e confiança”
+
+Descrição abaixo:
+“Ortodontia, estética e saúde bucal com atendimento humanizado e foco no seu bem-estar.”
+
+GRID DE SERVIÇOS:
+
+A seção deve possuir cards organizados exatamente como na referência:
+
+grid com 3 colunas no desktop
+cards alinhados com espaçamento elegante
+aparência premium
+responsividade perfeita
+
+Cada card deve conter:
+
+imagem no topo
+título do serviço
+descrição curta
+botão pequeno “Saiba mais”
+fundo verde escuro
+bordas arredondadas
+padding elegante
+hover suave
+
+SERVIÇOS:
+
+Ortodontia
+Alinhadores Invisíveis
+Clareamento Dental
+Estética Dental
+Implante Dental
+Coroa Dentária
+Harmonização Facial
+Tratamento de Canal
+Limpeza Dental
+Laser Odontológico
+Clínica Geral
+
+ESTILO VISUAL:
+
+fundo branco
+cards verde escuro (#003c3c aproximado)
+detalhes dourado/bege nos botões
+sombras suaves
+bordas arredondadas
+visual sofisticado
+aparência de clínica premium
+
+TIPOGRAFIA:
+
+elegante
+refinada
+moderna
+boa hierarquia visual
+
+BOTÕES:
+
+pequenos
+arredondados
+estilo premium
+hover suave
+ícone pequeno ao lado do texto
+
+RESPONSIVIDADE:
+
+DESKTOP:
+
+3 colunas organizadas
+
+TABLET:
+
+2 colunas
+
+MOBILE:
+
+1 coluna
+espaçamento confortável
+sem quebra ruim
+
+IMPORTANTE:
+
+recriar fielmente o espaçamento da referência
+manter proporções semelhantes
+seguir alinhamentos da imagem
+não inventar outro layout
+aparência extremamente próxima da referência enviada
+
+EFEITOS:
+
+hover elegante nos cards
+leve animação ao aparecer na tela
+transições suaves
+aparência moderna e luxuosa.

@@ -6,6 +6,10 @@ import beforeAfter3 from "@assets/image(2)_1778593478102.png";
 import beforeAfter4 from "@assets/png_1778593487627.png";
 import beforeAfter5 from "@assets/png(1)_1778593487628.png";
 import diferencialsBg from "@assets/fundo_diferenciis_1778596032037.png";
+import ambientePhoto1 from "@assets/DSC_0037.JPG_1778594681306.jpeg";
+import ambientePhoto2 from "@assets/image_1778590171196.png";
+import ambientePhoto3 from "@assets/image_1778590616773.png";
+import ambientePhoto4 from "@assets/image_1778592348491.png";
 
 function useReveal() {
   useEffect(() => {
@@ -765,6 +769,170 @@ function Services() {
             </span>
           </a>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Ambiente() {
+  const photos = [ambientePhoto1, ambientePhoto2, ambientePhoto3, ambientePhoto4];
+
+  return (
+    <section
+      id="ambiente"
+      className="reveal"
+      style={{
+        backgroundColor: "#003334",
+        padding: "clamp(60px, 7vw, 100px) clamp(20px, 5vw, 80px)",
+      }}
+    >
+      <div style={{ maxWidth: "960px", margin: "0 auto" }}>
+
+        {/* Top icon */}
+        <div style={{ textAlign: "center", marginBottom: "clamp(20px, 2.5vw, 32px)" }}>
+          <div style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "clamp(40px, 4vw, 52px)",
+            height: "clamp(40px, 4vw, 52px)",
+            borderRadius: "50%",
+            border: "1.5px solid rgba(255,255,255,0.18)",
+            background: "rgba(255,255,255,0.07)",
+          }}>
+            <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
+              <path d="M24 4C16 4 10 10 10 18c0 5 2 9 5 12l2 10a1 1 0 001 1h12a1 1 0 001-1l2-10c3-3 5-7 5-12 0-8-6-14-14-14z" fill="rgba(255,255,255,0.55)"/>
+            </svg>
+          </div>
+        </div>
+
+        {/* Title */}
+        <div style={{ textAlign: "center", marginBottom: "clamp(32px, 4vw, 52px)" }}>
+          <h2
+            style={{
+              fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+              fontWeight: 400,
+              fontSize: "clamp(1.6rem, 3vw, 2.8rem)",
+              color: "#fff",
+              lineHeight: 1.2,
+              margin: "0 0 clamp(12px, 1.5vw, 20px) 0",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Um ambiente pensado para{" "}
+            <span style={{ fontStyle: "italic", color: "#ffcc99" }}>transmitir</span>
+            <br />conforto e confiança
+          </h2>
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.78rem, 1vw, 0.92rem)",
+              color: "rgba(255,255,255,0.62)",
+              lineHeight: 1.8,
+              maxWidth: "540px",
+              margin: "0 auto",
+            }}
+          >
+            Sabemos que muitas pessoas chegam ao consultório com medo, insegurança ou experiências negativas do passado. Por isso, cada detalhe do nosso espaço foi pensado para transmitir leveza e confiança desde o primeiro atendimento. Aqui, você encontra um ambiente tranquilo, atendimento humanizado e uma experiência confortável em cada etapa do seu cuidado.
+          </p>
+        </div>
+
+        {/* 2×2 Photo grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "clamp(10px, 1.2vw, 16px)",
+            marginBottom: "clamp(32px, 4vw, 52px)",
+          }}
+        >
+          {photos.map((src, i) => (
+            <div
+              key={i}
+              style={{
+                borderRadius: "16px",
+                overflow: "hidden",
+                aspectRatio: "4 / 3",
+                background: "#002526",
+              }}
+            >
+              <img
+                src={src}
+                alt={`Ambiente da clínica ${i + 1}`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                  transition: "transform 0.4s ease",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1.04)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1)"; }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom text + CTA */}
+        <div style={{ textAlign: "center" }}>
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.78rem, 1vw, 0.9rem)",
+              color: "rgba(255,255,255,0.60)",
+              lineHeight: 1.8,
+              margin: "0 0 clamp(20px, 2.5vw, 32px) 0",
+            }}
+          >
+            Mais do que cuidar do seu sorriso, queremos que você se sinta bem em cada visita.
+          </p>
+
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 38%, #f0c8a8 68%, #fde8d0 100%)",
+              border: "1px solid rgba(255,255,255,0.20)",
+              borderRadius: "999px",
+              padding: "13px 32px",
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.82rem, 1vw, 0.95rem)",
+              fontWeight: 500,
+              color: "#003334",
+              textDecoration: "none",
+              letterSpacing: "0.03em",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.20)",
+              transition: "transform 0.2s, box-shadow 0.2s",
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "translateY(-2px)";
+              el.style.boxShadow = "0 8px 28px rgba(0,0,0,0.28)";
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.20)";
+            }}
+          >
+            Agendar Avaliação
+            <span style={{
+              width: "26px", height: "26px", borderRadius: "50%",
+              backgroundColor: "#003334",
+              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+            }}>
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </a>
+        </div>
+
       </div>
     </section>
   );
@@ -1651,6 +1819,7 @@ export default function App() {
       <Nav />
       <Hero />
       <Services />
+      <Ambiente />
       <Diferenciais />
       <Resultados />
       <Contato />

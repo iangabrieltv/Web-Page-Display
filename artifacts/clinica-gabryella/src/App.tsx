@@ -763,92 +763,203 @@ function Resultados() {
 }
 
 function Contato() {
+  const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Galeria+Bella+Rio+Largo+de+F%C3%A1tima+303+Penedo+AL";
+  const MAPS_EMBED = "https://maps.google.com/maps?q=Galeria+Bella+Rio,+Largo+de+F%C3%A1tima,+303,+Penedo,+AL,+57200-000,+Brasil&output=embed&z=16";
+
+  const contacts = [
+    {
+      href: `tel:+5582981028766`,
+      icon: (
+        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      ),
+      text: "(82) 98102-8766",
+    },
+    {
+      href: "mailto:dra.gabryellanunes@gmail.com",
+      icon: (
+        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      text: "dra.gabryellanunes@gmail.com",
+    },
+    {
+      href: MAPS_URL,
+      icon: (
+        <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+      text: "Praça, GALERIA BELLA RIO – Largo de Fátima, 303 – 1° ANDAR, SALA 03 – Santa Luzia, Penedo – AL, 57200-000",
+    },
+  ];
+
   return (
-    <section id="contato" className="py-24 px-6" style={{ backgroundColor: "rgb(246,248,247)" }}>
-      <div className="max-w-5xl mx-auto">
-        <div className="reveal text-center mb-14">
-          <div
-            className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
-            style={{ backgroundColor: "rgba(0,51,52,0.07)", color: "rgb(0,51,52)" }}
-          >
-            Onde nos encontrar
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em" }}
-          >
-            Entre em contato com nossa equipe
-          </h2>
-          <p className="text-base max-w-2xl mx-auto" style={{ color: "rgb(80,100,115)", lineHeight: 1.7 }}>
-            Descubra como podemos transformar o seu sorriso com conforto, tecnologia e segurança.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stagger">
-          {[
-            {
-              icon: (
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              ),
-              label: "Localização",
-              value: "Galeria Bella Rio - Largo de Fátima, 303 - 1° Andar, Sala 03 - Santa Luzia, Penedo - AL, 57200-000",
-            },
-            {
-              icon: (
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              ),
-              label: "Telefone / WhatsApp",
-              value: "(82) 98102-8766",
-            },
-            {
-              icon: (
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              ),
-              label: "E-mail",
-              value: "dra.gabryellanunes@gmail.com",
-            },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="reveal rounded-2xl p-7 bg-white border"
-              style={{ borderColor: "rgba(0,51,52,0.10)" }}
+    <section id="contato" className="py-24 px-6" style={{ backgroundColor: "#fff" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+        <div
+          className="reveal"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "64px",
+            alignItems: "center",
+          }}
+        >
+          {/* Left column */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+            {/* Title */}
+            <h2
+              style={{
+                fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+                color: "#003334",
+                margin: 0,
+                lineHeight: 1.15,
+              }}
             >
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                style={{ backgroundColor: "rgb(0,51,52)", color: "#fff" }}
-              >
-                {item.icon}
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: "rgba(0,51,52,0.5)" }}>
-                {item.label}
-              </p>
-              <p className="text-sm font-medium leading-relaxed" style={{ color: "rgb(30,50,65)" }}>
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
+              Onde nos encontrar
+            </h2>
 
-        <div className="mt-10 reveal text-center">
+            {/* Description */}
+            <p
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "14px",
+                fontWeight: 400,
+                color: "rgb(70,90,105)",
+                lineHeight: 1.8,
+                margin: 0,
+                borderLeft: "3px solid #003334",
+                paddingLeft: "16px",
+              }}
+            >
+              Entre em contato com nossa equipe e descubra como podemos transformar o seu sorriso com conforto, tecnologia e segurança.
+            </p>
+
+            {/* Contact items */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {contacts.map((c, i) => (
+                <a
+                  key={i}
+                  href={c.href}
+                  target={i === 2 ? "_blank" : undefined}
+                  rel={i === 2 ? "noopener noreferrer" : undefined}
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "12px",
+                    textDecoration: "none",
+                    color: "rgb(40,60,75)",
+                    transition: "color 0.2s",
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#003334")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgb(40,60,75)")}
+                >
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "linear-gradient(white, white) padding-box, linear-gradient(to right, #003334, #bcd1dd) border-box",
+                      border: "1px solid transparent",
+                      color: "#003334",
+                      marginTop: "2px",
+                    }}
+                  >
+                    {c.icon}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: "13px",
+                      lineHeight: 1.65,
+                      paddingTop: "6px",
+                    }}
+                  >
+                    {c.text}
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "52px",
+                  padding: "0 36px",
+                  borderRadius: "999px",
+                  background: "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
+                  border: "1px solid transparent",
+                  color: "#fff",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  boxShadow: "0 6px 24px rgba(0,51,52,0.25)",
+                  transition: "background 0.25s, transform 0.2s, box-shadow 0.2s",
+                  letterSpacing: "0.01em",
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.background = "linear-gradient(to right, #001e20 0%, #004a4c 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
+                  el.style.transform = "translateY(-2px)";
+                  el.style.boxShadow = "0 10px 30px rgba(0,51,52,0.32)";
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.background = "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
+                  el.style.transform = "translateY(0)";
+                  el.style.boxShadow = "0 6px 24px rgba(0,51,52,0.25)";
+                }}
+              >
+                Agendar Avaliação
+              </a>
+            </div>
+          </div>
+
+          {/* Right column — Google Maps */}
           <a
-            href={WHATSAPP_LINK}
+            href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
-            style={{ backgroundColor: "rgb(0,51,52)", color: "#fff", boxShadow: "0 6px 24px rgba(0,51,52,0.20)" }}
+            style={{
+              display: "block",
+              borderRadius: "16px",
+              overflow: "hidden",
+              border: "1px solid rgba(0,51,52,0.12)",
+              boxShadow: "0 4px 24px rgba(0,51,52,0.10)",
+              lineHeight: 0,
+              transition: "box-shadow 0.2s",
+            }}
+            onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(0,51,52,0.18)")}
+            onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(0,51,52,0.10)")}
           >
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.124 1.527 5.855L.096 23.333 5.7 21.933A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.213-3.717.972.99-3.61-.234-.37A9.818 9.818 0 012.182 12c0-5.42 4.4-9.818 9.818-9.818s9.818 4.398 9.818 9.818-4.4 9.818-9.818 9.818z"/>
-            </svg>
-            Agendar Avaliação via WhatsApp
+            <iframe
+              src={MAPS_EMBED}
+              width="100%"
+              height="380"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Dra. Gabryella Nunes"
+            />
           </a>
         </div>
       </div>

@@ -893,17 +893,17 @@ function Contato() {
             </div>
 
             {/* CTA Button */}
-            <div>
+            <div style={{ width: "100%" }}>
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: "inline-flex",
+                  display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  width: "100%",
                   height: "52px",
-                  padding: "0 36px",
                   borderRadius: "999px",
                   background: "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box",
                   border: "1px solid transparent",

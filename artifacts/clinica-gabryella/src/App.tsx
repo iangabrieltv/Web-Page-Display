@@ -960,7 +960,7 @@ function Footer() {
         }}
       >
         {/* Left — Atendimento */}
-        <div style={{ textAlign: "left" }}>
+        <div style={{ textAlign: "center" }}>
           <p
             style={{
               fontFamily: "'Poppins', sans-serif",
@@ -1067,7 +1067,7 @@ function Footer() {
         </div>
 
         {/* Right — Localização */}
-        <div style={{ textAlign: "right" }}>
+        <div style={{ textAlign: "center" }}>
           <p
             style={{
               fontFamily: "'Poppins', sans-serif",

@@ -744,7 +744,7 @@ function Resultados() {
               overflow: "hidden",
               position: "relative",
               background: "#003334",
-              aspectRatio: "1 / 2",
+              aspectRatio: "2 / 3",
             }}
           >
             {/* Full image — uniform height */}

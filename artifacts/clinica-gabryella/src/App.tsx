@@ -664,7 +664,7 @@ function Diferenciais() {
                 margin: "0 0 clamp(8px, 1.4vw, 20px) 0",
                 letterSpacing: "-0.01em",
               }}
-            >
+              className="mb-[250px]">
               Ortodontia com propósito
             </h2>
 

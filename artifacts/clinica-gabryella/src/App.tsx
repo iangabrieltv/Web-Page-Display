@@ -629,8 +629,8 @@ function Diferenciais() {
           style={{
             position: "absolute",
             top: "9%",
-            left: "44%",
-            width: "49%",
+            left: "47%",
+            width: "46%",
             height: "82%",
             display: "flex",
             flexDirection: "column",
@@ -639,9 +639,7 @@ function Diferenciais() {
             padding: "0 5% 0 4%",
           }}
         >
-          <div
-            style={{ width: "100%" }}
-            className="ml-[100px] mt-[0px] mb-[10px] pt-[10px] pb-[170px] pl-[0px] pr-[10px] mr-[100px]">
+          <div style={{ width: "100%" }}>
             {/* Label */}
             <p
               style={{

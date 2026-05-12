@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
+import beforeAfter1 from "@assets/image_1778593478099.png";
+import beforeAfter2 from "@assets/image(1)_1778593478101.png";
+import beforeAfter3 from "@assets/image(2)_1778593478102.png";
+import beforeAfter4 from "@assets/png_1778593487627.png";
+import beforeAfter5 from "@assets/png(1)_1778593487628.png";
 
 function useReveal() {
   useEffect(() => {
@@ -667,96 +672,175 @@ function Diferenciais() {
 }
 
 function Resultados() {
-  const cases = [
-    {
-      label: "Ortodontia",
-      desc: "Alinhamento completo com aparelho metálico em 18 meses",
-    },
-    {
-      label: "Clareamento",
-      desc: "6 tons mais branco em 3 sessões de laser odontológico",
-    },
-    {
-      label: "Implante",
-      desc: "Reposição natural e funcional de dente perdido há 5 anos",
-    },
-    {
-      label: "Facetas",
-      desc: "Harmonização estética com lentes de contato dental",
-    },
+  const photos = [
+    { src: beforeAfter1, delay: "delay-1" },
+    { src: beforeAfter2, delay: "delay-2" },
+    { src: beforeAfter3, delay: "delay-3" },
+    { src: beforeAfter4, delay: "delay-4" },
+    { src: beforeAfter5, delay: "delay-5" },
   ];
 
   return (
-    <section id="resultados" className="py-24 px-6" style={{ backgroundColor: "#fff" }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 reveal">
+    <section
+      id="resultados"
+      style={{
+        backgroundColor: "#003334",
+        padding: "clamp(60px, 8vw, 100px) clamp(16px, 4vw, 48px)",
+      }}
+    >
+      {/* Header */}
+      <div className="text-center reveal" style={{ marginBottom: "clamp(40px, 5vw, 64px)" }}>
+        <h2
+          style={{
+            fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+            fontWeight: 400,
+            fontSize: "clamp(1.9rem, 3.8vw, 3rem)",
+            color: "#fff",
+            lineHeight: 1.15,
+            margin: "0 0 16px 0",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          Resultados que devolvem confiança{" "}
+          <span style={{ color: "#ffcc99", fontStyle: "italic" }}>para sorrir</span>
+        </h2>
+        <p
+          style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "clamp(0.85rem, 1.1vw, 1rem)",
+            color: "rgba(255,255,255,0.70)",
+            lineHeight: 1.8,
+            maxWidth: "560px",
+            margin: "0 auto",
+          }}
+        >
+          Cada tratamento é planejado para entregar resultados naturais, funcionais e alinhados ao que cada paciente precisa.
+        </p>
+      </div>
+
+      {/* Photo grid — 5 cards */}
+      <div
+        className="stagger"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gap: "clamp(8px, 1.2vw, 16px)",
+          maxWidth: "1320px",
+          margin: "0 auto",
+        }}
+      >
+        {photos.map((photo, i) => (
           <div
-            className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase"
-            style={{ backgroundColor: "rgba(0,51,52,0.07)", color: "rgb(0,51,52)" }}
+            key={i}
+            className="reveal"
+            style={{
+              borderRadius: "16px",
+              overflow: "hidden",
+              position: "relative",
+              aspectRatio: "3 / 4",
+              background: "#001a1b",
+            }}
           >
-            Antes e depois
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ color: "rgb(0,51,52)", letterSpacing: "-0.02em" }}
-          >
-            Resultados que devolvem confiança para sorrir
-          </h2>
-          <p className="text-base max-w-2xl mx-auto" style={{ color: "rgb(80,100,115)", lineHeight: 1.7 }}>
-            Cada tratamento é planejado para entregar resultados naturais, funcionais e alinhados ao que cada paciente precisa.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger">
-          {cases.map((c) => (
-            <div key={c.label} className="reveal group rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(0,51,52,0.10)" }}>
-              <div
-                className="relative h-52 flex flex-col items-center justify-center gap-3"
-                style={{ backgroundColor: "rgba(0,51,52,0.05)" }}
-              >
-                <div className="flex gap-3 items-center">
-                  <div
-                    className="w-20 h-20 rounded-xl flex items-center justify-center text-3xl"
-                    style={{ backgroundColor: "rgba(0,51,52,0.08)" }}
-                  >
-                    😔
-                  </div>
-                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} style={{ color: "rgb(0,51,52)" }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                  <div
-                    className="w-20 h-20 rounded-xl flex items-center justify-center text-3xl"
-                    style={{ backgroundColor: "rgba(0,51,52,0.08)" }}
-                  >
-                    😁
-                  </div>
-                </div>
-                <div
-                  className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold"
-                  style={{ backgroundColor: "rgb(0,51,52)", color: "#fff" }}
-                >
-                  Antes e Depois
-                </div>
-              </div>
-              <div className="p-5">
-                <h3 className="font-semibold text-sm mb-1" style={{ color: "rgb(0,51,52)" }}>{c.label}</h3>
-                <p className="text-xs leading-relaxed" style={{ color: "rgb(90,110,125)" }}>{c.desc}</p>
-              </div>
+            {/* Animated image */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={photo.src}
+                alt={`Antes e depois ${i + 1}`}
+                className={`before-after-img ${photo.delay}`}
+                style={{
+                  width: "100%",
+                  height: "200%",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                  display: "block",
+                }}
+              />
             </div>
-          ))}
-        </div>
 
-        <div className="mt-14 text-center reveal">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
-            style={{ backgroundColor: "rgb(0,51,52)", color: "#fff", boxShadow: "0 6px 24px rgba(0,51,52,0.20)" }}
+            {/* "Antes e depois" badge — top left */}
+            <div
+              style={{
+                position: "absolute",
+                top: "12px",
+                left: "12px",
+                zIndex: 10,
+                background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 40%, #f0c8a8 70%, #fde8d0 100%)",
+                border: "1px solid rgba(255,255,255,0.30)",
+                borderRadius: "999px",
+                padding: "6px 16px",
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "12px",
+                fontWeight: 500,
+                color: "#003334",
+                letterSpacing: "0.02em",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Antes e depois
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA button */}
+      <div className="text-center reveal" style={{ marginTop: "clamp(36px, 4vw, 56px)" }}>
+        <a
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "12px",
+            background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 38%, #f0c8a8 68%, #fde8d0 100%)",
+            border: "1px solid rgba(255,255,255,0.25)",
+            borderRadius: "999px",
+            padding: "14px 36px",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "15px",
+            fontWeight: 500,
+            color: "#003334",
+            textDecoration: "none",
+            letterSpacing: "0.04em",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.22)",
+            transition: "transform 0.2s, box-shadow 0.2s, opacity 0.2s",
+          }}
+          onMouseEnter={e => {
+            const el = e.currentTarget as HTMLAnchorElement;
+            el.style.transform = "translateY(-2px)";
+            el.style.boxShadow = "0 8px 28px rgba(0,0,0,0.30)";
+          }}
+          onMouseLeave={e => {
+            const el = e.currentTarget as HTMLAnchorElement;
+            el.style.transform = "translateY(0)";
+            el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.22)";
+          }}
+        >
+          Agendar Avaliação
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "28px",
+              height: "28px",
+              borderRadius: "50%",
+              backgroundColor: "#003334",
+              flexShrink: 0,
+            }}
           >
-            Agendar Avaliação
-          </a>
-        </div>
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
   );

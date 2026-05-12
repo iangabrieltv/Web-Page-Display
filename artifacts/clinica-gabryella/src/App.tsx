@@ -641,7 +641,7 @@ function Diferenciais() {
         >
           <div
             style={{ width: "100%" }}
-            className="ml-[100px] mr-[100px] mt-[0px] mb-[10px] pt-[10px] pb-[170px] pl-[0px] pr-[10px]">
+            className="ml-[100px] mt-[0px] mb-[10px] pt-[10px] pb-[170px] pl-[0px] pr-[10px] mr-[100px]">
             {/* Label */}
             <p
               style={{

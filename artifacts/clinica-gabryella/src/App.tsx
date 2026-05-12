@@ -159,87 +159,128 @@ function Hero() {
           style={{ flex: "0 0 50%", backgroundColor: "transparent", zIndex: 1 }}
         >
           <div
-            className="w-full"
             style={{
-              paddingLeft: "clamp(1.5rem, 5vw, 7rem)",
-              paddingRight: "clamp(1rem, 3vw, 3rem)",
-              paddingTop: "clamp(5rem, 10vh, 8rem)",
-              paddingBottom: "clamp(3rem, 6vh, 5rem)",
+              paddingLeft: "clamp(1.5rem, 5vw, 6rem)",
+              paddingRight: "clamp(1rem, 2vw, 2rem)",
+              paddingTop: "clamp(4.5rem, 8vh, 6rem)",
+              paddingBottom: "clamp(2rem, 4vh, 3rem)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              height: "100%",
             }}
           >
+            {/* Title — inline mix of Poppins bold + Roxborough CF italic */}
             <h1
               style={{
                 color: "rgb(0,51,52)",
-                maxWidth: "clamp(260px, 38vw, 520px)",
-                marginBottom: "clamp(1rem, 2.5vh, 1.75rem)",
-                lineHeight: 1.13,
+                maxWidth: "clamp(280px, 36vw, 480px)",
+                marginBottom: "clamp(0.75rem, 1.8vh, 1.25rem)",
+                lineHeight: 1.22,
+                fontSize: "clamp(1.45rem, 2.6vw, 3rem)",
               }}
             >
-              {/* Poppins bold portion */}
               <span
                 style={{
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 700,
-                  fontSize: "clamp(1.6rem, 3.2vw, 3.4rem)",
-                  display: "block",
-                  letterSpacing: "-0.01em",
                 }}
               >
-                Especialista em cuidar<br />de pessoas e
+                Especialista em cuidar de pessoas e{" "}
               </span>
-              {/* Roxborough CF italic portion */}
               <span
                 style={{
                   fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                   fontWeight: 400,
                   fontStyle: "italic",
-                  fontSize: "clamp(1.6rem, 3.2vw, 3.4rem)",
-                  display: "block",
-                  letterSpacing: "-0.01em",
-                  lineHeight: 1.18,
-                  marginTop: "0.1em",
                 }}
               >
                 transformar sorrisos com naturalidade e confiança
               </span>
             </h1>
 
+            {/* Subtitle */}
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 400,
-                color: "rgb(85,105,120)",
-                lineHeight: 1.72,
-                fontSize: "clamp(0.8rem, 1.1vw, 1rem)",
-                maxWidth: "clamp(240px, 30vw, 400px)",
-                marginBottom: "clamp(1.5rem, 3.5vh, 2.5rem)",
+                color: "rgb(75,95,110)",
+                lineHeight: 1.65,
+                fontSize: "clamp(0.72rem, 0.95vw, 0.9rem)",
+                maxWidth: "clamp(220px, 28vw, 360px)",
+                marginBottom: "clamp(1.2rem, 2.5vh, 2rem)",
               }}
             >
               Aparelhos fixos, alinhadores invisíveis e muito mais em um ambiente sem julgamentos, criado para quem adiou o dentista por medo ou insegurança.
             </p>
 
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* CTA Button */}
+            <div style={{ marginBottom: "clamp(1.5rem, 3vh, 2.5rem)" }}>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 600,
+                  fontSize: "clamp(0.72rem, 0.9vw, 0.9rem)",
+                  backgroundColor: "rgb(0,51,52)",
+                  color: "#fff",
+                  borderRadius: "9999px",
+                  padding: "clamp(0.55rem, 1vh, 0.78rem) clamp(1.4rem, 2.5vw, 2rem)",
+                  boxShadow: "0 6px 24px rgba(0,51,52,0.25)",
+                  textDecoration: "none",
+                  transition: "opacity 0.2s",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+              >
+                Agendar Avaliação
+              </a>
+            </div>
+
+            {/* Stats bar */}
+            <div
               style={{
-                display: "inline-block",
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: 600,
-                fontSize: "clamp(0.8rem, 1vw, 1rem)",
-                backgroundColor: "rgb(0,51,52)",
-                color: "#fff",
-                borderRadius: "9999px",
-                padding: "clamp(0.65rem, 1.2vh, 0.9rem) clamp(1.6rem, 3vw, 2.4rem)",
-                boxShadow: "0 8px 32px rgba(0,51,52,0.28)",
-                textDecoration: "none",
-                transition: "opacity 0.2s, transform 0.2s",
+                display: "flex",
+                gap: "clamp(1rem, 2.5vw, 2.5rem)",
+                paddingTop: "clamp(0.75rem, 1.5vh, 1.25rem)",
+                borderTop: "1px solid rgba(0,51,52,0.12)",
+                maxWidth: "clamp(260px, 34vw, 440px)",
               }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.9"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
             >
-              Agendar Avaliação
-            </a>
+              {[
+                { value: "+3.000", label: "sorrisos transformados" },
+                { value: "+10 anos", label: "Experiência" },
+                { value: "4022", label: "CRO" },
+              ].map((stat) => (
+                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                  <span
+                    style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "clamp(0.85rem, 1.2vw, 1.1rem)",
+                      color: "rgb(0,51,52)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {stat.value}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontWeight: 400,
+                      fontSize: "clamp(0.6rem, 0.7vw, 0.7rem)",
+                      color: "rgb(100,120,135)",
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

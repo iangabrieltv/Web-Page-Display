@@ -744,16 +744,21 @@ function Resultados() {
               overflow: "hidden",
               position: "relative",
               background: "#003334",
+              aspectRatio: "1 / 2",
             }}
           >
-            {/* Full image — no crop */}
+            {/* Full image — uniform height */}
             <img
               src={photo.src}
               alt={`Antes e depois ${i + 1}`}
               className="before-after-img"
               style={{
+                position: "absolute",
+                inset: 0,
                 width: "100%",
-                height: "auto",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
                 display: "block",
               }}
             />

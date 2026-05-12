@@ -146,12 +146,13 @@ function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: "#fff", height: "100vh", minHeight: "500px" }}
+      style={{ backgroundColor: "#fff", height: "100vh", minHeight: "520px" }}
     >
-      {/* Background image — full design with text, photo and circles baked in */}
+      {/* Background image — photo + circles baked in */}
       <img
         src="/hero-bg.png"
-        alt="Dra. Gabryella Nunes — Especialista em cuidar de pessoas"
+        alt=""
+        aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
@@ -162,24 +163,152 @@ function Hero() {
         }}
       />
 
-      {/* Invisible clickable overlay over the button area in the image */}
-      <a
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Agendar Avaliação via WhatsApp"
+      {/* White mask — covers the baked-in text on the left of the image */}
+      <div
         style={{
           position: "absolute",
-          left: "5%",
-          bottom: "22%",
-          width: "16%",
-          height: "6%",
-          borderRadius: "9999px",
-          display: "block",
-          cursor: "pointer",
-          opacity: 0,
+          top: 0,
+          left: 0,
+          width: "62%",
+          height: "100%",
+          background: "linear-gradient(to right, #fff 0%, #fff 78%, rgba(255,255,255,0.5) 90%, transparent 100%)",
+          zIndex: 1,
+          pointerEvents: "none",
         }}
       />
+
+      {/* HTML content overlay — left half */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          zIndex: 2,
+        }}
+      >
+        <div
+          style={{
+            width: "50%",
+            paddingLeft: "clamp(1.5rem, 5vw, 6rem)",
+            paddingRight: "clamp(1rem, 2vw, 2rem)",
+            paddingTop: "clamp(4rem, 7vh, 5.5rem)",
+            paddingBottom: "clamp(1.5rem, 3vh, 2.5rem)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            height: "100%",
+          }}
+        >
+          {/* Title */}
+          <h1
+            style={{
+              color: "rgb(0,51,52)",
+              maxWidth: "clamp(280px, 36vw, 500px)",
+              marginBottom: "clamp(0.75rem, 1.8vh, 1.25rem)",
+              lineHeight: 1.22,
+              fontSize: "clamp(1.45rem, 2.6vw, 3rem)",
+              margin: "0 0 clamp(0.75rem, 1.8vh, 1.25rem) 0",
+            }}
+          >
+            <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>
+              Especialista em cuidar de pessoas e{" "}
+            </span>
+            <span
+              style={{
+                fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+              }}
+            >
+              transformar sorrisos com naturalidade e confiança
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: 400,
+              color: "rgb(75,95,110)",
+              lineHeight: 1.65,
+              fontSize: "clamp(0.72rem, 0.95vw, 0.9rem)",
+              maxWidth: "clamp(220px, 28vw, 380px)",
+              margin: "0 0 clamp(1.2rem, 2.5vh, 2rem) 0",
+            }}
+          >
+            Aparelhos fixos, alinhadores invisíveis e muito mais em um ambiente sem julgamentos, criado para quem adiou o dentista por medo ou insegurança.
+          </p>
+
+          {/* CTA Button */}
+          <div style={{ marginBottom: "clamp(1.5rem, 3vh, 2.5rem)" }}>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: "clamp(0.72rem, 0.9vw, 0.9rem)",
+                backgroundColor: "rgb(0,51,52)",
+                color: "#fff",
+                borderRadius: "9999px",
+                padding: "clamp(0.55rem, 1vh, 0.78rem) clamp(1.4rem, 2.5vw, 2rem)",
+                boxShadow: "0 6px 24px rgba(0,51,52,0.25)",
+                textDecoration: "none",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.88"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
+            >
+              Agendar Avaliação
+            </a>
+          </div>
+
+          {/* Stats bar */}
+          <div
+            style={{
+              display: "flex",
+              gap: "clamp(1rem, 2.5vw, 2.5rem)",
+              paddingTop: "clamp(0.75rem, 1.5vh, 1.25rem)",
+              borderTop: "1px solid rgba(0,51,52,0.15)",
+              maxWidth: "clamp(260px, 34vw, 440px)",
+            }}
+          >
+            {[
+              { value: "+3.000", label: "sorrisos transformados" },
+              { value: "+10 anos", label: "Experiência" },
+              { value: "4022", label: "CRO" },
+            ].map((stat) => (
+              <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "3px" }}>
+                <span
+                  style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(0.85rem, 1.2vw, 1.1rem)",
+                    color: "rgb(0,51,52)",
+                    lineHeight: 1,
+                  }}
+                >
+                  {stat.value}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 400,
+                    fontSize: "clamp(0.58rem, 0.68vw, 0.68rem)",
+                    color: "rgb(100,120,135)",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

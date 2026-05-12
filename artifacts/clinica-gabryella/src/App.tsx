@@ -171,7 +171,7 @@ function Hero() {
           left: 0,
           right: 0,
           zIndex: 10,
-          backgroundColor: "rgb(186,155,104)",
+          backgroundColor: "#ffcc99",
           overflow: "hidden",
           height: "clamp(44px, 6vh, 60px)",
           display: "flex",
@@ -196,8 +196,8 @@ function Hero() {
                 style={{
                   height: "clamp(22px, 3.5vh, 36px)",
                   width: "auto",
-                  filter: "brightness(0) invert(1) sepia(1) saturate(0) brightness(1.8)",
-                  opacity: 0.92,
+                  filter: "brightness(0) invert(1) sepia(1) saturate(2000%) hue-rotate(152deg) brightness(0.22)",
+                  opacity: 1,
                   flexShrink: 0,
                 }}
               />

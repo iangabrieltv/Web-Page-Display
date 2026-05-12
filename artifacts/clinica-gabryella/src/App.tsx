@@ -5,9 +5,7 @@ import beforeAfter2 from "@assets/image(1)_1778593478101.png";
 import beforeAfter3 from "@assets/image(2)_1778593478102.png";
 import beforeAfter4 from "@assets/png_1778593487627.png";
 import beforeAfter5 from "@assets/png(1)_1778593487628.png";
-import doctorPhoto from "@assets/DSC_0037.JPG_1778594681306.jpeg";
-import toothIcon from "@assets/dente_1778594972069.png";
-import brancoBg from "@assets/branco_1778595419572.png";
+import diferencialsBg from "@assets/fundo_diferenciis_1778596032037.png";
 
 function useReveal() {
   useEffect(() => {
@@ -605,110 +603,64 @@ function Diferenciais() {
   return (
     <section
       id="diferenciais"
-      style={{ position: "relative", overflow: "visible" }}
+      className="reveal"
+      style={{
+        position: "relative",
+        backgroundColor: "#f7f3ee",
+        overflow: "hidden",
+      }}
     >
-      <div style={{ display: "flex", minHeight: "520px", alignItems: "stretch" }}>
-
-        {/* ── LEFT — white side with doctor photo ── */}
-        <div
+      {/* ── Composition image — full width, defines section height ── */}
+      <div style={{ position: "relative" }}>
+        <img
+          src={diferencialsBg}
+          alt=""
+          aria-hidden="true"
           style={{
-            width: "45%",
-            backgroundColor: "#fff",
-            position: "relative",
-            overflow: "visible",
-            flexShrink: 0,
+            width: "100%",
+            height: "auto",
+            display: "block",
           }}
-        >
-          {/* Tooth icon — top center of photo area */}
-          <img
-            src={toothIcon}
-            alt="Ícone dente"
-            style={{
-              position: "absolute",
-              top: "-28px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "72px",
-              height: "72px",
-              zIndex: 20,
-              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.15))",
-            }}
-          />
+        />
 
-          {/* Doctor photo — head overflows above section */}
-          <img
-            src={doctorPhoto}
-            alt="Dra. Gabryella Nunes"
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              height: "115%",
-              width: "auto",
-              maxWidth: "none",
-              objectFit: "cover",
-              objectPosition: "top center",
-              zIndex: 10,
-            }}
-          />
-        </div>
-
-        {/* ── RIGHT — dark green side with content ── */}
+        {/* ── Text overlay — positioned over the green card (right ~45–90% of image) ── */}
         <div
           style={{
-            flex: 1,
-            backgroundColor: "#003334",
-            position: "relative",
-            overflow: "hidden",
+            position: "absolute",
+            top: "10%",
+            left: "46%",
+            width: "43%",
+            height: "78%",
             display: "flex",
             alignItems: "center",
-            padding: "clamp(40px, 6vw, 80px) clamp(32px, 5vw, 72px) clamp(40px, 6vw, 80px) clamp(32px, 4vw, 56px)",
+            padding: "0 2%",
           }}
         >
-          {/* White swoosh background element */}
-          <img
-            src={brancoBg}
-            alt=""
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              bottom: "-10%",
-              right: "-5%",
-              width: "70%",
-              opacity: 0.07,
-              pointerEvents: "none",
-              zIndex: 0,
-            }}
-          />
-
-          {/* Content */}
-          <div style={{ position: "relative", zIndex: 1, maxWidth: "480px" }}>
+          <div style={{ width: "100%" }}>
             {/* Label */}
-            <div
+            <p
               style={{
-                display: "inline-block",
-                marginBottom: "16px",
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "12px",
+                fontSize: "clamp(0.55rem, 0.85vw, 0.72rem)",
                 fontWeight: 600,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.60)",
+                color: "rgba(255,255,255,0.55)",
+                margin: "0 0 clamp(4px, 0.8vw, 10px) 0",
               }}
             >
               Diferenciais +
-            </div>
+            </p>
 
             {/* Title */}
             <h2
               style={{
                 fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                 fontWeight: 400,
-                fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+                fontSize: "clamp(0.95rem, 2.1vw, 2.2rem)",
                 color: "#fff",
                 lineHeight: 1.15,
-                margin: "0 0 20px 0",
+                margin: "0 0 clamp(6px, 1vw, 14px) 0",
                 letterSpacing: "-0.01em",
               }}
             >
@@ -719,36 +671,36 @@ function Diferenciais() {
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "clamp(0.82rem, 1vw, 0.95rem)",
-                color: "rgba(255,255,255,0.68)",
-                lineHeight: 1.85,
-                margin: "0 0 32px 0",
-                maxWidth: "400px",
+                fontSize: "clamp(0.5rem, 0.85vw, 0.82rem)",
+                color: "rgba(255,255,255,0.65)",
+                lineHeight: 1.75,
+                margin: "0 0 clamp(8px, 1.2vw, 20px) 0",
               }}
             >
               Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório.
             </p>
 
             {/* Bullet points */}
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "clamp(4px, 0.8vw, 12px)" }}>
               {bullets.map((b) => (
                 <li
                   key={b}
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "12px",
+                    gap: "clamp(4px, 0.6vw, 10px)",
                     fontFamily: "'Poppins', sans-serif",
-                    fontSize: "clamp(0.80rem, 0.95vw, 0.90rem)",
-                    color: "rgba(255,255,255,0.85)",
+                    fontSize: "clamp(0.48rem, 0.8vw, 0.78rem)",
+                    color: "rgba(255,255,255,0.82)",
                     fontWeight: 500,
+                    transition: "opacity 0.2s",
                   }}
                 >
                   <span
                     style={{
                       flexShrink: 0,
-                      width: "20px",
-                      height: "20px",
+                      width: "clamp(12px, 1.2vw, 18px)",
+                      height: "clamp(12px, 1.2vw, 18px)",
                       borderRadius: "50%",
                       background: "linear-gradient(135deg, #f5c9a0 0%, #e8b48a 100%)",
                       display: "flex",
@@ -756,7 +708,7 @@ function Diferenciais() {
                       justifyContent: "center",
                     }}
                   >
-                    <svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="#003334" strokeWidth={2.2}>
+                    <svg width="8" height="8" fill="none" viewBox="0 0 12 12" stroke="#003334" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2 6l3 3 5-5" />
                     </svg>
                   </span>
@@ -766,7 +718,6 @@ function Diferenciais() {
             </ul>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,0 +1,97 @@
+Quero alterar a seção “Diferenciais” do site da Dra. Gabryella Nunes.
+
+IMPORTANTE:
+Eu já tenho uma imagem pronta da composição visual SEM textos.
+Essa imagem deve ser usada como base visual da seção.
+
+OBJETIVO:
+A IA NÃO deve tentar recriar o design do zero.
+Ela deve apenas:
+
+usar minha imagem como fundo/composição
+posicionar os textos por cima
+manter responsividade
+manter aparência premium e moderna
+
+ESTRUTURA VISUAL:
+
+A seção deve ficar semelhante ao layout de referência:
+
+imagem da dentista posicionada à esquerda
+card verde escuro ocupando a área central/direita
+fundo com tecido branco orgânico/flutuando
+badge circular de ícone de dente no topo esquerdo
+textos posicionados sobre o card verde
+aparência sofisticada, elegante e premium
+
+ARQUIVOS:
+
+usar a imagem "diferenciais-bg.png" como base principal da composição
+essa imagem já contém:
+moldura
+fundo verde
+posicionamento da doutora
+elementos decorativos
+
+O sistema NÃO deve alterar essa composição.
+
+TEXTOS DA SEÇÃO:
+
+Subtítulo:
+"DIFERENCIAIS +"
+
+Título:
+"Ortodontia com propósito"
+
+Descrição:
+"Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório."
+
+Lista:
+
+Tecnologia moderna para mais conforto
+Atendimento acolhedor e humanizado
+Ortodontia com acompanhamento próximo
+
+REQUISITOS VISUAIS:
+
+fonte elegante
+aparência premium
+muito espaço em branco
+alinhamento sofisticado
+efeito moderno
+bordas arredondadas
+responsividade perfeita no mobile
+no mobile os textos devem diminuir proporcionalmente
+evitar quebra ruim de texto
+manter excelente leitura
+
+RESPONSIVIDADE:
+
+DESKTOP:
+
+imagem ocupando grande destaque
+textos alinhados à direita
+
+TABLET:
+
+reduzir proporções mantendo composição
+
+MOBILE:
+
+imagem centralizada
+textos sobrepostos corretamente
+sem cortar a dentista
+sem overflow
+tudo proporcional
+
+EFEITOS:
+
+transição suave ao scroll
+fade-in elegante
+hover suave nos itens da lista
+sombras discretas
+visual clean e luxuoso
+
+IMPORTANTE:
+Não recriar o design.
+Apenas usar minha imagem pronta como composição principal e posicionar os elementos corretamente

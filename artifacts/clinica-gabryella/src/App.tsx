@@ -10,6 +10,7 @@ import ambientePhoto1 from "@assets/DSC_0037.JPG_1778594681306.jpeg";
 import ambientePhoto2 from "@assets/image_1778590171196.png";
 import ambientePhoto3 from "@assets/image_1778590616773.png";
 import ambientePhoto4 from "@assets/image_1778592348491.png";
+import heroBg from "@assets/Início_1778789868230.png";
 
 function useReveal() {
   useEffect(() => {
@@ -231,7 +232,7 @@ function Hero() {
     >
       {/* Background image — photo + circles baked in */}
       <img
-        src="/hero-bg.png"
+        src={heroBg}
         alt=""
         aria-hidden="true"
         style={{

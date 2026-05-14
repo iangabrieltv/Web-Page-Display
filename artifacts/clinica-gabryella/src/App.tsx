@@ -281,7 +281,7 @@ function Hero() {
           {/* Left column content */}
           <div
             style={{
-              maxWidth: "520px",
+              maxWidth: "700px",
               display: "flex",
               flexDirection: "column",
               gap: "28px",
@@ -425,6 +425,7 @@ function Hero() {
             <div
               style={{
                 paddingTop: "24px",
+                paddingBottom: "clamp(32px, 5vh, 56px)",
                 borderTop: "1px solid rgba(0,51,52,0.15)",
                 display: "flex",
                 gap: "clamp(1.5rem, 3vw, 3rem)",

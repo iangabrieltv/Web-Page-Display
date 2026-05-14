@@ -11,6 +11,7 @@ import ambientePhoto2 from "@assets/image_1778590171196.png";
 import ambientePhoto3 from "@assets/image_1778590616773.png";
 import ambientePhoto4 from "@assets/image_1778592348491.png";
 import heroBg from "@assets/Início_1778789868230.png";
+import novaSecaoBg from "@assets/nova_1778792810212.png";
 
 function useReveal() {
   useEffect(() => {
@@ -817,6 +818,56 @@ function Services() {
             </span>
           </a>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function NovaSecao() {
+  return (
+    <section
+      className="reveal"
+      style={{
+        position: "relative",
+        width: "100%",
+        minHeight: "clamp(420px, 55vw, 720px)",
+        backgroundColor: "#fff",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      {/* Background image — full width, max quality */}
+      <img
+        src={novaSecaoBg}
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "left center",
+          imageRendering: "auto",
+        }}
+      />
+
+      {/* Content overlay — right side reserved for future text */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          width: "100%",
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 64px",
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        {/* Placeholder for text — will be filled in later */}
+        <div style={{ width: "45%" }} />
       </div>
     </section>
   );
@@ -1848,6 +1899,7 @@ export default function App() {
     <div style={{ fontFamily: "'Inter', 'system-ui', sans-serif" }}>
       <Nav />
       <Hero />
+      <NovaSecao />
       <Ambiente />
       <Services />
       <Diferenciais />

@@ -921,9 +921,9 @@ function NovaSecao() {
 function Ambiente() {
   const photos = [
     { src: ambientePhoto1, position: "center center" }, // recepção — cena horizontal
-    { src: ambientePhoto2, position: "center top" },    // sala de atendimento — retrato
+    { src: ambientePhoto2, position: "55% center" },    // sala de atendimento — foco na dra
     { src: ambientePhoto3, position: "center 30%" },    // dra na mesa — rosto no topo
-    { src: ambientePhoto4, position: "center top" },    // dra na porta — retrato
+    { src: ambientePhoto4, position: "40% 20%" },       // dra na porta — foco no rosto
   ];
 
   return (

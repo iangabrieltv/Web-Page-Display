@@ -836,24 +836,6 @@ function Ambiente() {
     >
       <div style={{ maxWidth: "960px", margin: "0 auto" }}>
 
-        {/* Top icon */}
-        <div style={{ textAlign: "center", marginBottom: "clamp(20px, 2.5vw, 32px)" }}>
-          <div style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "clamp(40px, 4vw, 52px)",
-            height: "clamp(40px, 4vw, 52px)",
-            borderRadius: "50%",
-            border: "1.5px solid rgba(255,255,255,0.18)",
-            background: "rgba(255,255,255,0.07)",
-          }}>
-            <svg width="22" height="22" viewBox="0 0 48 48" fill="none">
-              <path d="M24 4C16 4 10 10 10 18c0 5 2 9 5 12l2 10a1 1 0 001 1h12a1 1 0 001-1l2-10c3-3 5-7 5-12 0-8-6-14-14-14z" fill="rgba(255,255,255,0.55)"/>
-            </svg>
-          </div>
-        </div>
-
         {/* Title */}
         <div style={{ textAlign: "center", marginBottom: "clamp(32px, 4vw, 52px)" }}>
           <h2

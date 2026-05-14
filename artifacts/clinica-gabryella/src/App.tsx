@@ -290,6 +290,7 @@ function Hero() {
           >
             {/* Headline */}
             <h1 style={{ margin: 0, lineHeight: 1.05 }}>
+              {/* Linha 1: Especialista em cuidar */}
               <span
                 style={{
                   display: "block",
@@ -300,8 +301,39 @@ function Hero() {
                   lineHeight: 1.05,
                 }}
               >
-                Especialista em cuidar de pessoas e
+                Especialista em cuidar
               </span>
+              {/* Linha 2: de pessoas e + transformar (mista) */}
+              <span
+                style={{
+                  display: "block",
+                  lineHeight: 1.1,
+                  marginTop: "2px",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "clamp(2rem, 4.2vw, 64px)",
+                    color: "rgb(0,51,52)",
+                  }}
+                >
+                  de pessoas e{" "}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+                    fontWeight: 500,
+                    fontStyle: "italic",
+                    fontSize: "clamp(1.8rem, 3.9vw, 60px)",
+                    color: "rgb(0,51,52)",
+                  }}
+                >
+                  transformar
+                </span>
+              </span>
+              {/* Linha 3: sorrisos com naturalidade */}
               <span
                 style={{
                   display: "block",
@@ -311,10 +343,24 @@ function Hero() {
                   fontSize: "clamp(1.8rem, 3.9vw, 60px)",
                   color: "rgb(0,51,52)",
                   lineHeight: 1.1,
-                  marginTop: "4px",
+                  marginTop: "2px",
                 }}
               >
-                transformar sorrisos com naturalidade e confiança
+                sorrisos com naturalidade
+              </span>
+              {/* Linha 4: e confiança */}
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+                  fontWeight: 500,
+                  fontStyle: "italic",
+                  fontSize: "clamp(1.8rem, 3.9vw, 60px)",
+                  color: "rgb(0,51,52)",
+                  lineHeight: 1.1,
+                }}
+              >
+                e confiança
               </span>
             </h1>
 

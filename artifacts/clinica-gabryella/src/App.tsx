@@ -853,7 +853,7 @@ function NovaSecao() {
         }}
       />
 
-      {/* Content overlay — right side reserved for future text */}
+      {/* Content — text on the right side */}
       <div
         style={{
           position: "relative",
@@ -861,13 +861,58 @@ function NovaSecao() {
           width: "100%",
           maxWidth: "1280px",
           margin: "0 auto",
-          padding: "0 64px",
+          padding: "clamp(48px, 6vw, 96px) 64px",
           display: "flex",
           justifyContent: "flex-end",
         }}
       >
-        {/* Placeholder for text — will be filled in later */}
-        <div style={{ width: "45%" }} />
+        <div
+          style={{
+            width: "clamp(280px, 45%, 520px)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          {/* Title */}
+          <h2
+            style={{
+              fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
+              fontWeight: 500,
+              fontStyle: "italic",
+              fontSize: "clamp(1.8rem, 3vw, 3rem)",
+              color: "#003334",
+              margin: 0,
+              lineHeight: 1.15,
+            }}
+          >
+            Dra. Gabryella Nunes
+          </h2>
+
+          {/* Body text */}
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.8rem, 0.95vw, 0.95rem)",
+              color: "rgb(60, 80, 90)",
+              lineHeight: 1.85,
+              margin: 0,
+            }}
+          >
+            Sou a Dra. Gabryella Nunes, cirurgiã-dentista especializada em Ortodontia e apaixonada por transformar sorrisos com naturalidade, confiança e acolhimento. Acredito em uma odontologia mais humana, onde cada paciente se sinta confortável, ouvido e seguro durante toda a experiência no consultório.
+          </p>
+          <p
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: "clamp(0.8rem, 0.95vw, 0.95rem)",
+              color: "rgb(60, 80, 90)",
+              lineHeight: 1.85,
+              margin: 0,
+            }}
+          >
+            Costumo dizer que a odontologia me escolheu, e hoje tenho como propósito cuidar das pessoas com dedicação, transparência e carinho em cada detalhe. Meu compromisso é proporcionar tratamentos personalizados, ajudando cada paciente a recuperar a autoestima e voltar a sorrir com confiança.
+          </p>
+        </div>
       </div>
     </section>
   );

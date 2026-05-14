@@ -6,10 +6,10 @@ import beforeAfter3 from "@assets/image(2)_1778593478102.png";
 import beforeAfter4 from "@assets/png_1778593487627.png";
 import beforeAfter5 from "@assets/png(1)_1778593487628.png";
 import diferencialsBg from "@assets/fundo_diferenciis_1778596032037.png";
-import ambientePhoto1 from "@assets/DSC_0037.JPG_1778594681306.jpeg";
-import ambientePhoto2 from "@assets/image_1778590171196.png";
-import ambientePhoto3 from "@assets/image_1778590616773.png";
-import ambientePhoto4 from "@assets/image_1778592348491.png";
+import ambientePhoto1 from "@assets/WhatsApp_Image_2026-05-09_at_23.35.05_1778793543074.jpeg";
+import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
+import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
+import ambientePhoto4 from "@assets/DSC_0026_-_Gabryella_Nunes_1778793598144.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 
@@ -919,7 +919,12 @@ function NovaSecao() {
 }
 
 function Ambiente() {
-  const photos = [ambientePhoto1, ambientePhoto2, ambientePhoto3, ambientePhoto4];
+  const photos = [
+    { src: ambientePhoto1, position: "center center" }, // recepção — cena horizontal
+    { src: ambientePhoto2, position: "center top" },    // sala de atendimento — retrato
+    { src: ambientePhoto3, position: "center 30%" },    // dra na mesa — rosto no topo
+    { src: ambientePhoto4, position: "center top" },    // dra na porta — retrato
+  ];
 
   return (
     <section
@@ -972,7 +977,7 @@ function Ambiente() {
             marginBottom: "clamp(32px, 4vw, 52px)",
           }}
         >
-          {photos.map((src, i) => (
+          {photos.map((photo, i) => (
             <div
               key={i}
               style={{
@@ -983,13 +988,13 @@ function Ambiente() {
               }}
             >
               <img
-                src={src}
+                src={photo.src}
                 alt={`Ambiente da clínica ${i + 1}`}
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center",
+                  objectPosition: photo.position,
                   display: "block",
                   transition: "transform 0.4s ease",
                 }}

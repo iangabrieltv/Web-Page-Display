@@ -12,6 +12,17 @@ import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
 import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
+import serviceOrto from "@assets/orto_1778809661749.jpg";
+import serviceAlinhadores from "@assets/alilhadores_1778809688651.jpg";
+import serviceClareamento from "@assets/clareamento_1778809692558.jpg";
+import serviceEstetica from "@assets/estetica_1778809698407.jpg";
+import serviceImplante from "@assets/implante_1778809707377.jpg";
+import serviceCoroa from "@assets/coroa_1778809715017.jpg";
+import serviceHarmonizacao from "@assets/harmonizacao_1778809722444.jpg";
+import serviceCanal from "@assets/canal_1778809727920.jpg";
+import serviceLimpeza from "@assets/limpeza_1778809731960.jpg";
+import serviceLazer from "@assets/lazer_1778809735130.jpg";
+import serviceClinicaGeral from "@assets/image(1)_1778809760552.png";
 
 function useReveal() {
   useEffect(() => {
@@ -520,60 +531,71 @@ const SERVICES = [
     title: "Ortodontia",
     desc: "Sorriso alinhado com aparelhos metálicos ou estéticos. Discreta, segura e com resultado transformador.",
     gradient: "linear-gradient(145deg, #002a2b 0%, #004a4c 60%, #006668 100%)",
+    img: serviceOrto,
   },
   {
     title: "Alinhadores Invisíveis",
     desc: "Corrija o sorriso sem aparelho aparente. Removível, confortável e quase imperceptível no dia a dia.",
     gradient: "linear-gradient(145deg, #001e1f 0%, #003c3e 60%, #005456 100%)",
+    img: serviceAlinhadores,
   },
   {
     title: "Clareamento Dental",
     desc: "Dentes visivelmente mais brancos em poucos encontros, com tecnologia segura e resultado duradouro.",
     gradient: "linear-gradient(145deg, #002e2e 0%, #004e50 60%, #006a6c 100%)",
+    img: serviceClareamento,
   },
   {
     title: "Estética Dental",
     desc: "Facetas, resinas e procedimentos que devolvem harmonia e beleza natural ao sorriso.",
     gradient: "linear-gradient(145deg, #002626 0%, #004040 60%, #005a5a 100%)",
+    img: serviceEstetica,
   },
   {
     title: "Implante Dental",
     desc: "Reposição de dentes perdidos com aparência e função idênticas ao dente natural.",
     gradient: "linear-gradient(145deg, #001a1a 0%, #003434 60%, #004e4e 100%)",
+    img: serviceImplante,
   },
   {
     title: "Coroa Dentária",
     desc: "Proteção e restauração estética para dentes danificados, com resultado natural e duradouro.",
     gradient: "linear-gradient(145deg, #002020 0%, #003c3c 60%, #005454 100%)",
+    img: serviceCoroa,
   },
   {
     title: "Harmonização Facial",
     desc: "Procedimentos minimamente invasivos para realçar a beleza natural do rosto com naturalidade.",
     gradient: "linear-gradient(145deg, #002828 0%, #004444 60%, #005e5e 100%)",
+    img: serviceHarmonizacao,
   },
   {
     title: "Tratamento de Canal",
     desc: "Elimine a dor e preserve seu dente com segurança. Técnica moderna e muito menos desconforto.",
     gradient: "linear-gradient(145deg, #001c1c 0%, #003636 60%, #005050 100%)",
+    img: serviceCanal,
   },
   {
     title: "Limpeza Dental",
     desc: "Remoção profissional de tártaro e manchas para um sorriso saudável e protegido.",
     gradient: "linear-gradient(145deg, #002424 0%, #004040 60%, #005c5c 100%)",
+    img: serviceLimpeza,
   },
   {
     title: "Laser Odontológico",
     desc: "Tecnologia de ponta para procedimentos mais precisos, rápidos e com mínimo desconforto.",
     gradient: "linear-gradient(145deg, #002c2c 0%, #004848 60%, #006464 100%)",
+    img: serviceLazer,
   },
   {
     title: "Clínica Geral",
     desc: "Restaurações, extrações e prevenção completa para toda a família em um só lugar.",
     gradient: "linear-gradient(145deg, #001e1e 0%, #003a3a 60%, #005252 100%)",
+    img: serviceClinicaGeral,
   },
 ];
 
-function ServiceCard({ title, desc, gradient }: { title: string; desc: string; gradient: string }) {
+function ServiceCard({ title, desc, gradient, img }: { title: string; desc: string; gradient: string; img?: string }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -601,24 +623,32 @@ function ServiceCard({ title, desc, gradient }: { title: string; desc: string; g
           width: "100%",
           aspectRatio: "16 / 10",
           background: gradient,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           flexShrink: 0,
           position: "relative",
           overflow: "hidden",
         }}
       >
-        <svg
-          width="48" height="48" viewBox="0 0 48 48" fill="none"
-          style={{ opacity: 0.18 }}
-        >
-          <path d="M24 4C16 4 10 10 10 18c0 5 2 9 5 12l2 10a1 1 0 001 1h12a1 1 0 001-1l2-10c3-3 5-7 5-12 0-8-6-14-14-14z" fill="white"/>
-        </svg>
+        {img && (
+          <img
+            src={img}
+            alt={title}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+              transition: "transform 0.4s ease",
+              transform: hovered ? "scale(1.06)" : "scale(1)",
+            }}
+          />
+        )}
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to bottom, transparent 40%, rgba(0,51,52,0.6) 100%)",
+          background: "linear-gradient(to bottom, transparent 40%, rgba(0,51,52,0.55) 100%)",
         }} />
       </div>
 
@@ -758,7 +788,7 @@ function Services() {
           className="services-grid stagger"
         >
           {SERVICES.map((s) => (
-            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} />
+            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} />
           ))}
         </div>
 

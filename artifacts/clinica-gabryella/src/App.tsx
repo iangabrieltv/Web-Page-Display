@@ -1258,13 +1258,48 @@ function Diferenciais() {
   );
 }
 
+type PhotoItem = {
+  src: string;
+  delay: string;
+  expand?: number;
+  fit?: "cover" | "fill" | "contain";
+  pos?: string;
+};
+
+function photoImgStyle(p: PhotoItem): React.CSSProperties {
+  const fit = p.fit ?? "cover";
+  const pos = p.pos ?? "center";
+  if (p.expand && p.expand > 0) {
+    const e = p.expand;
+    return {
+      position: "absolute",
+      display: "block",
+      objectFit: fit,
+      objectPosition: pos,
+      width: `${(1 + e * 2) * 100}%`,
+      height: `${(1 + e * 2) * 100}%`,
+      top: `${-e * 100}%`,
+      left: `${-e * 100}%`,
+    };
+  }
+  return {
+    position: "absolute",
+    top: 0, left: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: fit,
+    objectPosition: pos,
+    display: "block",
+  };
+}
+
 function Resultados() {
-  const photos = [
+  const photos: PhotoItem[] = [
     { src: beforeAfter1, delay: "delay-1", expand: 0.12 },
     { src: beforeAfter2, delay: "delay-2" },
     { src: beforeAfter3, delay: "delay-3" },
     { src: beforeAfter4, delay: "delay-4" },
-    { src: beforeAfter5, delay: "delay-5", fit: "fill" as const },
+    { src: beforeAfter5, delay: "delay-5" },
   ];
 
   return (
@@ -1335,19 +1370,8 @@ function Resultados() {
             >
               <img
                 src={photo.src}
-                alt={`Antes e depois ${(i % photos.length) + 1}`}
-                style={{
-                  position: "absolute",
-                  objectFit: (photo as { fit?: string }).fit ?? "cover",
-                  objectPosition: (photo as { pos?: string }).pos ?? "center",
-                  display: "block",
-                  ...(() => {
-                    const ex = (photo as { expand?: number }).expand ?? 0;
-                    return ex > 0
-                      ? { width: `${(1 + ex * 2) * 100}%`, height: `${(1 + ex * 2) * 100}%`, top: `${-ex * 100}%`, left: `${-ex * 100}%` }
-                      : { inset: 0, width: "100%", height: "100%" };
-                  })(),
-                }}
+                alt={`Antes e depois ${i + 1}`}
+                style={photoImgStyle(photo)}
               />
               {/* Badge */}
               <div

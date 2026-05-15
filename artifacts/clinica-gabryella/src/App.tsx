@@ -11,7 +11,7 @@ import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
 import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
 import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
-import sectionDividerIcon from "@assets/Início_(1)_1778847553697.png";
+import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 import serviceOrto from "@assets/orto_1778809661749.jpg";
 import serviceAlinhadores from "@assets/alilhadores_1778809688651.jpg";
@@ -996,8 +996,8 @@ function Ambiente() {
           transform: "translate(-50%, -50%)",
           width: "130px",
           height: "auto",
-          borderRadius: "14px",
-          boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
+          borderRadius: "18px",
+          boxShadow: "0 6px 24px rgba(0,0,0,0.18)",
           zIndex: 10,
           display: "block",
         }}

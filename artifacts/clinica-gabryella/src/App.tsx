@@ -648,11 +648,6 @@ function ServiceCard({ title, desc, gradient, img, imgPosition }: { title: strin
             }}
           />
         )}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(to bottom, transparent 40%, rgba(0,51,52,0.55) 100%)",
-        }} />
       </div>
 
       {/* Content */}

@@ -581,8 +581,8 @@ const SERVICES = [
     desc: "Remoção profissional de tártaro e manchas para um sorriso saudável e protegido.",
     gradient: "linear-gradient(145deg, #002424 0%, #004040 60%, #005c5c 100%)",
     img: serviceLimpeza,
-    imgPosition: "center top",
-    imgScale: 1.18,
+    imgPosition: "center 15%",
+    imgScale: 1.45,
   },
   {
     title: "Laser Odontológico",

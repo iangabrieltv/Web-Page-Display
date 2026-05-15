@@ -1312,68 +1312,68 @@ function Resultados() {
         </p>
       </div>
 
-      {/* Photo grid — 5 cards */}
-      <div
-        className="stagger"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
-          gap: "clamp(6px, 0.8vw, 12px)",
-          width: "100%",
-        }}
-      >
-        {photos.map((photo, i) => (
-          <div
-            key={i}
-            className="reveal"
-            style={{
-              borderRadius: "16px",
-              overflow: "hidden",
-              position: "relative",
-              background: "#003334",
-              aspectRatio: "2 / 3",
-            }}
-          >
-            {/* Full image — uniform height */}
-            <img
-              src={photo.src}
-              alt={`Antes e depois ${i + 1}`}
-              className="before-after-img"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-                display: "block",
-              }}
-            />
-
-            {/* "Antes e depois" badge — top left */}
+      {/* Infinite marquee carousel */}
+      <div style={{ overflow: "hidden", width: "100%" }}>
+        <div
+          className="marquee-track"
+          style={{
+            display: "flex",
+            gap: "clamp(8px, 1vw, 14px)",
+            width: "max-content",
+          }}
+        >
+          {/* Duplicate photos for seamless loop */}
+          {[...photos, ...photos].map((photo, i) => (
             <div
+              key={i}
               style={{
-                position: "absolute",
-                top: "12px",
-                left: "12px",
-                zIndex: 10,
-                background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 40%, #f0c8a8 70%, #fde8d0 100%)",
-                border: "1px solid rgba(255,255,255,0.30)",
-                borderRadius: "999px",
-                padding: "6px 16px",
-                fontFamily: "'Poppins', sans-serif",
-                fontSize: "12px",
-                fontWeight: 500,
-                color: "#003334",
-                letterSpacing: "0.02em",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
-                whiteSpace: "nowrap",
+                borderRadius: "16px",
+                overflow: "hidden",
+                position: "relative",
+                background: "#002526",
+                aspectRatio: "2 / 3",
+                width: "clamp(200px, 18vw, 260px)",
+                flexShrink: 0,
               }}
             >
-              Antes e depois
+              <img
+                src={photo.src}
+                alt={`Antes e depois ${(i % photos.length) + 1}`}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                }}
+              />
+              {/* Badge */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  left: "12px",
+                  zIndex: 10,
+                  background: "linear-gradient(105deg, #f5c9a0 0%, #e8b48a 40%, #f0c8a8 70%, #fde8d0 100%)",
+                  border: "1px solid rgba(255,255,255,0.30)",
+                  borderRadius: "999px",
+                  padding: "5px 14px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "11px",
+                  fontWeight: 500,
+                  color: "#003334",
+                  letterSpacing: "0.02em",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.18)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Antes e depois
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* CTA button */}

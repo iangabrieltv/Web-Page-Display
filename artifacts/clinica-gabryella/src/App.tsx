@@ -309,9 +309,9 @@ function Hero() {
                   display: "block",
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 700,
-                  fontSize: "clamp(2rem, 4.2vw, 64px)",
+                  fontSize: "clamp(2rem, 3vw, 48px)",
                   color: "rgb(0,51,52)",
-                  lineHeight: 1.05,
+                  lineHeight: 1.1,
                 }}
               >
                 Especialista em cuidar
@@ -320,7 +320,7 @@ function Hero() {
               <span
                 style={{
                   display: "block",
-                  lineHeight: 1.1,
+                  lineHeight: 1.15,
                   marginTop: "2px",
                 }}
               >
@@ -328,7 +328,7 @@ function Hero() {
                   style={{
                     fontFamily: "'Poppins', sans-serif",
                     fontWeight: 700,
-                    fontSize: "clamp(2rem, 4.2vw, 64px)",
+                    fontSize: "clamp(2rem, 3vw, 48px)",
                     color: "rgb(0,51,52)",
                   }}
                 >
@@ -339,7 +339,7 @@ function Hero() {
                     fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                     fontWeight: 500,
                     fontStyle: "italic",
-                    fontSize: "clamp(1.8rem, 3.9vw, 60px)",
+                    fontSize: "clamp(1.8rem, 2.8vw, 46px)",
                     color: "rgb(0,51,52)",
                   }}
                 >
@@ -353,9 +353,9 @@ function Hero() {
                   fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                   fontWeight: 500,
                   fontStyle: "italic",
-                  fontSize: "clamp(1.8rem, 3.9vw, 60px)",
+                  fontSize: "clamp(1.8rem, 2.8vw, 46px)",
                   color: "rgb(0,51,52)",
-                  lineHeight: 1.1,
+                  lineHeight: 1.15,
                   marginTop: "2px",
                 }}
               >
@@ -368,9 +368,9 @@ function Hero() {
                   fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                   fontWeight: 500,
                   fontStyle: "italic",
-                  fontSize: "clamp(1.8rem, 3.9vw, 60px)",
+                  fontSize: "clamp(1.8rem, 2.8vw, 46px)",
                   color: "rgb(0,51,52)",
-                  lineHeight: 1.1,
+                  lineHeight: 1.15,
                 }}
               >
                 e confiança

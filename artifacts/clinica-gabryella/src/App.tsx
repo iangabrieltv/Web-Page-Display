@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./index.css";
-import beforeAfter1 from "@assets/image_1778593478099.png";
+import beforeAfter1 from "@assets/8E70F238-E0BE-48F2-8BD9-DD47CD02C663_L0_001-08_05_2026,_19_31__1778811401826.jpg";
 import beforeAfter2 from "@assets/image(1)_1778593478101.png";
 import beforeAfter3 from "@assets/image(2)_1778593478102.png";
 import beforeAfter4 from "@assets/png_1778593487627.png";

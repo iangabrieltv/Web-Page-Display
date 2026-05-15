@@ -452,7 +452,7 @@ function Hero() {
                 { value: "+10 anos", label: "EXPERIÊNCIA" },
                 { value: "4022", label: "CRO" },
               ].map((stat) => (
-                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "5px", alignItems: "flex-start", textAlign: "left" }}>
+                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", textAlign: "center" }}>
                   <span
                     style={{
                       fontFamily: "'Poppins', sans-serif",

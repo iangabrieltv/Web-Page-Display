@@ -173,6 +173,101 @@
   }
 }
 
+/* ═══════════════════════════════════════════════
+   Mobile responsive — all breakpoints
+   ═══════════════════════════════════════════════ */
+
+/* Nav logo — remove large right margin on mobile */
+@media (max-width: 768px) {
+  .nav-logo {
+    margin-right: 0 !important;
+  }
+
+  /* Hero — background image covers full section */
+  .hero-bg-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: right top !important;
+  }
+
+  /* Hero — white mask covers full width so text is readable */
+  .hero-white-mask {
+    width: 100% !important;
+    background: linear-gradient(to bottom,
+      rgba(255,255,255,0.97) 0%,
+      rgba(255,255,255,0.93) 65%,
+      rgba(255,255,255,0.75) 100%) !important;
+  }
+
+  /* Hero — reduce side padding */
+  .hero-content-pad {
+    padding: 0 24px !important;
+  }
+
+  /* Sobre — center content, full width text */
+  .sobre-wrapper {
+    justify-content: flex-start !important;
+    align-items: flex-end !important;
+    padding: 40px 20px !important;
+  }
+  .sobre-text-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: rgba(255,255,255,0.92);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  /* Services bottom grid — full width on mobile */
+  .services-grid-bottom {
+    max-width: 100% !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Diferenciais — stack text below image */
+  .diferenciais-overlay {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 28px 24px 24px !important;
+    background: #003334;
+  }
+
+  /* Resultados — 2 columns on mobile */
+  .resultados-carousel-inner {
+    flex-wrap: wrap !important;
+  }
+  .resultado-card {
+    flex: 0 0 calc(50% - 8px) !important;
+    min-width: calc(50% - 8px) !important;
+  }
+
+  /* Contato — single column */
+  .contato-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Footer — single column, reduced padding */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    padding: 40px 24px 32px !important;
+    gap: 32px !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .services-grid-bottom {
+    grid-template-columns: 1fr !important;
+  }
+  .resultado-card {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+  }
+}
+
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }

@@ -85,7 +85,7 @@ function Nav() {
             src="/logo-nova.png"
             alt="Dra. Gabryella Nunes"
             style={{ width: "120px", height: "auto", display: "block" }}
-            className="mr-[300px]" />
+            className="nav-logo" />
         </a>
 
         {/* Desktop Menu — centered */}
@@ -245,6 +245,7 @@ function Hero() {
         src={heroBg}
         alt=""
         aria-hidden="true"
+        className="hero-bg-img"
         style={{
           position: "absolute",
           top: 0,
@@ -258,6 +259,7 @@ function Hero() {
 
       {/* White mask — wider, softer fade to hide baked-in text */}
       <div
+        className="hero-white-mask"
         style={{
           position: "absolute",
           top: 0,
@@ -283,6 +285,7 @@ function Hero() {
         }}
       >
         <div
+          className="hero-content-pad"
           style={{
             width: "100%",
             maxWidth: "1280px",
@@ -726,7 +729,7 @@ function Services() {
             maxWidth: "75%",
             margin: "0 auto",
           }}
-          className="services-grid stagger"
+          className="services-grid services-grid-bottom stagger"
         >
           {SERVICES.slice(8).map((s) => (
             <ServiceCard key={s.title} slug={s.slug} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
@@ -825,6 +828,7 @@ function NovaSecao() {
 
       {/* Content — text on the right side */}
       <div
+        className="sobre-wrapper"
         style={{
           position: "relative",
           zIndex: 2,
@@ -837,6 +841,7 @@ function NovaSecao() {
         }}
       >
         <div
+          className="sobre-text-box"
           style={{
             width: "clamp(280px, 45%, 520px)",
             display: "flex",
@@ -1090,6 +1095,7 @@ function Diferenciais() {
 
         {/* ── Text overlay — positioned over the green card ── */}
         <div
+          className="diferenciais-overlay"
           style={{
             position: "absolute",
             top: "9%",
@@ -1291,6 +1297,7 @@ function Resultados() {
       {/* Carousel — 5 cards full width */}
       <div style={{ overflow: "hidden", width: "100%", padding: "0 clamp(8px, 1vw, 14px)" }}>
         <div
+          className="resultados-carousel-inner"
           style={{
             display: "flex",
             gap: "clamp(8px, 1vw, 14px)",
@@ -1299,6 +1306,7 @@ function Resultados() {
           {photos.map((photo, i) => (
             <div
               key={i}
+              className="resultado-card"
               style={{
                 borderRadius: "16px",
                 overflow: "hidden",
@@ -1443,7 +1451,7 @@ function Contato() {
     <section id="contato" className="py-24 px-6" style={{ backgroundColor: "#fff" }}>
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         <div
-          className="reveal"
+          className="reveal contato-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -1753,6 +1761,7 @@ function Footer() {
     <footer style={{ backgroundColor: "rgb(0,51,52)" }}>
       {/* Main footer content */}
       <div
+        className="footer-grid"
         style={{
           maxWidth: "1280px",
           margin: "0 auto",

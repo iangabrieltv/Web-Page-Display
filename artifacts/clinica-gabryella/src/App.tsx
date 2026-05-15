@@ -280,6 +280,7 @@ function Hero() {
           flex: 1,
           display: "flex",
           alignItems: "center",
+          paddingTop: "88px",      /* offset for fixed nav */
           paddingBottom: "clamp(60px, 8vh, 80px)", /* room for marquee */
         }}
       >
@@ -298,7 +299,6 @@ function Hero() {
               display: "flex",
               flexDirection: "column",
               gap: "28px",
-              paddingTop: "80px",
             }}
           >
             {/* Headline */}

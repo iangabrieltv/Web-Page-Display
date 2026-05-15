@@ -1312,18 +1312,15 @@ function Resultados() {
         </p>
       </div>
 
-      {/* Infinite marquee carousel */}
-      <div style={{ overflow: "hidden", width: "100%" }}>
+      {/* Carousel — 5 cards full width */}
+      <div style={{ overflow: "hidden", width: "100%", padding: "0 clamp(8px, 1vw, 14px)" }}>
         <div
-          className="marquee-track"
           style={{
             display: "flex",
             gap: "clamp(8px, 1vw, 14px)",
-            width: "max-content",
           }}
         >
-          {/* Duplicate photos for seamless loop */}
-          {[...photos, ...photos].map((photo, i) => (
+          {photos.map((photo, i) => (
             <div
               key={i}
               style={{
@@ -1332,8 +1329,8 @@ function Resultados() {
                 position: "relative",
                 background: "#002526",
                 aspectRatio: "2 / 3",
-                width: "clamp(200px, 18vw, 260px)",
-                flexShrink: 0,
+                flex: "1 1 0",
+                minWidth: 0,
               }}
             >
               <img

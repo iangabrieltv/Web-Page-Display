@@ -994,7 +994,7 @@ function Ambiente() {
           top: 0,
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "52px",
+          width: "90px",
           height: "auto",
           borderRadius: "14px",
           boxShadow: "0 4px 18px rgba(0,0,0,0.22)",

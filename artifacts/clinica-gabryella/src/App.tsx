@@ -57,8 +57,8 @@ function Nav() {
 
   const links = [
     { label: "Início", href: "#" },
-    { label: "Sobre", href: "#diferenciais" },
-    { label: "Espaço", href: "#resultados" },
+    { label: "Sobre", href: "#sobre" },
+    { label: "Espaço", href: "#ambiente" },
     { label: "Serviço", href: "#servicos" },
     { label: "Contato", href: "#contato" },
   ];
@@ -877,6 +877,7 @@ function Services() {
 function NovaSecao() {
   return (
     <section
+      id="sobre"
       className="reveal"
       style={{
         position: "relative",

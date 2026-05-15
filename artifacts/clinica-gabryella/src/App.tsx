@@ -1260,7 +1260,7 @@ function Diferenciais() {
 
 function Resultados() {
   const photos = [
-    { src: beforeAfter1, delay: "delay-1", fit: "contain" as const },
+    { src: beforeAfter1, delay: "delay-1", fit: "fill" as const },
     { src: beforeAfter2, delay: "delay-2" },
     { src: beforeAfter3, delay: "delay-3" },
     { src: beforeAfter4, delay: "delay-4" },

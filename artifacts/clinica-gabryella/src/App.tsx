@@ -457,7 +457,7 @@ function Hero() {
                     style={{
                       fontFamily: "'Poppins', sans-serif",
                       fontWeight: 400,
-                      fontSize: "clamp(1.1rem, 1.8vw, 28px)",
+                      fontSize: "clamp(0.9rem, 1.1vw, 18px)",
                       color: "rgb(0,51,52)",
                       lineHeight: 1,
                     }}

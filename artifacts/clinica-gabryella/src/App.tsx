@@ -443,6 +443,8 @@ function Hero() {
                 borderTop: "1px solid rgba(0,51,52,0.15)",
                 display: "flex",
                 gap: "clamp(1.5rem, 3vw, 3rem)",
+                maxWidth: "460px",
+                width: "100%",
               }}
             >
               {[

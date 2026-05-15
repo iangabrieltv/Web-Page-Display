@@ -923,7 +923,7 @@ function Ambiente() {
     { src: ambientePhoto1, position: "center center" }, // recepção — cena horizontal
     { src: ambientePhoto2, position: "55% center" },    // sala de atendimento — foco na dra
     { src: ambientePhoto3, position: "center 30%" },    // dra na mesa — rosto no topo
-    { src: ambientePhoto4, position: "center top" },    // dra sentada — topo da imagem, rosto visível
+    { src: ambientePhoto4, position: "center 25%" },    // dra sentada — um pouco mais abaixo
   ];
 
   return (

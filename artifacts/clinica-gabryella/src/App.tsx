@@ -101,6 +101,7 @@ function Nav() {
             <a
               key={l.href + l.label}
               href={l.href}
+              translate="no"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -131,7 +132,7 @@ function Nav() {
                 el.style.boxShadow = "none";
               }}
             >
-              {l.label}
+              <span translate="no">{l.label}</span>
             </a>
           ))}
         </div>
@@ -250,11 +251,12 @@ function Hero() {
         aria-hidden="true"
         style={{
           position: "absolute",
-          inset: 0,
-          width: "100%",
+          top: 0,
+          right: 0,
           height: "100%",
-          objectFit: "cover",
-          objectPosition: "center top",
+          width: "auto",
+          maxWidth: "none",
+          objectFit: "unset",
         }}
       />
 

@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Router, Route, Switch } from "wouter";
+import ServiceDetailPage from "./ServiceDetailPage";
+import { SERVICES, WHATSAPP_LINK } from "./services-data";
 import "./index.css";
 import beforeAfter1 from "@assets/8E70F238-E0BE-48F2-8BD9-DD47CD02C663_L0_001-08_05_2026,_19_31__1778811401826.jpg";
 import beforeAfter2 from "@assets/image(1)_1778593478101.png";
@@ -13,17 +16,6 @@ import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG
 import heroBg from "@assets/Início_1778789868230.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
-import serviceOrto from "@assets/orto_1778809661749.jpg";
-import serviceAlinhadores from "@assets/alilhadores_1778809688651.jpg";
-import serviceClareamento from "@assets/clareamento_1778809692558.jpg";
-import serviceEstetica from "@assets/estetica_1778809698407.jpg";
-import serviceImplante from "@assets/implante_1778809707377.jpg";
-import serviceCoroa from "@assets/coroa_1778809715017.jpg";
-import serviceHarmonizacao from "@assets/harmonizacao_1778809722444.jpg";
-import serviceCanal from "@assets/canal_1778809727920.jpg";
-import serviceLimpeza from "@assets/limpeza_1778809731960.jpg";
-import serviceLazer from "@assets/lazer_1778809735130.jpg";
-import serviceClinicaGeral from "@assets/image(1)_1778809760552.png";
 
 function useReveal() {
   useEffect(() => {
@@ -42,8 +34,6 @@ function useReveal() {
     return () => observer.disconnect();
   }, []);
 }
-
-const WHATSAPP_LINK = "https://wa.me/5582981028766";
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -530,80 +520,7 @@ function Hero() {
   );
 }
 
-const SERVICES = [
-  {
-    title: "Ortodontia",
-    desc: "Sorriso alinhado com aparelhos metálicos ou estéticos. Discreta, segura e com resultado transformador.",
-    gradient: "linear-gradient(145deg, #002a2b 0%, #004a4c 60%, #006668 100%)",
-    img: serviceOrto,
-  },
-  {
-    title: "Alinhadores Invisíveis",
-    desc: "Corrija o sorriso sem aparelho aparente. Removível, confortável e quase imperceptível no dia a dia.",
-    gradient: "linear-gradient(145deg, #001e1f 0%, #003c3e 60%, #005456 100%)",
-    img: serviceAlinhadores,
-  },
-  {
-    title: "Clareamento Dental",
-    desc: "Dentes visivelmente mais brancos em poucos encontros, com tecnologia segura e resultado duradouro.",
-    gradient: "linear-gradient(145deg, #002e2e 0%, #004e50 60%, #006a6c 100%)",
-    img: serviceClareamento,
-    imgPosition: "center top",
-  },
-  {
-    title: "Estética Dental",
-    desc: "Facetas, resinas e procedimentos que devolvem harmonia e beleza natural ao sorriso.",
-    gradient: "linear-gradient(145deg, #002626 0%, #004040 60%, #005a5a 100%)",
-    img: serviceEstetica,
-  },
-  {
-    title: "Implante Dental",
-    desc: "Reposição de dentes perdidos com aparência e função idênticas ao dente natural.",
-    gradient: "linear-gradient(145deg, #001a1a 0%, #003434 60%, #004e4e 100%)",
-    img: serviceImplante,
-  },
-  {
-    title: "Coroa Dentária",
-    desc: "Proteção e restauração estética para dentes danificados, com resultado natural e duradouro.",
-    gradient: "linear-gradient(145deg, #002020 0%, #003c3c 60%, #005454 100%)",
-    img: serviceCoroa,
-  },
-  {
-    title: "Harmonização Facial",
-    desc: "Procedimentos minimamente invasivos para realçar a beleza natural do rosto com naturalidade.",
-    gradient: "linear-gradient(145deg, #002828 0%, #004444 60%, #005e5e 100%)",
-    img: serviceHarmonizacao,
-  },
-  {
-    title: "Tratamento de Canal",
-    desc: "Elimine a dor e preserve seu dente com segurança. Técnica moderna e muito menos desconforto.",
-    gradient: "linear-gradient(145deg, #001c1c 0%, #003636 60%, #005050 100%)",
-    img: serviceCanal,
-  },
-  {
-    title: "Limpeza Dental",
-    desc: "Remoção profissional de tártaro e manchas para um sorriso saudável e protegido.",
-    gradient: "linear-gradient(145deg, #002424 0%, #004040 60%, #005c5c 100%)",
-    img: serviceLimpeza,
-    imgPosition: "center 15%",
-    imgScale: 1.45,
-  },
-  {
-    title: "Laser Odontológico",
-    desc: "Tecnologia de ponta para procedimentos mais precisos, rápidos e com mínimo desconforto.",
-    gradient: "linear-gradient(145deg, #002c2c 0%, #004848 60%, #006464 100%)",
-    img: serviceLazer,
-  },
-  {
-    title: "Clínica Geral",
-    desc: "Restaurações, extrações e prevenção completa para toda a família em um só lugar.",
-    gradient: "linear-gradient(145deg, #001e1e 0%, #003a3a 60%, #005252 100%)",
-    img: serviceClinicaGeral,
-    imgPosition: "center top",
-  },
-];
-
-function ServiceCard({ title, desc, gradient, img, imgPosition, imgScale }: { title: string; desc: string; gradient: string; img?: string; imgPosition?: string; imgScale?: number }) {
+function ServiceCard({ slug, title, desc, gradient, img, imgPosition, imgScale }: { slug: string; title: string; desc: string; gradient: string; img?: string; imgPosition?: string; imgScale?: number }) {
   const [hovered, setHovered] = useState(false);
   const baseScale = imgScale ?? 1;
 
@@ -686,7 +603,7 @@ function ServiceCard({ title, desc, gradient, img, imgPosition, imgScale }: { ti
         {/* Saiba mais button */}
         <div style={{ display: "flex" }}>
           <a
-            href={WHATSAPP_LINK}
+            href={`/servicos/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -793,7 +710,7 @@ function Services() {
           className="services-grid stagger"
         >
           {SERVICES.slice(0, 8).map((s) => (
-            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
+            <ServiceCard key={s.title} slug={s.slug} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
           ))}
         </div>
 
@@ -809,7 +726,7 @@ function Services() {
           className="services-grid stagger"
         >
           {SERVICES.slice(8).map((s) => (
-            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
+            <ServiceCard key={s.title} slug={s.slug} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
           ))}
         </div>
 
@@ -2036,9 +1953,8 @@ function FloatingWhatsApp() {
   );
 }
 
-export default function App() {
+function MainPage() {
   useReveal();
-
   return (
     <div style={{ fontFamily: "'Inter', 'system-ui', sans-serif" }}>
       <Nav />
@@ -2053,5 +1969,16 @@ export default function App() {
       <Footer />
       <FloatingWhatsApp />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/servicos/:slug" component={ServiceDetailPage} />
+        <Route component={MainPage} />
+      </Switch>
+    </Router>
   );
 }

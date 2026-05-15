@@ -1,8 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { Router, Route, Switch } from "wouter";
 import ServiceDetailPage from "./ServiceDetailPage";
+import BookingModal from "./BookingModal";
 import { SERVICES, WHATSAPP_LINK } from "./services-data";
 import "./index.css";
+
+interface BookingCtx { openModal: (service?: string) => void; }
+const BookingContext = createContext<BookingCtx>({ openModal: () => {} });
+function useBooking() { return useContext(BookingContext); }
 import beforeAfter1 from "@assets/8E70F238-E0BE-48F2-8BD9-DD47CD02C663_L0_001-08_05_2026,_19_31__1778811401826.jpg";
 import beforeAfter2 from "@assets/image(1)_1778593478101.png";
 import beforeAfter3 from "@assets/image(2)_1778593478102.png";
@@ -45,6 +50,7 @@ function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const { openModal } = useBooking();
   const links = [
     { label: "Início", href: "#" },
     { label: "Sobre", href: "#sobre" },
@@ -129,10 +135,8 @@ function Nav() {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center" style={{ flexShrink: 0 }}>
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openModal()}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -144,26 +148,27 @@ function Nav() {
               fontFamily: "'Poppins', sans-serif",
               fontSize: "13px",
               fontWeight: 700,
-              textDecoration: "none",
+              border: "none",
+              cursor: "pointer",
               boxShadow: "0 4px 18px rgba(0,51,52,0.22)",
               transition: "transform 0.2s, box-shadow 0.2s, background-color 0.2s",
               whiteSpace: "nowrap",
             }}
             onMouseEnter={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
+              const el = e.currentTarget as HTMLButtonElement;
               el.style.transform = "translateY(-2px)";
               el.style.boxShadow = "0 8px 24px rgba(0,51,52,0.30)";
               el.style.backgroundColor = "#002526";
             }}
             onMouseLeave={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
+              const el = e.currentTarget as HTMLButtonElement;
               el.style.transform = "translateY(0)";
               el.style.boxShadow = "0 4px 18px rgba(0,51,52,0.22)";
               el.style.backgroundColor = "#003334";
             }}
           >
             Agendar Avaliação
-          </a>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -202,12 +207,11 @@ function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => { openModal(); setMenuOpen(false); }}
             style={{
               display: "block",
+              width: "100%",
               textAlign: "center",
               padding: "10px 20px",
               borderRadius: "999px",
@@ -216,12 +220,13 @@ function Nav() {
               fontFamily: "'Poppins', sans-serif",
               fontSize: "13px",
               fontWeight: 700,
-              textDecoration: "none",
+              border: "none",
+              cursor: "pointer",
               marginTop: "4px",
             }}
           >
             Agendar Avaliação
-          </a>
+          </button>
         </div>
       )}
     </nav>
@@ -229,6 +234,7 @@ function Nav() {
 }
 
 function Hero() {
+  const { openModal } = useBooking();
   return (
     <section
       className="relative overflow-hidden"
@@ -386,10 +392,8 @@ function Hero() {
 
             {/* CTA Button */}
             <div style={{ width: "100%", maxWidth: "460px" }}>
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openModal()}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -405,25 +409,25 @@ function Hero() {
                   height: "56px",
                   padding: "0 32px",
                   boxShadow: "0 8px 28px rgba(0,51,52,0.28)",
-                  textDecoration: "none",
+                  cursor: "pointer",
                   transition: "background 0.25s, transform 0.2s, box-shadow 0.2s",
                   letterSpacing: "0.01em",
                 }}
                 onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLAnchorElement;
+                  const el = e.currentTarget as HTMLButtonElement;
                   el.style.background = "linear-gradient(to right, #001e20 0%, #004a4c 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                   el.style.transform = "translateY(-2px)";
                   el.style.boxShadow = "0 12px 32px rgba(0,51,52,0.38)";
                 }}
                 onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLAnchorElement;
+                  const el = e.currentTarget as HTMLButtonElement;
                   el.style.background = "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                   el.style.transform = "translateY(0)";
                   el.style.boxShadow = "0 8px 28px rgba(0,51,52,0.28)";
                 }}
               >
                 Agendar Avaliação
-              </a>
+              </button>
             </div>
 
             {/* Stats */}
@@ -647,6 +651,7 @@ function ServiceCard({ slug, title, desc, gradient, img, imgPosition, imgScale }
 }
 
 function Services() {
+  const { openModal } = useBooking();
   return (
     <section
       id="servicos"
@@ -740,10 +745,8 @@ function Services() {
           >
             Conheça todos os nossos serviços e realize sua consulta
           </p>
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openModal()}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -756,18 +759,18 @@ function Services() {
               fontSize: "clamp(0.82rem, 1vw, 0.95rem)",
               fontWeight: 500,
               color: "#003334",
-              textDecoration: "none",
+              cursor: "pointer",
               letterSpacing: "0.03em",
               boxShadow: "0 4px 20px rgba(0,0,0,0.14)",
               transition: "transform 0.2s, box-shadow 0.2s",
             }}
             onMouseEnter={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
+              const el = e.currentTarget as HTMLButtonElement;
               el.style.transform = "translateY(-2px)";
               el.style.boxShadow = "0 8px 28px rgba(0,0,0,0.20)";
             }}
             onMouseLeave={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
+              const el = e.currentTarget as HTMLButtonElement;
               el.style.transform = "translateY(0)";
               el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.14)";
             }}
@@ -782,7 +785,7 @@ function Services() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -886,6 +889,7 @@ function NovaSecao() {
 }
 
 function Ambiente() {
+  const { openModal } = useBooking();
   const photos = [
     { src: ambientePhoto1, position: "center center" }, // recepção — cena horizontal
     { src: ambientePhoto2, position: "55% center" },    // sala de atendimento — foco na dra
@@ -1005,10 +1009,8 @@ function Ambiente() {
             Mais do que cuidar do seu sorriso, queremos que você se sinta bem em cada visita.
           </p>
 
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openModal()}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -1021,18 +1023,18 @@ function Ambiente() {
               fontSize: "clamp(0.82rem, 1vw, 0.95rem)",
               fontWeight: 500,
               color: "#003334",
-              textDecoration: "none",
+              cursor: "pointer",
               letterSpacing: "0.03em",
               boxShadow: "0 4px 20px rgba(0,0,0,0.20)",
               transition: "transform 0.2s, box-shadow 0.2s",
             }}
             onMouseEnter={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
+              const el = e.currentTarget as HTMLButtonElement;
               el.style.transform = "translateY(-2px)";
               el.style.boxShadow = "0 8px 28px rgba(0,0,0,0.28)";
             }}
             onMouseLeave={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
+              const el = e.currentTarget as HTMLButtonElement;
               el.style.transform = "translateY(0)";
               el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.20)";
             }}
@@ -1047,7 +1049,7 @@ function Ambiente() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
-          </a>
+          </button>
         </div>
 
       </div>
@@ -1233,6 +1235,7 @@ function photoImgStyle(p: PhotoItem): React.CSSProperties {
 }
 
 function Resultados() {
+  const { openModal } = useBooking();
   const photos: PhotoItem[] = [
     { src: beforeAfter2, delay: "delay-1" },
     { src: beforeAfter3, delay: "delay-2" },
@@ -1347,10 +1350,8 @@ function Resultados() {
           paddingRight: "clamp(16px, 4vw, 48px)",
         }}
       >
-        <a
-          href={WHATSAPP_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => openModal()}
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -1363,18 +1364,18 @@ function Resultados() {
             fontSize: "15px",
             fontWeight: 500,
             color: "#003334",
-            textDecoration: "none",
+            cursor: "pointer",
             letterSpacing: "0.04em",
             boxShadow: "0 4px 20px rgba(0,0,0,0.22)",
             transition: "transform 0.2s, box-shadow 0.2s, opacity 0.2s",
           }}
           onMouseEnter={e => {
-            const el = e.currentTarget as HTMLAnchorElement;
+            const el = e.currentTarget as HTMLButtonElement;
             el.style.transform = "translateY(-2px)";
             el.style.boxShadow = "0 8px 28px rgba(0,0,0,0.30)";
           }}
           onMouseLeave={e => {
-            const el = e.currentTarget as HTMLAnchorElement;
+            const el = e.currentTarget as HTMLButtonElement;
             el.style.transform = "translateY(0)";
             el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.22)";
           }}
@@ -1396,13 +1397,14 @@ function Resultados() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </span>
-        </a>
+        </button>
       </div>
     </section>
   );
 }
 
 function Contato() {
+  const { openModal } = useBooking();
   const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Galeria+Bella+Rio+Largo+de+F%C3%A1tima+303+Penedo+AL";
   const MAPS_EMBED = "https://maps.google.com/maps?q=Galeria+Bella+Rio,+Largo+de+F%C3%A1tima,+303,+Penedo,+AL,+57200-000,+Brasil&output=embed&z=16";
 
@@ -1534,10 +1536,8 @@ function Contato() {
 
             {/* CTA Button */}
             <div style={{ width: "100%" }}>
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openModal()}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -1551,26 +1551,26 @@ function Contato() {
                   fontFamily: "'Poppins', sans-serif",
                   fontSize: "14px",
                   fontWeight: 600,
-                  textDecoration: "none",
+                  cursor: "pointer",
                   boxShadow: "0 6px 24px rgba(0,51,52,0.25)",
                   transition: "background 0.25s, transform 0.2s, box-shadow 0.2s",
                   letterSpacing: "0.01em",
                 }}
                 onMouseEnter={e => {
-                  const el = e.currentTarget as HTMLAnchorElement;
+                  const el = e.currentTarget as HTMLButtonElement;
                   el.style.background = "linear-gradient(to right, #001e20 0%, #004a4c 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                   el.style.transform = "translateY(-2px)";
                   el.style.boxShadow = "0 10px 30px rgba(0,51,52,0.32)";
                 }}
                 onMouseLeave={e => {
-                  const el = e.currentTarget as HTMLAnchorElement;
+                  const el = e.currentTarget as HTMLButtonElement;
                   el.style.background = "linear-gradient(to right, #002e30 0%, #005c5e 100%) padding-box, linear-gradient(to right, #003334 0%, #bcd1dd 100%) border-box";
                   el.style.transform = "translateY(0)";
                   el.style.boxShadow = "0 6px 24px rgba(0,51,52,0.25)";
                 }}
               >
                 Agendar Avaliação
-              </a>
+              </button>
             </div>
           </div>
 
@@ -1953,20 +1953,35 @@ function FloatingWhatsApp() {
 
 function MainPage() {
   useReveal();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalService, setModalService] = useState<string | undefined>(undefined);
+
+  const openModal = (service?: string) => {
+    setModalService(service);
+    setModalOpen(true);
+  };
+
   return (
-    <div style={{ fontFamily: "'Inter', 'system-ui', sans-serif" }}>
-      <Nav />
-      <Hero />
-      <NovaSecao />
-      <Ambiente />
-      <Services />
-      <Diferenciais />
-      <Resultados />
-      <Contato />
-      <FAQ />
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+    <BookingContext.Provider value={{ openModal }}>
+      <div style={{ fontFamily: "'Inter', 'system-ui', sans-serif" }}>
+        <Nav />
+        <Hero />
+        <NovaSecao />
+        <Ambiente />
+        <Services />
+        <Diferenciais />
+        <Resultados />
+        <Contato />
+        <FAQ />
+        <Footer />
+        <FloatingWhatsApp />
+        <BookingModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          prefilledService={modalService}
+        />
+      </div>
+    </BookingContext.Provider>
   );
 }
 

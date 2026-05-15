@@ -604,8 +604,6 @@ function ServiceCard({ slug, title, desc, gradient, img, imgPosition, imgScale }
         <div style={{ display: "flex" }}>
           <a
             href={`/servicos/${slug}`}
-            target="_blank"
-            rel="noopener noreferrer"
             style={{
               display: "inline-flex",
               alignItems: "center",

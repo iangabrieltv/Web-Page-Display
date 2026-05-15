@@ -778,16 +778,33 @@ function Services() {
           </p>
         </div>
 
-        {/* Grid */}
+        {/* Grid — first 8 cards in 4 columns */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: "clamp(10px, 1.2vw, 18px)",
+            marginBottom: "clamp(10px, 1.2vw, 18px)",
           }}
           className="services-grid stagger"
         >
-          {SERVICES.map((s) => (
+          {SERVICES.slice(0, 8).map((s) => (
+            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
+          ))}
+        </div>
+
+        {/* Last 3 cards centered */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "clamp(10px, 1.2vw, 18px)",
+            maxWidth: "75%",
+            margin: "0 auto",
+          }}
+          className="services-grid stagger"
+        >
+          {SERVICES.slice(8).map((s) => (
             <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
           ))}
         </div>

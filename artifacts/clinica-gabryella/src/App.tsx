@@ -11,6 +11,7 @@ import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
 import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
 import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
+import sectionDividerIcon from "@assets/Início_(1)_1778847553697.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 import serviceOrto from "@assets/orto_1778809661749.jpg";
 import serviceAlinhadores from "@assets/alilhadores_1778809688651.jpg";
@@ -2020,6 +2021,30 @@ export default function App() {
       <Nav />
       <Hero />
       <NovaSecao />
+      {/* Divider icon between white (Sobre Nós) and green (Ambiente) sections */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          height: 0,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={sectionDividerIcon}
+          alt=""
+          aria-hidden="true"
+          style={{
+            width: "52px",
+            height: "auto",
+            transform: "translateY(-50%)",
+            borderRadius: "14px",
+            boxShadow: "0 4px 18px rgba(0,0,0,0.18)",
+            display: "block",
+          }}
+        />
+      </div>
       <Ambiente />
       <Services />
       <Diferenciais />

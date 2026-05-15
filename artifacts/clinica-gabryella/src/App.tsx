@@ -1295,11 +1295,10 @@ function photoImgStyle(p: PhotoItem): React.CSSProperties {
 
 function Resultados() {
   const photos: PhotoItem[] = [
-    { src: beforeAfter1, delay: "delay-1", expand: 0.12 },
-    { src: beforeAfter2, delay: "delay-2" },
-    { src: beforeAfter3, delay: "delay-3" },
-    { src: beforeAfter4, delay: "delay-4" },
-    { src: beforeAfter5, delay: "delay-5" },
+    { src: beforeAfter2, delay: "delay-1" },
+    { src: beforeAfter3, delay: "delay-2" },
+    { src: beforeAfter4, delay: "delay-3" },
+    { src: beforeAfter5, delay: "delay-4" },
   ];
 
   return (

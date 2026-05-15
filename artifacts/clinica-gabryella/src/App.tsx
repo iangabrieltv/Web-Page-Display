@@ -298,7 +298,7 @@ function Hero() {
               maxWidth: "700px",
               display: "flex",
               flexDirection: "column",
-              gap: "28px",
+              gap: "36px",
             }}
           >
             {/* Headline */}
@@ -437,8 +437,7 @@ function Hero() {
             {/* Stats */}
             <div
               style={{
-                paddingTop: "24px",
-                paddingBottom: "clamp(32px, 5vh, 56px)",
+                paddingTop: "20px",
                 borderTop: "1px solid rgba(0,51,52,0.15)",
                 display: "flex",
                 gap: "clamp(1.5rem, 3vw, 3rem)",
@@ -449,7 +448,7 @@ function Hero() {
                 { value: "+10 anos", label: "EXPERIÊNCIA" },
                 { value: "4022", label: "CRO" },
               ].map((stat) => (
-                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center", textAlign: "center" }}>
+                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: "5px", alignItems: "flex-start", textAlign: "left" }}>
                   <span
                     style={{
                       fontFamily: "'Poppins', sans-serif",

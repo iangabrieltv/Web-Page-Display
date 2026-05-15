@@ -979,10 +979,29 @@ function Ambiente() {
       id="ambiente"
       className="reveal"
       style={{
+        position: "relative",
         backgroundColor: "#003334",
         padding: "clamp(60px, 7vw, 100px) clamp(20px, 5vw, 80px)",
       }}
     >
+      {/* Divider icon sitting on the seam between white and green */}
+      <img
+        src={sectionDividerIcon}
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "52px",
+          height: "auto",
+          borderRadius: "14px",
+          boxShadow: "0 4px 18px rgba(0,0,0,0.22)",
+          zIndex: 10,
+          display: "block",
+        }}
+      />
       <div style={{ maxWidth: "960px", margin: "0 auto" }}>
 
         {/* Title */}
@@ -2021,30 +2040,6 @@ export default function App() {
       <Nav />
       <Hero />
       <NovaSecao />
-      {/* Divider icon between white (Sobre Nós) and green (Ambiente) sections */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          height: 0,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <img
-          src={sectionDividerIcon}
-          alt=""
-          aria-hidden="true"
-          style={{
-            width: "52px",
-            height: "auto",
-            transform: "translateY(-50%)",
-            borderRadius: "14px",
-            boxShadow: "0 4px 18px rgba(0,0,0,0.18)",
-            display: "block",
-          }}
-        />
-      </div>
       <Ambiente />
       <Services />
       <Diferenciais />

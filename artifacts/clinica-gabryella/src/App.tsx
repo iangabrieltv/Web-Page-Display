@@ -1260,7 +1260,7 @@ function Diferenciais() {
 
 function Resultados() {
   const photos = [
-    { src: beforeAfter1, delay: "delay-1", scale: 1.52 },
+    { src: beforeAfter1, delay: "delay-1", expand: 0.12 },
     { src: beforeAfter2, delay: "delay-2" },
     { src: beforeAfter3, delay: "delay-3" },
     { src: beforeAfter4, delay: "delay-4" },
@@ -1338,14 +1338,15 @@ function Resultados() {
                 alt={`Antes e depois ${(i % photos.length) + 1}`}
                 style={{
                   position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
                   objectFit: (photo as { fit?: string }).fit ?? "cover",
                   objectPosition: (photo as { pos?: string }).pos ?? "center",
                   display: "block",
-                  transform: (photo as { scale?: number }).scale ? `scale(${(photo as { scale?: number }).scale})` : undefined,
-                  transformOrigin: "center center",
+                  ...(() => {
+                    const ex = (photo as { expand?: number }).expand ?? 0;
+                    return ex > 0
+                      ? { width: `${(1 + ex * 2) * 100}%`, height: `${(1 + ex * 2) * 100}%`, top: `${-ex * 100}%`, left: `${-ex * 100}%` }
+                      : { inset: 0, width: "100%", height: "100%" };
+                  })(),
                 }}
               />
               {/* Badge */}

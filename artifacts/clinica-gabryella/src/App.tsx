@@ -582,6 +582,7 @@ const SERVICES = [
     gradient: "linear-gradient(145deg, #002424 0%, #004040 60%, #005c5c 100%)",
     img: serviceLimpeza,
     imgPosition: "center top",
+    imgScale: 1.18,
   },
   {
     title: "Laser Odontológico",
@@ -598,8 +599,9 @@ const SERVICES = [
   },
 ];
 
-function ServiceCard({ title, desc, gradient, img, imgPosition }: { title: string; desc: string; gradient: string; img?: string; imgPosition?: string }) {
+function ServiceCard({ title, desc, gradient, img, imgPosition, imgScale }: { title: string; desc: string; gradient: string; img?: string; imgPosition?: string; imgScale?: number }) {
   const [hovered, setHovered] = useState(false);
+  const baseScale = imgScale ?? 1;
 
   return (
     <div
@@ -644,7 +646,7 @@ function ServiceCard({ title, desc, gradient, img, imgPosition }: { title: strin
               objectPosition: imgPosition ?? "center",
               display: "block",
               transition: "transform 0.4s ease",
-              transform: hovered ? "scale(1.06)" : "scale(1)",
+              transform: hovered ? `scale(${baseScale * 1.06})` : `scale(${baseScale})`,
             }}
           />
         )}
@@ -786,7 +788,7 @@ function Services() {
           className="services-grid stagger"
         >
           {SERVICES.map((s) => (
-            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} />
+            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} imgScale={s.imgScale} />
           ))}
         </div>
 

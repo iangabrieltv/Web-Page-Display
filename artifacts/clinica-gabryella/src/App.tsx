@@ -1806,7 +1806,7 @@ function Footer() {
           <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
             {/* Instagram */}
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/dra.gabryellanunes/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

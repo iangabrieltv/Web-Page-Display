@@ -544,6 +544,7 @@ const SERVICES = [
     desc: "Dentes visivelmente mais brancos em poucos encontros, com tecnologia segura e resultado duradouro.",
     gradient: "linear-gradient(145deg, #002e2e 0%, #004e50 60%, #006a6c 100%)",
     img: serviceClareamento,
+    imgPosition: "center top",
   },
   {
     title: "Estética Dental",
@@ -580,6 +581,7 @@ const SERVICES = [
     desc: "Remoção profissional de tártaro e manchas para um sorriso saudável e protegido.",
     gradient: "linear-gradient(145deg, #002424 0%, #004040 60%, #005c5c 100%)",
     img: serviceLimpeza,
+    imgPosition: "center top",
   },
   {
     title: "Laser Odontológico",
@@ -592,10 +594,11 @@ const SERVICES = [
     desc: "Restaurações, extrações e prevenção completa para toda a família em um só lugar.",
     gradient: "linear-gradient(145deg, #001e1e 0%, #003a3a 60%, #005252 100%)",
     img: serviceClinicaGeral,
+    imgPosition: "center top",
   },
 ];
 
-function ServiceCard({ title, desc, gradient, img }: { title: string; desc: string; gradient: string; img?: string }) {
+function ServiceCard({ title, desc, gradient, img, imgPosition }: { title: string; desc: string; gradient: string; img?: string; imgPosition?: string }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -638,7 +641,7 @@ function ServiceCard({ title, desc, gradient, img }: { title: string; desc: stri
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              objectPosition: "center",
+              objectPosition: imgPosition ?? "center",
               display: "block",
               transition: "transform 0.4s ease",
               transform: hovered ? "scale(1.06)" : "scale(1)",
@@ -788,7 +791,7 @@ function Services() {
           className="services-grid stagger"
         >
           {SERVICES.map((s) => (
-            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} />
+            <ServiceCard key={s.title} title={s.title} desc={s.desc} gradient={s.gradient} img={s.img} imgPosition={s.imgPosition} />
           ))}
         </div>
 

@@ -9,7 +9,7 @@ import diferencialsBg from "@assets/fundo_diferenciis_1778596032037.png";
 import ambientePhoto1 from "@assets/WhatsApp_Image_2026-05-09_at_23.35.05_1778793543074.jpeg";
 import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
 import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
-import ambientePhoto4 from "@assets/DSC_0026_-_Gabryella_Nunes_1778793598144.JPG";
+import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 
@@ -923,7 +923,7 @@ function Ambiente() {
     { src: ambientePhoto1, position: "center center" }, // recepção — cena horizontal
     { src: ambientePhoto2, position: "55% center" },    // sala de atendimento — foco na dra
     { src: ambientePhoto3, position: "center 30%" },    // dra na mesa — rosto no topo
-    { src: ambientePhoto4, position: "40% 20%" },       // dra na porta — foco no rosto
+    { src: ambientePhoto4, position: "center 20%" },    // dra sentada — foco no rosto e busto
   ];
 
   return (

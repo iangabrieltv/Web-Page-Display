@@ -1260,11 +1260,11 @@ function Diferenciais() {
 
 function Resultados() {
   const photos = [
-    { src: beforeAfter1, delay: "delay-1", scale: 1.38, pos: "center center" },
+    { src: beforeAfter1, delay: "delay-1", fit: "contain" as const },
     { src: beforeAfter2, delay: "delay-2" },
     { src: beforeAfter3, delay: "delay-3" },
     { src: beforeAfter4, delay: "delay-4" },
-    { src: beforeAfter5, delay: "delay-5" },
+    { src: beforeAfter5, delay: "delay-5", fit: "fill" as const },
   ];
 
   return (
@@ -1341,11 +1341,9 @@ function Resultados() {
                   inset: 0,
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
-                  objectPosition: photo.pos ?? "center",
+                  objectFit: (photo as { fit?: string }).fit ?? "cover",
+                  objectPosition: (photo as { pos?: string }).pos ?? "center",
                   display: "block",
-                  transform: photo.scale ? `scale(${photo.scale})` : undefined,
-                  transformOrigin: "center center",
                 }}
               />
               {/* Badge */}

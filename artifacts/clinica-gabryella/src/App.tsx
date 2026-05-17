@@ -238,7 +238,7 @@ function Hero() {
   const { openModal } = useBooking();
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden hero-section"
       style={{ backgroundColor: "#fff", minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       {/* Background image — photo + circles baked in */}
@@ -275,6 +275,7 @@ function Hero() {
 
       {/* Main content — fills hero minus marquee bar */}
       <div
+        className="hero-main-content"
         style={{
           position: "relative",
           zIndex: 2,

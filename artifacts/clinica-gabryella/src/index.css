@@ -193,6 +193,17 @@
     display: none !important;
   }
 
+  /* Hero section — remove forced full-viewport height on mobile */
+  .hero-section {
+    min-height: auto !important;
+  }
+
+  /* Hero main content — reduce bottom padding so image follows tightly */
+  .hero-main-content {
+    padding-bottom: 0 !important;
+    align-items: flex-start !important;
+  }
+
   /* Hero — hide white mask on mobile (not needed without bg image) */
   .hero-white-mask {
     display: none !important;
@@ -203,12 +214,12 @@
     padding: 0 24px !important;
   }
 
-  /* Hero mobile image — inline flow below stats, full bleed */
+  /* Hero mobile image — inline flow below stats, full bleed, close to content */
   .hero-mobile-img {
     display: block !important;
     position: static !important;
     width: calc(100% + 48px) !important;
-    margin: 16px -24px 0 -24px !important;
+    margin: 8px -24px 0 -24px !important;
     overflow: hidden;
   }
   .hero-mobile-img img {
@@ -223,6 +234,7 @@
     position: static;
     width: 100% !important;
     max-width: 100% !important;
+    padding-bottom: 0 !important;
   }
 
   /* Sobre — center content, full width text */

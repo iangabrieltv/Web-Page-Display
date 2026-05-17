@@ -92,6 +92,11 @@
   border-color: rgb(0, 51, 52);
 }
 
+/* Hero mobile image — hidden by default on desktop */
+.hero-mobile-img {
+  display: none;
+}
+
 /* Marquee logo bar */
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -183,26 +188,26 @@
     margin-right: 0 !important;
   }
 
-  /* Hero — background image covers full section */
+  /* Hero — hide desktop background image on mobile */
   .hero-bg-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: right top !important;
+    display: none !important;
   }
 
-  /* Hero — white mask covers full width so text is readable */
+  /* Hero — hide white mask on mobile (not needed without bg image) */
   .hero-white-mask {
-    width: 100% !important;
-    background: linear-gradient(to bottom,
-      rgba(255,255,255,0.97) 0%,
-      rgba(255,255,255,0.93) 65%,
-      rgba(255,255,255,0.75) 100%) !important;
+    display: none !important;
   }
 
   /* Hero — reduce side padding */
   .hero-content-pad {
     padding: 0 24px !important;
+  }
+
+  /* Hero mobile image — hidden on desktop, shown on mobile */
+  .hero-mobile-img {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
   }
 
   /* Sobre — center content, full width text */

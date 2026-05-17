@@ -203,30 +203,26 @@
     padding: 0 24px !important;
   }
 
-  /* Hero mobile image — full section background */
+  /* Hero mobile image — inline flow below stats */
   .hero-mobile-img {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 !important;
-    z-index: 0;
-    pointer-events: none;
+    display: block !important;
+    position: static !important;
+    width: calc(100% + 32px) !important;
+    margin: 16px -16px 0 -16px !important;
+    overflow: hidden;
   }
   .hero-mobile-img img {
     width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-    border-radius: 0 !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: unset !important;
   }
 
-  /* Hero content — no extra positioning needed, parent wrapper already has z-index:2 */
+  /* Hero content wrapper — fills column width */
   .hero-content-wrapper {
     position: static;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* Sobre — center content, full width text */

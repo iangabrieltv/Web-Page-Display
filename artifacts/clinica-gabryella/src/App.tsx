@@ -273,6 +273,15 @@ function Hero() {
         }}
       />
 
+      {/* Mobile background image — direct child of section so absolute covers full area */}
+      <div className="hero-mobile-img">
+        <img
+          src={heroMobile}
+          alt="Dra. Gabryella Nunes"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
+        />
+      </div>
+
       {/* Main content — fills hero minus marquee bar */}
       <div
         style={{
@@ -433,20 +442,6 @@ function Hero() {
               >
                 Agendar Avaliação
               </button>
-            </div>
-
-            {/* Mobile hero image — shown only on small screens */}
-            <div className="hero-mobile-img">
-              <img
-                src={heroMobile}
-                alt="Dra. Gabryella Nunes"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  borderRadius: "16px",
-                }}
-              />
             </div>
 
             {/* Stats */}

@@ -203,11 +203,31 @@
     padding: 0 24px !important;
   }
 
-  /* Hero mobile image — hidden on desktop, shown on mobile */
+  /* Hero mobile image — full section background */
   .hero-mobile-img {
-    display: block;
-    width: 100%;
-    margin-top: 8px;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-mobile-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hero content sits above the background image */
+  .hero-content-wrapper {
+    position: relative;
+    z-index: 1;
   }
 
   /* Sobre — center content, full width text */

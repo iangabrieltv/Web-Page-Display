@@ -296,6 +296,7 @@ function Hero() {
         >
           {/* Left column content */}
           <div
+            className="hero-content-wrapper"
             style={{
               maxWidth: "700px",
               display: "flex",

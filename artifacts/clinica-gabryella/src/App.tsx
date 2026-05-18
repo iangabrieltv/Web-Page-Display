@@ -451,7 +451,7 @@ function Hero() {
 
             {/* Stats */}
             <div
-              className="hero-stats"
+              className="hero-stats stagger"
               style={{
                 paddingTop: "20px",
                 borderTop: "1px solid rgba(0,51,52,0.15)",
@@ -875,7 +875,7 @@ function NovaSecao() {
         }}
       >
         <div
-          className="sobre-text-box"
+          className="sobre-text-box reveal reveal-left"
           style={{
             width: "clamp(280px, 45%, 520px)",
             display: "flex",
@@ -924,7 +924,7 @@ function NovaSecao() {
         </div>
 
         {/* Mobile photo — shown below text on small screens */}
-        <div className="sobre-mobile-img">
+        <div className="sobre-mobile-img reveal reveal-scale reveal-d2">
           <img
             src={sobreMobile}
             alt="Dra. Gabryella Nunes com paciente"
@@ -1218,7 +1218,7 @@ function Diferenciais() {
             }} />
 
             {/* Bullet points */}
-            <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "clamp(8px, 1.1vw, 16px)" }}>
+            <ul className="stagger" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "clamp(8px, 1.1vw, 16px)" }}>
               {bullets.map((b) => (
                 <li
                   key={b}

@@ -198,9 +198,9 @@
     min-height: auto !important;
   }
 
-  /* Hero main content — reduce bottom padding so image follows tightly */
+  /* Hero main content — keep bottom padding to clear marquee bar */
   .hero-main-content {
-    padding-bottom: 0 !important;
+    padding-bottom: 72px !important;
     align-items: flex-start !important;
   }
 

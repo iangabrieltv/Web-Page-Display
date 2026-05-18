@@ -244,15 +244,20 @@
     text-align: center !important;
     width: 100% !important;
   }
-  /* Uniform font size for all spans */
+  /* Uniform font size for all spans — bigger for pyramid effect */
   .hero-title span {
-    font-size: 1.38rem !important;
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
   }
-  /* Make italic spans (3rd and 4th) flow inline so they wrap as 2 lines together */
+  /* Make italic spans flow inline so they wrap naturally as 2 lines */
   .hero-title > span:nth-child(3),
   .hero-title > span:nth-child(4) {
     display: inline !important;
     margin-top: 0 !important;
+  }
+  /* Slight gap between bold block and italic block */
+  .hero-title > span:nth-child(2) {
+    margin-bottom: 2px !important;
   }
 
   /* Hero subtitle — centered, full width */

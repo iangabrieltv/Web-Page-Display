@@ -459,7 +459,7 @@ function Hero() {
               }}
             >
               {[
-                { value: "+3.000", label: "SORRISOS TRANSFORMADOS" },
+                { value: "+3.000", label: "SORRISOS\nTRANSFORMADOS" },
                 { value: "+10 anos", label: "EXPERIÊNCIA" },
                 { value: "4022", label: "CRO" },
               ].map((stat) => (

@@ -22,7 +22,7 @@ import heroBg from "@assets/Início_1778789868230.png";
 import heroMobile from "@assets/Início_(5)_1779069228416.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
-import sobreMobile from "@assets/Início_(6)_1779070935643.png";
+import sobreMobile from "@assets/Início_(8)_1779071427085.png";
 import sobreBgMobile from "@assets/Início_(7)_1779071209125.png";
 
 function useReveal() {

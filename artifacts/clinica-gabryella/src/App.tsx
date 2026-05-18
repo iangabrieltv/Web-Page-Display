@@ -19,7 +19,7 @@ import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
 import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
 import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
-import heroMobile from "@assets/Início_(4)_1779067721838.png";
+import heroMobile from "@assets/Início_(5)_1779069228416.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 

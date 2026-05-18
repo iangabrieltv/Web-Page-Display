@@ -200,7 +200,7 @@
 
   /* Hero main content — keep bottom padding to clear marquee bar */
   .hero-main-content {
-    padding-bottom: 72px !important;
+    padding-bottom: 110px !important;
     align-items: flex-start !important;
   }
 

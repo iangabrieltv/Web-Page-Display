@@ -272,12 +272,12 @@
     width: 100% !important;
   }
 
-  /* Hero stats — centered, full width, justify evenly */
+  /* Hero stats — spread evenly: laterais nas bordas, centro no meio */
   .hero-stats {
     max-width: 100% !important;
     width: 100% !important;
-    justify-content: center !important;
-    gap: 1.2rem !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
   }
   /* Reduce label text (SORRISOS TRANSFORMADOS, EXPERIÊNCIA, CRO) on mobile */
   .hero-stats div span:last-child {

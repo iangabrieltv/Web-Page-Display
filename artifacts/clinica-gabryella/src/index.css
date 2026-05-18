@@ -102,6 +102,11 @@
   display: none;
 }
 
+/* Sobre mobile background — hidden by default on desktop */
+.sobre-mobile-bg {
+  display: none;
+}
+
 /* Marquee logo bar */
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -299,9 +304,12 @@
     white-space: pre-line !important;
   }
 
-  /* Sobre — fundo branco no mobile, sem imagem de fundo */
+  /* Sobre — esconde fundo desktop, mostra fundo mobile */
   .sobre-bg-img {
     display: none !important;
+  }
+  .sobre-mobile-bg {
+    display: block !important;
   }
   .sobre-wrapper {
     justify-content: flex-start !important;

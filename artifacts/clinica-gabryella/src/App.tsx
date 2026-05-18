@@ -23,6 +23,7 @@ import heroMobile from "@assets/Início_(5)_1779069228416.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 import sobreMobile from "@assets/Início_(6)_1779070935643.png";
+import sobreBgMobile from "@assets/Início_(7)_1779071209125.png";
 
 function useReveal() {
   useEffect(() => {
@@ -840,6 +841,21 @@ function NovaSecao() {
           objectFit: "cover",
           objectPosition: "left center",
           imageRendering: "auto",
+        }}
+      />
+      {/* Mobile background — subtle clinic image (shown only on mobile) */}
+      <img
+        src={sobreBgMobile}
+        alt=""
+        aria-hidden="true"
+        className="sobre-mobile-bg"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center center",
         }}
       />
 

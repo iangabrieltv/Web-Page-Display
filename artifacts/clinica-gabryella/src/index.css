@@ -229,12 +229,38 @@
     object-fit: unset !important;
   }
 
-  /* Hero content wrapper — fills column width */
+  /* Hero content wrapper — fills column width, centered */
   .hero-content-wrapper {
     position: static;
     width: 100% !important;
     max-width: 100% !important;
     padding-bottom: 0 !important;
+    align-items: center !important;
+  }
+
+  /* Hero title — centered on mobile */
+  .hero-title {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Hero subtitle — centered, full width */
+  .hero-subtitle {
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero CTA button wrapper — full width centered */
+  .hero-cta {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Hero stats — centered, full width, justify evenly */
+  .hero-stats {
+    max-width: 100% !important;
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   /* Sobre — center content, full width text */

@@ -306,7 +306,7 @@ function Hero() {
             }}
           >
             {/* Headline */}
-            <h1 style={{ margin: 0, lineHeight: 1.05 }}>
+            <h1 className="hero-title" style={{ margin: 0, lineHeight: 1.05 }}>
               {/* Linha 1: Especialista em cuidar */}
               <span
                 style={{
@@ -383,6 +383,7 @@ function Hero() {
 
             {/* Subtitle */}
             <p
+              className="hero-subtitle"
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 400,
@@ -397,7 +398,7 @@ function Hero() {
             </p>
 
             {/* CTA Button */}
-            <div style={{ width: "100%", maxWidth: "460px" }}>
+            <div className="hero-cta" style={{ width: "100%", maxWidth: "460px" }}>
               <button
                 onClick={() => openModal()}
                 style={{
@@ -438,6 +439,7 @@ function Hero() {
 
             {/* Stats */}
             <div
+              className="hero-stats"
               style={{
                 paddingTop: "20px",
                 borderTop: "1px solid rgba(0,51,52,0.15)",

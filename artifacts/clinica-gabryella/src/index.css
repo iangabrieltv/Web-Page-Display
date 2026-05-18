@@ -359,6 +359,18 @@
     padding: 28px 24px 24px !important;
     background: #003334;
   }
+  .diferenciais-overlay p:first-child {
+    font-size: 0.72rem !important;
+  }
+  .diferenciais-overlay h2 {
+    font-size: 1.75rem !important;
+  }
+  .diferenciais-overlay p {
+    font-size: 0.88rem !important;
+  }
+  .diferenciais-overlay li {
+    font-size: 0.88rem !important;
+  }
 
   /* Resultados — 2 columns on mobile */
   .resultados-carousel-inner {

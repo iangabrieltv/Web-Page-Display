@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SERVICES } from "./services-data";
 
 interface BookingModalProps {
@@ -16,6 +16,169 @@ function formatDate(iso: string) {
 
 function today() {
   return new Date().toISOString().split("T")[0];
+}
+
+const ALL_SERVICES = [
+  ...SERVICES.map(s => s.title),
+  "Outro",
+];
+
+function ServiceDropdown({
+  value,
+  onChange,
+  hasError,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  hasError: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div ref={ref} style={{ position: "relative" }}>
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        style={{
+          width: "100%",
+          height: "46px",
+          padding: "0 40px 0 14px",
+          borderRadius: "10px",
+          border: `1.5px solid ${hasError ? "#c0392b" : open ? "#003334" : "rgba(0,51,52,0.18)"}`,
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "14px",
+          color: value ? "#003334" : "#aaa",
+          backgroundColor: "#fafffe",
+          outline: "none",
+          cursor: "pointer",
+          textAlign: "left",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          transition: "border-color 0.2s, box-shadow 0.2s",
+          boxShadow: open ? "0 0 0 3px rgba(0,51,52,0.08)" : "none",
+          boxSizing: "border-box",
+        }}
+      >
+        <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {value || "Selecione um serviço"}
+        </span>
+        <span
+          style={{
+            position: "absolute",
+            right: "14px",
+            top: "50%",
+            transform: `translateY(-50%) rotate(${open ? "180deg" : "0deg"})`,
+            transition: "transform 0.2s",
+            color: "#003334",
+            opacity: 0.6,
+            pointerEvents: "none",
+            flexShrink: 0,
+          }}
+        >
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+
+      {open && (
+        <div
+          style={{
+            position: "absolute",
+            top: "calc(100% + 6px)",
+            left: 0,
+            right: 0,
+            zIndex: 100,
+            backgroundColor: "#fff",
+            borderRadius: "12px",
+            border: "1.5px solid rgba(0,51,52,0.12)",
+            boxShadow: "0 12px 40px rgba(0,51,52,0.16)",
+            overflow: "hidden",
+            animation: "dropdownIn 0.15s ease",
+          }}
+        >
+          <div style={{ maxHeight: "260px", overflowY: "auto", padding: "6px" }}>
+            {ALL_SERVICES.map((svc, i) => {
+              const isSelected = value === svc;
+              const isLast = svc === "Outro";
+              return (
+                <button
+                  key={svc}
+                  type="button"
+                  onClick={() => { onChange(svc); setOpen(false); }}
+                  style={{
+                    width: "100%",
+                    padding: "10px 12px",
+                    borderRadius: "8px",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    fontFamily: "'Poppins', sans-serif",
+                    fontSize: "13.5px",
+                    fontWeight: isSelected ? 600 : 400,
+                    color: isSelected ? "#003334" : "#2c4a4b",
+                    backgroundColor: isSelected ? "rgba(0,51,52,0.07)" : "transparent",
+                    textAlign: "left",
+                    transition: "background-color 0.15s",
+                    marginTop: isLast ? "4px" : "1px",
+                    borderTop: isLast ? "1px solid rgba(0,51,52,0.1)" : "none",
+                  }}
+                  onMouseEnter={e => {
+                    if (!isSelected) e.currentTarget.style.backgroundColor = "rgba(0,51,52,0.05)";
+                  }}
+                  onMouseLeave={e => {
+                    if (!isSelected) e.currentTarget.style.backgroundColor = "transparent";
+                  }}
+                >
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      background: isSelected
+                        ? "linear-gradient(135deg, #003334 0%, #005456 100%)"
+                        : "linear-gradient(135deg, rgba(0,51,52,0.08) 0%, rgba(0,51,52,0.12) 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke={isSelected ? "#ffcc99" : "#003334"} strokeWidth={2.2} opacity={isSelected ? 1 : 0.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                  </span>
+                  {svc}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes dropdownIn {
+          from { opacity: 0; transform: translateY(-6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        div[style*="overflowY: auto"]::-webkit-scrollbar { width: 4px; }
+        div[style*="overflowY: auto"]::-webkit-scrollbar-track { background: transparent; }
+        div[style*="overflowY: auto"]::-webkit-scrollbar-thumb { background: rgba(0,51,52,0.2); border-radius: 4px; }
+      `}</style>
+    </div>
+  );
 }
 
 export default function BookingModal({ isOpen, onClose, prefilledService }: BookingModalProps) {
@@ -71,7 +234,7 @@ export default function BookingModal({ isOpen, onClose, prefilledService }: Book
     backgroundColor: "#fafffe",
     outline: "none",
     boxSizing: "border-box",
-    transition: "border-color 0.2s",
+    transition: "border-color 0.2s, box-shadow 0.2s",
   };
 
   const labelStyle: React.CSSProperties = {
@@ -161,41 +324,20 @@ export default function BookingModal({ isOpen, onClose, prefilledService }: Book
               value={name}
               onChange={e => { setName(e.target.value); if (errors.name) setErrors(p => ({ ...p, name: "" })); }}
               style={{ ...inputStyle, borderColor: errors.name ? "#c0392b" : "rgba(0,51,52,0.18)" }}
-              onFocus={e => (e.currentTarget.style.borderColor = "#003334")}
-              onBlur={e => (e.currentTarget.style.borderColor = errors.name ? "#c0392b" : "rgba(0,51,52,0.18)")}
+              onFocus={e => { e.currentTarget.style.borderColor = "#003334"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(0,51,52,0.08)"; }}
+              onBlur={e => { e.currentTarget.style.borderColor = errors.name ? "#c0392b" : "rgba(0,51,52,0.18)"; e.currentTarget.style.boxShadow = "none"; }}
             />
             {errors.name && <p style={errorStyle}>{errors.name}</p>}
           </div>
 
-          {/* Serviço */}
+          {/* Serviço — custom dropdown */}
           <div>
             <label style={labelStyle}>Serviço desejado *</label>
-            <div style={{ position: "relative" }}>
-              <select
-                value={service}
-                onChange={e => { setService(e.target.value); if (errors.service) setErrors(p => ({ ...p, service: "" })); }}
-                style={{
-                  ...inputStyle,
-                  appearance: "none",
-                  paddingRight: "36px",
-                  borderColor: errors.service ? "#c0392b" : "rgba(0,51,52,0.18)",
-                  cursor: "pointer",
-                  backgroundColor: service ? "#fafffe" : "#fafffe",
-                  color: service ? "#003334" : "#aaa",
-                }}
-              >
-                <option value="" disabled>Selecione um serviço</option>
-                {SERVICES.map(s => (
-                  <option key={s.slug} value={s.title}>{s.title}</option>
-                ))}
-                <option value="Outro">Outro</option>
-              </select>
-              <span style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none", color: "#003334", opacity: 0.5 }}>
-                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </div>
+            <ServiceDropdown
+              value={service}
+              onChange={v => { setService(v); if (errors.service) setErrors(p => ({ ...p, service: "" })); }}
+              hasError={!!errors.service}
+            />
             {errors.service && <p style={errorStyle}>{errors.service}</p>}
           </div>
 
@@ -208,8 +350,8 @@ export default function BookingModal({ isOpen, onClose, prefilledService }: Book
               value={date}
               onChange={e => { setDate(e.target.value); if (errors.date) setErrors(p => ({ ...p, date: "" })); }}
               style={{ ...inputStyle, borderColor: errors.date ? "#c0392b" : "rgba(0,51,52,0.18)", cursor: "pointer" }}
-              onFocus={e => (e.currentTarget.style.borderColor = "#003334")}
-              onBlur={e => (e.currentTarget.style.borderColor = errors.date ? "#c0392b" : "rgba(0,51,52,0.18)")}
+              onFocus={e => { e.currentTarget.style.borderColor = "#003334"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(0,51,52,0.08)"; }}
+              onBlur={e => { e.currentTarget.style.borderColor = errors.date ? "#c0392b" : "rgba(0,51,52,0.18)"; e.currentTarget.style.boxShadow = "none"; }}
             />
             {errors.date && <p style={errorStyle}>{errors.date}</p>}
             <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", color: "rgba(0,51,52,0.45)", marginTop: "4px" }}>
@@ -234,8 +376,8 @@ export default function BookingModal({ isOpen, onClose, prefilledService }: Book
                 resize: "vertical",
                 minHeight: "80px",
               }}
-              onFocus={e => (e.currentTarget.style.borderColor = "#003334")}
-              onBlur={e => (e.currentTarget.style.borderColor = "rgba(0,51,52,0.18)")}
+              onFocus={e => { e.currentTarget.style.borderColor = "#003334"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(0,51,52,0.08)"; }}
+              onBlur={e => { e.currentTarget.style.borderColor = "rgba(0,51,52,0.18)"; e.currentTarget.style.boxShadow = "none"; }}
             />
           </div>
 

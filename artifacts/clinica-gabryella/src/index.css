@@ -343,6 +343,14 @@
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
+  /* Diferenciais — swap image on mobile */
+  .diferenciais-bg-img {
+    display: none !important;
+  }
+  .diferenciais-mobile-img {
+    display: block !important;
+  }
+
   /* Diferenciais — stack text below image */
   .diferenciais-overlay {
     position: static !important;

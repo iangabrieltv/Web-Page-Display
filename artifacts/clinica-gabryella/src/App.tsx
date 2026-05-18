@@ -1120,7 +1120,7 @@ function Diferenciais() {
         position: "relative",
         backgroundColor: "#003334",
         overflow: "hidden",
-        paddingBottom: "clamp(40px, 5vw, 80px)",
+        paddingBottom: 0,
       }}
     >
       {/* ── Composition image — full width, defines section height ── */}
@@ -1309,7 +1309,7 @@ function Resultados() {
       id="resultados"
       style={{
         backgroundColor: "#003334",
-        padding: "clamp(60px, 8vw, 100px) 0 clamp(50px, 6vw, 80px) 0",
+        padding: "clamp(20px, 3vw, 40px) 0 clamp(50px, 6vw, 80px) 0",
       }}
     >
       {/* Header */}

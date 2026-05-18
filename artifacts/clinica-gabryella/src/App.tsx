@@ -22,6 +22,7 @@ import heroBg from "@assets/Início_1778789868230.png";
 import heroMobile from "@assets/Início_(5)_1779069228416.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
+import sobreMobile from "@assets/Início_(6)_1779070935643.png";
 
 function useReveal() {
   useEffect(() => {
@@ -825,11 +826,12 @@ function NovaSecao() {
         alignItems: "center",
       }}
     >
-      {/* Background image — full width, max quality */}
+      {/* Background image — full width, max quality (hidden on mobile) */}
       <img
         src={novaSecaoBg}
         alt=""
         aria-hidden="true"
+        className="sobre-bg-img"
         style={{
           position: "absolute",
           inset: 0,
@@ -902,6 +904,15 @@ function NovaSecao() {
           >
             Costumo dizer que a odontologia me escolheu, e hoje tenho como propósito cuidar das pessoas com dedicação, transparência e carinho em cada detalhe. Meu compromisso é proporcionar tratamentos personalizados, ajudando cada paciente a recuperar a autoestima e voltar a sorrir com confiança.
           </p>
+        </div>
+
+        {/* Mobile photo — shown below text on small screens */}
+        <div className="sobre-mobile-img">
+          <img
+            src={sobreMobile}
+            alt="Dra. Gabryella Nunes com paciente"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
         </div>
       </div>
     </section>

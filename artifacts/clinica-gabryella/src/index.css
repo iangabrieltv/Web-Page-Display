@@ -97,6 +97,11 @@
   display: none;
 }
 
+/* Sobre mobile photo — hidden by default on desktop */
+.sobre-mobile-img {
+  display: none;
+}
+
 /* Marquee logo bar */
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -294,18 +299,34 @@
     white-space: pre-line !important;
   }
 
-  /* Sobre — center content, full width text */
+  /* Sobre — fundo branco no mobile, sem imagem de fundo */
+  .sobre-bg-img {
+    display: none !important;
+  }
   .sobre-wrapper {
     justify-content: flex-start !important;
-    align-items: flex-end !important;
-    padding: 40px 20px !important;
+    align-items: flex-start !important;
+    padding: 40px 24px 0 24px !important;
+    flex-direction: column !important;
   }
   .sobre-text-box {
     width: 100% !important;
     max-width: 100% !important;
-    background: rgba(255,255,255,0.92);
-    border-radius: 16px;
-    padding: 20px;
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+  /* Foto mobile da seção Sobre — mostrada abaixo do texto */
+  .sobre-mobile-img {
+    display: block !important;
+    width: calc(100% + 48px) !important;
+    margin: 32px -24px 0 -24px !important;
+    overflow: hidden;
+  }
+  .sobre-mobile-img img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
 
   /* Services bottom grid — full width on mobile */

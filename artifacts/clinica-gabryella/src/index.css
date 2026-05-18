@@ -214,13 +214,14 @@
     padding: 0 24px !important;
   }
 
-  /* Hero mobile image — inline flow below stats, full bleed, close to content */
+  /* Hero mobile image — at TOP of content, full bleed, no top margin */
   .hero-mobile-img {
     display: block !important;
     position: static !important;
     width: calc(100% + 48px) !important;
-    margin: 8px -24px 0 -24px !important;
+    margin: 0 -24px 20px -24px !important;
     overflow: hidden;
+    order: -1;
   }
   .hero-mobile-img img {
     width: 100% !important;
@@ -238,10 +239,13 @@
     align-items: center !important;
   }
 
-  /* Hero title — centered on mobile */
+  /* Hero title — centered on mobile, all spans same size */
   .hero-title {
     text-align: center !important;
     width: 100% !important;
+  }
+  .hero-title span {
+    font-size: clamp(1.7rem, 7vw, 2rem) !important;
   }
 
   /* Hero subtitle — centered, full width */
@@ -261,6 +265,14 @@
     max-width: 100% !important;
     width: 100% !important;
     justify-content: center !important;
+    gap: 1.2rem !important;
+  }
+  /* Reduce label text (SORRISOS TRANSFORMADOS, EXPERIÊNCIA, CRO) on mobile */
+  .hero-stats div span:last-child {
+    font-size: 9px !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
   }
 
   /* Sobre — center content, full width text */

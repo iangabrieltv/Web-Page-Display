@@ -19,7 +19,7 @@ import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
 import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";
 import ambientePhoto4 from "@assets/DSC_0082_-_Gabryella_Nunes_1778808306614.JPG";
 import heroBg from "@assets/Início_1778789868230.png";
-import heroMobile from "@assets/Início_(3)_1779062098169.png";
+import heroMobile from "@assets/Início_(4)_1779067721838.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/nova_1778792810212.png";
 
@@ -305,6 +305,15 @@ function Hero() {
               gap: "36px",
             }}
           >
+            {/* Mobile doctor photo — shown at top on small screens */}
+            <div className="hero-mobile-img">
+              <img
+                src={heroMobile}
+                alt="Dra. Gabryella Nunes"
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+
             {/* Headline */}
             <h1 className="hero-title" style={{ margin: 0, lineHeight: 1.05 }}>
               {/* Linha 1: Especialista em cuidar */}
@@ -482,14 +491,6 @@ function Hero() {
               ))}
             </div>
 
-            {/* Mobile doctor photo — shown below stats on small screens */}
-            <div className="hero-mobile-img">
-              <img
-                src={heroMobile}
-                alt="Dra. Gabryella Nunes"
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
-            </div>
           </div>
         </div>
       </div>

@@ -1196,6 +1196,20 @@ function Diferenciais() {
               Ortodontia com propósito
             </h2>
 
+            {/* Body */}
+            <p
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "clamp(0.55rem, 0.85vw, 0.82rem)",
+                color: "rgba(255,255,255,0.60)",
+                lineHeight: 1.8,
+                margin: "0 0 clamp(10px, 1.4vw, 22px) 0",
+                maxWidth: "90%",
+              }}
+            >
+              Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório.
+            </p>
+
             {/* Divider */}
             <div style={{
               width: "clamp(28px, 3vw, 40px)",

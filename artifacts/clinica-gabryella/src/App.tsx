@@ -1153,15 +1153,16 @@ function Diferenciais() {
           className="diferenciais-overlay"
           style={{
             position: "absolute",
-            top: "9%",
-            left: "47%",
-            width: "46%",
-            height: "82%",
+            top: "5%",
+            left: "46%",
+            width: "49%",
+            height: "90%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent: "space-between",
             alignItems: "flex-start",
-            padding: "8% 5% 0 4%",
+            padding: "6% 5% 5% 5%",
+            overflow: "hidden",
           }}
         >
           <div style={{ width: "100%" }}>

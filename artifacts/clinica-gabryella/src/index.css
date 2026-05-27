@@ -346,12 +346,12 @@
     white-space: pre-line !important;
   }
 
-  /* Sobre — esconde fundo desktop, mostra fundo mobile */
+  /* Sobre — esconde fundo desktop e fundo mobile */
   .sobre-bg-img {
     display: none !important;
   }
   .sobre-mobile-bg {
-    display: block !important;
+    display: none !important;
   }
   .sobre-wrapper {
     justify-content: flex-start !important;

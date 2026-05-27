@@ -5,7 +5,7 @@ import serviceEstetica from "@assets/estetica_1778809698407.jpg";
 import serviceImplante from "@assets/implante_1778809707377.jpg";
 import serviceCoroa from "@assets/coroa_1778809715017.jpg";
 import serviceHarmonizacao from "@assets/harmonizacao_1778809722444.jpg";
-import serviceCanal from "@assets/canal_1778809727920.jpg";
+import serviceCanal from "@assets/Início_(5)_1779906970317.png";
 import serviceLimpeza from "@assets/limpeza_1778809731960.jpg";
 import serviceLazer from "@assets/lazer_1778809735130.jpg";
 import serviceClinicaGeral from "@assets/image(1)_1778809760552.png";

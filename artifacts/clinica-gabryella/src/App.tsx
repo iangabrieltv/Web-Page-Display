@@ -962,7 +962,7 @@ function Ambiente() {
         aria-hidden="true"
         style={{
           position: "absolute",
-          top: 0,
+          top: 5,
           left: "50%",
           transform: "translate(-50%, -50%)",
           width: "130px",

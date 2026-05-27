@@ -1170,7 +1170,7 @@ function Diferenciais() {
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "clamp(0.5rem, 0.75vw, 0.7rem)",
+                fontSize: "clamp(0.7rem, 0.95vw, 0.9rem)",
                 fontWeight: 600,
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
@@ -1186,7 +1186,7 @@ function Diferenciais() {
               style={{
                 fontFamily: "'Roxborough CF', 'Cormorant Garamond', Georgia, serif",
                 fontWeight: 400,
-                fontSize: "clamp(1.1rem, 2.2vw, 2.4rem)",
+                fontSize: "clamp(1.3rem, 2.4vw, 2.6rem)",
                 color: "#fff",
                 lineHeight: 1.2,
                 margin: "0 0 clamp(8px, 1.2vw, 18px) 0",
@@ -1200,7 +1200,7 @@ function Diferenciais() {
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "clamp(0.55rem, 0.85vw, 0.82rem)",
+                fontSize: "clamp(0.75rem, 1.05vw, 1.02rem)",
                 color: "rgba(255,255,255,0.60)",
                 lineHeight: 1.8,
                 margin: "0 0 clamp(10px, 1.4vw, 22px) 0",
@@ -1228,7 +1228,7 @@ function Diferenciais() {
                     alignItems: "center",
                     gap: "clamp(8px, 0.9vw, 13px)",
                     fontFamily: "'Poppins', sans-serif",
-                    fontSize: "clamp(0.52rem, 0.82vw, 0.8rem)",
+                    fontSize: "clamp(0.72rem, 1.02vw, 1rem)",
                     color: "rgba(255,255,255,0.82)",
                     fontWeight: 500,
                     letterSpacing: "0.01em",

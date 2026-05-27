@@ -23,8 +23,8 @@ import heroBg from "@assets/Início_1778789868230.png";
 import heroMobile from "@assets/Início_(5)_1779069228416.png";
 import sectionDividerIcon from "@assets/divider_icon_nobg.png";
 import novaSecaoBg from "@assets/Início_(3)_1779904874246.png";
-import sobreMobile from "@assets/Início_(9)_1779071774559.png";
-import sobreBgMobile from "@assets/Início_(4)_1779904930766.png";
+import sobreMobile from "@assets/image_1779905165288.png";
+import sobreBgMobile from "@assets/Início_(4)_1779905208202.png";
 
 function useReveal() {
   useEffect(() => {

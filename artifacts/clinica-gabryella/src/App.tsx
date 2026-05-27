@@ -923,14 +923,6 @@ function NovaSecao() {
           </p>
         </div>
 
-        {/* Mobile photo — shown below text on small screens */}
-        <div className="sobre-mobile-img reveal reveal-scale reveal-d2">
-          <img
-            src={sobreMobile}
-            alt="Dra. Gabryella Nunes com paciente"
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
-        </div>
       </div>
     </section>
   );

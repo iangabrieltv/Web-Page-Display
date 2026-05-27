@@ -2031,9 +2031,9 @@ function MainPage() {
         <Nav />
         <Hero />
         <NovaSecao />
+        <Diferenciais />
         <Ambiente />
         <Services />
-        <Diferenciais />
         <Resultados />
         <Contato />
         <FAQ />

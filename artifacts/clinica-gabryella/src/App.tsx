@@ -14,7 +14,7 @@ import beforeAfter3 from "@assets/image(2)_1778593478102.png";
 import beforeAfter4 from "@assets/png_1778593487627.png";
 import beforeAfter5 from "@assets/png(1)_1778593487628.png";
 import diferencialsBg from "@assets/fundo_diferenciis_1778596032037.png";
-import diferencialsMobile from "@assets/Início_(10)_1779072619789.png";
+import diferencialsMobile from "@assets/Início_(1)_1779901848228.png";
 import ambientePhoto1 from "@assets/WhatsApp_Image_2026-05-09_at_23.35.05_1778793543074.jpeg";
 import ambientePhoto2 from "@assets/DSC_0038.JPG_1778793557749.jpeg";
 import ambientePhoto3 from "@assets/DSC_0054.JPG_1778793579410.jpeg";

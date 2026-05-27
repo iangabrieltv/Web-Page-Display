@@ -1207,7 +1207,7 @@ function Diferenciais() {
                 maxWidth: "90%",
               }}
             >
-              Cada detalhe do atendimento foi pensado para que você se sinta acolhido, seguro e confortável durante toda a sua experiência no consultório.
+              Cada detalhe do atendimento foi pensado<br />para que você se sinta acolhido, seguro<br />e confortável durante toda a sua experiência no consultório.
             </p>
 
             {/* Divider */}

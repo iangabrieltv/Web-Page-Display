@@ -1153,7 +1153,7 @@ function Diferenciais() {
           className="diferenciais-overlay"
           style={{
             position: "absolute",
-            top: "7%",
+            top: "12%",
             left: "46%",
             width: "49%",
             height: "90%",

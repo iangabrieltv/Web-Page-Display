@@ -1470,7 +1470,7 @@ function Resultados() {
 function Contato() {
   const { openModal } = useBooking();
   const MAPS_URL = "https://www.google.com/maps/place/Dra.+Gabryella+Nunes+%7C+Ortodontista+e+Dentista+em+Penedo/@-10.283436,-36.5712163,17z/data=!3m1!4b1!4m6!3m5!1s0x70455e9fef9fd2b:0x6004fbde9a8d8722!8m2!3d-10.283436!4d-36.5712163!16s%2Fg%2F11nj97k_nq?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D";
-  const MAPS_EMBED = "https://maps.google.com/maps?q=-10.283436,-36.5712163&output=embed&z=17&hl=pt-BR";
+  const MAPS_EMBED = "https://maps.google.com/maps?q=Pra%C3%A7a,+GALERIA+BELLA+RIO,+Largo+de+F%C3%A1tima,+303,+T%C3%89RREO,+SALA+03,+Santa+Luzia,+Penedo,+AL,+57200-000,+Brasil&output=embed&z=17&hl=pt-BR";
 
   const contacts = [
     {

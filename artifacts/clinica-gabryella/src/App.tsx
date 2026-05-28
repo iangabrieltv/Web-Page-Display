@@ -1469,8 +1469,8 @@ function Resultados() {
 
 function Contato() {
   const { openModal } = useBooking();
-  const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Galeria+Bella+Rio+Largo+de+F%C3%A1tima+303+Penedo+AL";
-  const MAPS_EMBED = "https://maps.google.com/maps?q=Galeria+Bella+Rio,+Largo+de+F%C3%A1tima,+303,+Penedo,+AL,+57200-000,+Brasil&output=embed&z=16";
+  const MAPS_URL = "https://www.google.com/maps/place/Dra.+Gabryella+Nunes+%7C+Ortodontista+e+Dentista+em+Penedo/@-10.283436,-36.5712163,17z/data=!3m1!4b1!4m6!3m5!1s0x70455e9fef9fd2b:0x6004fbde9a8d8722!8m2!3d-10.283436!4d-36.5712163!16s%2Fg%2F11nj97k_nq?entry=ttu&g_ep=EgoyMDI2MDUyNS4wIKXMDSoASAFQAw%3D%3D";
+  const MAPS_EMBED = "https://maps.google.com/maps?q=-10.283436,-36.5712163&output=embed&z=17&hl=pt-BR";
 
   const contacts = [
     {
@@ -1499,7 +1499,7 @@ function Contato() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      text: "Praça, GALERIA BELLA RIO – Largo de Fátima, 303 – 1° ANDAR, SALA 03 – Santa Luzia, Penedo – AL, 57200-000",
+      text: "Praça, GALERIA BELLA RIO – Largo de Fátima, 303 – TÉRREO, SALA 03 – Santa Luzia, Penedo – AL, 57200-000",
     },
   ];
 

@@ -1958,7 +1958,7 @@ function Footer() {
             }}
           >
             Praça, GALERIA BELLA RIO – Largo de Fátima,<br />
-            303 – 1º ANDAR, SALA 03 – Santa Luzia,<br />
+            303 – TÉRREO, SALA 03 – Santa Luzia,<br />
             Penedo – AL, 57200-000
           </p>
         </div>
